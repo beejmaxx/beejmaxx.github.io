@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API & Integration Systems | Bijan Pourriahi</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand"><a href="/">Bijan Pourriahi</a></div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/resume.pdf">Resume</a>
+        <a href="https://github.com/bijmaxx">GitHub</a>
+        <a href="mailto:bijan.pourriahi@gmail.com">Email</a>
+      </nav>
+    </header>
+
+    <main class="main case">
+      <section class="hero">
+        <p class="kicker">Case Study</p>
+        <h1>API & Integration Systems</h1>
+        <p class="lede">
+          Built integration layers across external systems with different latency, reliability,
+          authentication, state, and failure-mode characteristics.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Problem</h2>
+        <p>
+          Production workflows depended on multiple external systems: broker APIs, prop-firm systems,
+          market-data providers, execution APIs, WebSocket APIs, browser sessions, and authentication
+          flows. Each system failed differently, exposed state differently, and required different
+          operational visibility.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>What I Built</h2>
+        <ul>
+          <li>API adapters for external services with different request, response, auth, and state models.</li>
+          <li>WebSocket command/control flows for real-time state, monitoring, and operational actions.</li>
+          <li>Authentication, session handling, retry, recovery, and state reconciliation workflows.</li>
+          <li>Browser automation infrastructure with proxy/session management, Docker workers, and failure recovery.</li>
+          <li>Dashboards and review tools that made integration state and failures visible enough to debug.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Architecture</h2>
+        <p class="note">
+          External APIs and browser sessions -> integration adapters -> normalized internal state ->
+          runtime workflows -> logs, metrics, dashboards, CLIs, and operational review.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Technical Challenges</h2>
+        <ul>
+          <li>Handling inconsistent external state without hiding failure modes.</li>
+          <li>Making retries and recovery observable instead of opaque background behavior.</li>
+          <li>Keeping real-time WebSocket state understandable for operators and debugging workflows.</li>
+          <li>Designing interfaces that kept domain complexity out of the rest of the system.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>What This Demonstrates</h2>
+        <p>
+          API design, external integrations, operational reliability, WebSocket systems, interface
+          boundaries, failure handling, browser automation, and practical production debugging.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

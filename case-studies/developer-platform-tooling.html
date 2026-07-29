@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Developer Platform & Tooling | Bijan Pourriahi</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand"><a href="/">Bijan Pourriahi</a></div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/resume.pdf">Resume</a>
+        <a href="https://github.com/bijmaxx">GitHub</a>
+        <a href="mailto:bijan.pourriahi@gmail.com">Email</a>
+      </nav>
+    </header>
+
+    <main class="main case">
+      <section class="hero">
+        <p class="kicker">Case Study</p>
+        <h1>Developer Platform & Tooling</h1>
+        <p class="lede">
+          Built developer-facing and operator-facing workflows around a complex Rust/Python platform:
+          APIs, CLIs, MCP tools, dashboards, browser tooling, automation, evidence capture, and
+          operational review.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Problem</h2>
+        <p>
+          The platform had no separate product team and I was the primary user, so developer experience
+          directly shaped the architecture. Slow feedback, unclear state, opaque failures, or manual
+          review would have made iteration too expensive.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>What I Built</h2>
+        <ul>
+          <li>CLI workflows for local debugging, repeatable execution, automation, and operational review.</li>
+          <li>MCP-based interfaces so AI agents could interact with internal services where remote or standardized tool access made sense.</li>
+          <li>Dashboards and review surfaces for inspecting runtime state, results, evidence, and operational behavior.</li>
+          <li>Browser tooling and automation workflows for repetitive operational tasks and external-service workflows.</li>
+          <li>Fast feedback loops around replay, simulation, evaluation, and production review.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Interface Tradeoffs</h2>
+        <p>
+          I did not treat MCP as the answer to every problem. For local workflows, CLIs were often
+          simpler, easier to debug, and easier to operate. MCP was useful where tools needed a more
+          standardized interface for agent access or remote execution.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Architecture</h2>
+        <p class="note">
+          Internal services -> APIs and command surfaces -> CLI / MCP / dashboard interfaces ->
+          logs, evidence, metrics, and operator/developer review.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>What This Demonstrates</h2>
+        <p>
+          Developer tooling judgment, API/interface design, AI-assisted workflows, operational UX,
+          debugging discipline, and the ability to make complex systems easier to use and trust.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

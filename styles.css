@@ -75,6 +75,12 @@ a:hover {
   margin: 0 0 10px;
 }
 
+.skill-line {
+  color: #17364a;
+  font-weight: 650;
+  margin: -2px 0 18px;
+}
+
 h1,
 h2,
 h3 {

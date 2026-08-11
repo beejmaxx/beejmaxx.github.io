@@ -9,8 +9,8 @@
     />
     <meta name="theme-color" content="#171717" />
     <title>Engine sound utility</title>
-    <script type="module" crossorigin src="./assets/index-iLN9pU0v.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D88wVetq.css">
+    <script type="module" crossorigin src="./assets/index-Y27Z04RH.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CON8DeaK.css">
   </head>
   <body>
     <main class="app">
@@ -26,29 +26,15 @@
         <h2 id="controls-heading">Controls</h2>
 
         <div class="control-grid">
-          <label class="field engine-field">
-            <span>Engine</span>
-            <select id="engine-select">
-              <option value="subaru-ej25">Subaru EJ25 — Flat 4</option>
-              <option value="toyota-2jz">Toyota 2JZ — Inline 6</option>
-              <option value="gm-ls-v8">GM LS — V8</option>
-              <option value="ferrari-f136-v8">Ferrari F136 — V8</option>
-              <option value="ferrari-412-t2-v12">Ferrari 412 T2 — F1 V12</option>
-              <option value="ferrari-enzo-f140b">Ferrari Enzo — F140B V12 (approx.)</option>
-              <option value="lexus-lfa-v10">Lexus LFA — V10</option>
-              <option value="merlin-v12">Rolls-Royce Merlin — V12</option>
-              <option value="harley-shovelhead">Harley Shovelhead — V2</option>
-              <option value="honda-vtec">Honda VTEC — Inline 4</option>
-            </select>
-            <small id="engine-meta">4 cylinders · 2.5 L · Boxer</small>
-          </label>
+          <fieldset class="engine-field">
+            <legend>Engine</legend>
+            <div id="engine-picker" class="engine-picker"></div>
+          </fieldset>
 
-          <label class="field">
-            <span>Fuel</span>
-            <select id="fuel-select" disabled aria-describedby="fuel-note">
-              <option>Gasoline</option>
-            </select>
-          </label>
+          <div class="field">
+            <span>Fuel model</span>
+            <div class="readonly-control">Generic gasoline</div>
+          </div>
 
           <label class="field">
             <span>Duration</span>
@@ -66,7 +52,8 @@
         </div>
 
         <p id="fuel-note" class="note">
-          Gasoline only for now; other fuels need a real combustion-model extension.
+          Models energy density, density, stoichiometric mixture, flame speed, turbulence and burn
+          efficiency. Octane grade, knock and detonation are not modeled yet.
         </p>
 
         <div class="actions">

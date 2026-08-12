@@ -168,6 +168,51 @@ p {
   gap: 18px;
 }
 
+.project-group-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 6px 0 14px;
+}
+
+.project-group-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-group-heading h3,
+.project-group-heading p {
+  margin: 0;
+}
+
+.project-group-heading p {
+  max-width: 610px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.experiments-heading {
+  margin-top: 38px;
+  padding-top: 26px;
+  border-top: 1px dashed var(--line);
+}
+
+.effort-mark {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.effort-mark.major {
+  background: var(--accent-2);
+}
+
+.effort-mark.experiment {
+  background: #94a3b8;
+}
+
 .project-card {
   display: flex;
   min-height: 250px;
@@ -344,6 +389,14 @@ figcaption {
 
   .section-heading {
     display: block;
+  }
+
+  .project-group-heading {
+    display: block;
+  }
+
+  .project-group-heading p {
+    margin-top: 7px;
   }
 
   .section-intro {

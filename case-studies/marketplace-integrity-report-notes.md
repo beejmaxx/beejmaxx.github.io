@@ -23,10 +23,10 @@
 
 | Project | Canonical evidence used | Reported synthetic result |
 |---|---|---|
-| HTTP Bot Defense Lab | `README.md`, `docs/case-study.md` | Seed 42; 74 accounts; 2,680 requests; request-time recall 41.67%; layered TP=24, FP=0, TN=50, FN=0 at threshold 60 |
-| Red Queen Lab | `evidence/demo/summary.json`, `README.md` | 240 evaluations per method; 23.779% search-objective uplift; adaptive holdout detection 0%; retained harm 100%; replay reduced from 2,317 to 424 actions |
-| Market Integrity Lab | `README.md`, local `artifacts/demo/summary.json`, `docs/METRICS.md` | Ring case at 385 seconds; ring profit 109 to 18 credits; legitimate fill quantity +1.183%; total fill quantity −2.574% |
-| Marketplace Intervention Lab | `evidence/demo/summary.json`, `docs/METHOD.md` | DR residual harm 108.784 / 27.226 / 8.402; aggressive policy rejected; shifted canary friction 11.0% versus 6.5% budget after 300 episodes |
+| HTTP Bot Defense Lab | `README.md`, `docs/case-study.md`, `docs/adaptive-closure.md` | Seed 42 acceptance fixture plus bounded account/audit state and actual Go scorer integration |
+| Red Queen Lab | `evidence/demo/summary.json`, `evidence/go-detector/`, `docs/GO_DETECTOR_EXPERIMENT.md` | Standalone benchmark plus v1→v4 exact replay: 2,819→1,200 credits, 54 later market actions blocked, then a new 34-action frontier |
+| Market Integrity Lab | `README.md`, local `artifacts/demo/summary.json`, `docs/METRICS.md` | Offline case evidence threshold at T+385; ring profit 109 to 18 credits; legitimate fill quantity +1.183%; total fill quantity −2.574% |
+| Marketplace Intervention Lab | `evidence/demo/summary.json`, `docs/METHOD.md` | DR residual harm 108.784 / 27.226 / 8.402; 94.6% outcome maturity clears 90% gate; shifted canary friction 11.0% versus 6.5% budget |
 
 The market-integrity full `summary.json` is locally reproducible but not committed. The reader-facing citation therefore links to the public README section that documents the same default-seed result and to the committed metric definitions.
 
@@ -47,6 +47,7 @@ Colors are categorical and semantic: blue for baseline/observation, mint for sup
 - Credits are scenario units, not money.
 - Ring profit reduction is `(baseline ring profit - treatment ring profit) / abs(baseline ring profit)`.
 - Red Queen retained harm compares realized profit under the reference detector with the identical strategy under a no-op detector.
+- Cross-repository fresh-strategy profit is not a paired causal comparison; only the 94-action frozen replay uses identical actions.
 - Intervention residual harm is an offline policy-value outcome; the report identifies the doubly robust point estimate and separates support/guardrail gates from policy performance.
 - The 90-day plan is a recommendation, not evidence from the synthetic labs.
 

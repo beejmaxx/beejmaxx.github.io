@@ -92,7 +92,7 @@
         <div class="section-content">
           <p class="eyebrow">System view</p>
           <h2>Each project owns one decision boundary.</h2>
-          <p class="section-lede">The repositories do not import one another. Together, their neutral contracts describe how an authorized internal system could progress from an observation to a governed action.</p>
+          <p class="section-lede">The projects remain separate deployable codebases. The Go scorer and Red Queen harness now integrate through a loopback-only observable-event contract; the other boundaries remain offline schemas and operating-model links.</p>
 
           <div class="system-flow" aria-label="Four-stage marketplace integrity system">
             <article class="flow-stage">
@@ -170,7 +170,7 @@
               </div>
               <div class="finding-copy">
                 <p><strong>What happened.</strong> Request-time scoring caught all ten fixed-loop accounts but missed fourteen randomized or coordinated accounts. Longer-window analysis found those constructed profiles without adding a false positive at the default threshold.</p>
-                <p><strong>Why it matters.</strong> The online path remains bounded; slower correlation work moves off the request path. At a lower threshold, three legitimate household accounts are flagged, making the cost of sensitivity visible.</p>
+                <p><strong>Why it matters.</strong> The online path now bounds both samples and account cardinality, defines retry and late-event semantics, and places JSONL audit delivery behind an observable fixed-capacity queue. At a lower threshold, three legitimate household accounts are flagged, making the cost of sensitivity visible.</p>
               </div>
             </div>
             <details>
@@ -200,9 +200,34 @@
             </div>
             <details>
               <summary>Guardrail and interpretation</summary>
-              <p>Aggregate legitimate-action friction was 0.19% across three evaluation-only hard-negative personas. That small synthetic value is a scenario check, not a safe production target. Failure to discover an evasion would not prove security.</p>
+              <p>Macro legitimate-action friction was 0.19%, yet the power-trader persona was touched on 60% of its five seeds. The action-level average and persona-level intervention risk therefore need to be read together. Failure to discover an evasion would not prove security.</p>
             </details>
             <p class="source-line">Source: <a href="https://github.com/beejmaxx/bot-defense-red-team-lab/blob/main/evidence/demo/summary.json">committed summary.json</a> and <a href="https://github.com/beejmaxx/bot-defense-red-team-lab/blob/main/README.md#result-from-the-committed-scenario">result interpretation</a>.</p>
+          </article>
+
+          <article class="evidence-card">
+            <div class="evidence-heading">
+              <div>
+                <p class="project-index">Cross-repository engineering experiment</p>
+                <h3>Discover → mitigate → reject → reattack</h3>
+                <p>The Red Queen harness now attacks the actual Go scorer, not a co-located reference implementation.</p>
+              </div>
+              <a class="repo-link" href="https://github.com/beejmaxx/bot-defense-red-team-lab/blob/main/docs/GO_DETECTOR_EXPERIMENT.md">Experiment note ↗</a>
+            </div>
+            <div class="metric-triptych">
+              <div><span class="metric-value">94</span><span>actions in frozen v1 failure</span></div>
+              <div><span class="metric-value">54</span><span>later market actions blocked by v4</span></div>
+              <div class="metric-alert"><span class="metric-value">34</span><span>actions in the new v4 frontier</span></div>
+            </div>
+            <div class="finding-copy wide">
+              <p><strong>Same-trace result.</strong> The v1 failure realized 2,819 synthetic credits with no score. V4 detected that exact trace, blocked 54 later market actions, and reduced realized profit to 1,200.</p>
+              <p><strong>Operating result.</strong> A broad cadence fix was rejected after it detected every power-trader and delegated-household seed. A narrower coordination rule passed the three declared hard negatives, then fresh search found a profitable three-account evasion. The useful result is a working improvement loop, not a solved detector.</p>
+            </div>
+            <details>
+              <summary>Evaluation boundary</summary>
+              <p>Two search seeds, three disjoint holdout seeds, 32 candidates per search method, and an authored synthetic economy. The fresh v1/v3/v4 strategies differ, so their profit values are not paired causal estimates. Only the frozen-trace replay compares identical actions.</p>
+            </details>
+            <p class="source-line">Source: <a href="https://github.com/beejmaxx/bot-defense-red-team-lab/blob/main/docs/GO_DETECTOR_EXPERIMENT.md">experiment report</a>, <a href="https://github.com/beejmaxx/bot-defense-red-team-lab/tree/main/evidence/go-detector">committed machine-readable evidence</a>, and <a href="https://github.com/beejmaxx/http-bot-defense-lab/blob/main/docs/adaptive-closure.md">Go implementation note</a>.</p>
           </article>
 
           <article class="evidence-card">
@@ -230,8 +255,8 @@
                 <p class="chart-note">−83.5% ring profit · +1.2% legitimate fill quantity · −2.6% total fill quantity</p>
               </div>
               <div class="finding-copy">
-                <p><strong>What happened.</strong> All six ring accounts used unique device, network, and session identifiers and remained below the account-only threshold. A graph/economic layer opened one case at T+385 seconds using synchronized repricing, shared target rotation, and cluster density.</p>
-                <p><strong>Why it matters.</strong> The intervention was marketplace-only and began only after evidence accumulated. The paired world reran adaptive agents from the same seed and exposed both reduced ring profit and liquidity tradeoffs.</p>
+                <p><strong>What happened.</strong> All six ring accounts used unique device, network, and session identifiers and remained below the account-only threshold. A full-batch graph/economic layer formed one six-account case with a retrospectively verified evidence threshold at T+385 seconds.</p>
+                <p><strong>Why it matters.</strong> The paired treatment world applied a marketplace-only rule after that offline evidence threshold and exposed both reduced ring profit and liquidity tradeoffs. T+385 is not a measured streaming-alert latency.</p>
               </div>
             </div>
             <details>
@@ -284,7 +309,7 @@
             </div>
             <details>
               <summary>Method and interpretation</summary>
-              <p>The lab uses SNIPS and doubly robust estimates on a held-out period, with clustered bootstrap uncertainty. The policy gate cannot read actor truth or unchosen outcomes; a hidden oracle audits the frozen decision afterward. These mechanics require logged action propensities and mature outcomes that may not exist in production.</p>
+              <p>The lab uses SNIPS and doubly robust estimates on a held-out period, with clustered bootstrap uncertainty. The gate now requires at least 90% global outcome maturity; the committed run has 2,697 of 2,852 holdout episodes mature (94.6%). The policy gate cannot read actor truth or unchosen outcomes; a hidden oracle audits the frozen decision afterward.</p>
             </details>
             <p class="source-line">Source: <a href="https://github.com/beejmaxx/marketplace-intervention-lab/blob/main/evidence/demo/summary.json">committed summary.json</a> and <a href="https://github.com/beejmaxx/marketplace-intervention-lab/blob/main/docs/METHOD.md">evaluation method</a>.</p>
           </article>

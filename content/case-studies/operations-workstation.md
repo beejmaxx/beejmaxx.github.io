@@ -6,39 +6,42 @@ tags: real-time systems, operational UX, risk, full-stack
 image: /assets/screenshots/trading-fleet-dashboard.png
 ---
 
-## Problem
+## What exists
 
 Operators needed one surface to understand live account state, execution behavior, exposure, limits, and emergency controls without jumping between separate tools. The interface had to support fast action while keeping state inspectable and operational decisions explainable.
 
 ![Trading fleet dashboard](/assets/screenshots/trading-fleet-dashboard.png)
 
-## What I built
+## The hard part
 
-- Frontend dashboards for live account, balance, position, and risk visibility.
-- Backend coordination for multi-account fan-out workflows.
-- Operator controls for flatten, cancel, emergency stops, and risk limits.
-- Monitoring views and explanations designed for fast operational review.
-- Mobile and desktop control surfaces for the same operational model.
+The interface had to support fast action without turning an emergency control into an easy accident. Display state and control logic stayed separate; destructive actions remained explicit; fan-out behavior needed to be visible rather than implied.
 
 ![Strategy explorer](/assets/screenshots/strategy-explorer.png)
 
-## Architecture
+## System map
 
 ```text
 workstation → API/control layer → runtime state → policy/control logic
             → execution workflow → monitoring and event logs
 ```
 
-## Technical challenges
+## Key decisions
 
-- Keeping real-time state readable and trustworthy under operational pressure.
-- Separating display state from control logic so actions remained explicit.
-- Designing emergency controls that were available without being easy to misuse.
-- Making multi-account fan-out behavior visible enough to debug and operate.
+- Keep account-level state visible even when actions originate from a group.
+- Treat flatten, cancel, and stop as named commands with explicit scope.
+- Preserve event and execution history for review rather than showing only current positions.
+- Use the same operational model on desktop and mobile without pretending the surfaces are interchangeable.
 
 ![Live execution dashboard](/assets/screenshots/live-execution-dashboard.png)
 
-## What this demonstrates
+## Evidence
 
-Platform ownership, real-time systems, operational UX, backend architecture, data modeling, monitoring, reliability-aware interface design, and the ability to turn complex runtime behavior into an operator-usable product.
+The screenshots on this page show the fleet overview, experiment comparison surface, and live execution state. They are product artifacts, not reconstructed portfolio mockups.
 
+## Limits
+
+The public record can show interface structure and system boundaries, but not private account data, production credentials, or confidential operational history.
+
+## What I would change
+
+I would make command provenance and last-known-good state even more prominent, and treat every emergency action as a reviewable incident artifact from the beginning.

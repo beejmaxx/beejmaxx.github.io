@@ -30,7 +30,6 @@ internal services → APIs and command surfaces → CLI / MCP / dashboards
                   → logs, evidence, metrics, and review
 ```
 
-## What this demonstrates
+## Limits and what I would change
 
-Developer-tooling judgment, API and interface design, AI-native development workflows, operational UX, debugging discipline, and the ability to make complex systems easier to use and trust.
-
+Tool choice alone does not prove that a workflow improved. I would attach time-to-feedback, failure-recovery, or repeatability evidence to each interface as it matures.

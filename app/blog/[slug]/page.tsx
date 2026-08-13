@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { SimpleFooter, SiteHeader } from "@/components/SiteHeader";
+import { SiteShell } from "@/components/SiteShell";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 
 export const dynamicParams = false;
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   if (!getPostSlugs().includes(slug)) return {};
   const post = getPostBySlug(slug);
-  return { title: post.title, description: post.excerpt };
+  return { title: post.title, description: post.excerpt, alternates: { canonical: `/blog/${slug}` }, openGraph: { title: `${post.title} — bijan`, description: post.excerpt, url: `/blog/${slug}`, type: "article" } };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -24,11 +24,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getPostBySlug(slug);
 
   return (
-    <>
-      <SiteHeader />
-      <main className="page-main wrap">
+    <SiteShell current="notes">
+      <main className="page" id="main">
         <article className="article-shell">
-          <a className="article-back" href="/blog">← All blog posts</a>
+          <a className="article-back" href="/notes">← all notes</a>
           <header className="article-header">
             <p className="eyebrow">{post.tags.join(" · ")}</p>
             <h1>{post.title}</h1>
@@ -43,7 +42,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </article>
       </main>
-      <SimpleFooter />
-    </>
+    </SiteShell>
   );
 }

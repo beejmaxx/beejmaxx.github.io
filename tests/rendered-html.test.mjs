@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile, access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 const clientRoot = new URL("../dist/client/", import.meta.url);
@@ -8,64 +8,77 @@ async function readPage(path) {
   return readFile(new URL(path, clientRoot), "utf8");
 }
 
-test("exports the portfolio and all primary routes", async () => {
-  const [home, archive, blog, about, caseStudies, workMap] = await Promise.all([
-    readPage("index.html"),
-    readPage("archive.html"),
-    readPage("blog.html"),
-    readPage("about.html"),
-    readPage("case-studies.html"),
-    readPage("work-map.html"),
-  ]);
+test("exports the portfolio and every public index", async () => {
+  const paths = [
+    "index.html", "work.html", "library.html", "attempts.html", "notes.html",
+    "archive.html", "about.html", "case-studies.html", "blog.html", "work-map.html",
+  ];
+  const pages = await Promise.all(paths.map(readPage));
+  const [home, work, library, attempts, notes, archive, about, cases, blogAlias, workAlias] = pages;
 
-  assert.match(home, /Four projects, each interesting for a different reason/);
+  assert.match(home, /making hidden systems inspectable/i);
   assert.match(home, /Depthfield/);
-  assert.match(workMap, /Polymarket MCP/);
-  assert.match(home, /Rust API Field Guide/);
-  assert.match(home, /problem-first/);
-  assert.match(archive, /the unfiltered pile/i);
-  assert.match(blog, /nothing here yet/i);
-  assert.match(about, /engineer/i);
-  assert.match(caseStudies, /systems/);
-  assert.match(workMap, /stuff/);
-  assert.match(workMap, /same obsession, different project/);
-  for (const page of [home, archive, blog, about, caseStudies, workMap]) {
-    assert.match(page, /Saved across pages/);
-    assert.match(page, /Arctic/);
+  assert.match(home, /systems with receipts/i);
+  assert.match(work, /same obsession/i);
+  assert.match(work, /Polymarket MCP/);
+  assert.match(library, /Rust API Field Guide/);
+  assert.match(library, /Napoleon Library/);
+  assert.match(attempts, /detector that caught everything/i);
+  assert.match(notes, /price anchor for every column/i);
+  assert.match(archive, /145(?:<!-- -->)? public repositories/i);
+  assert.match(archive, /63(?:<!-- -->)? mine/i);
+  assert.match(about, /Ruby, Rails/i);
+  assert.match(cases, /engineering records/i);
+  assert.match(blogAlias, /price anchor for every column/i);
+  assert.match(workAlias, /same obsession/i);
+
+  for (const page of pages) {
+    assert.match(page, /Choose site palette/);
+    assert.match(page, />bijan</);
   }
 });
 
-test("keeps unpublished drafts out of the export and preserves public assets", async () => {
+test("publishes one real note and keeps old drafts out", async () => {
+  const note = await readPage("blog/why-depth-history-needs-price-anchors.html");
+  assert.match(note, /History should be immutable/);
+  assert.match(note, /coordinate system/i);
   await assert.rejects(access(new URL("blog/the-things-that-didnt-ship-belong-here.html", clientRoot)));
-  await access(new URL(".nojekyll", clientRoot));
-  await access(new URL("og.png", clientRoot));
-  await access(new URL("resume.pdf", clientRoot));
-  await access(new URL("engine-sim/index.html", clientRoot));
-  await access(new URL("aikido/index.html", clientRoot));
-  await access(new URL("aikido/architecture.html", clientRoot));
-  await access(new URL("case-studies/marketplace-integrity.html", clientRoot));
-  await access(new URL("assets/screenshots/trading-fleet-dashboard.png", clientRoot));
-  const caseStudy = await readPage("case-studies/operations-workstation.html");
-  assert.match(caseStudy, /Real-Time Operations Workstation/);
 });
 
-test("exports independent homepage concepts", async () => {
-  const [index, personalWeb, hybrid, projectLed, notebook, technicalIndex] = await Promise.all([
-    readPage("concepts.html"),
-    readPage("concepts/personal-web.html"),
-    readPage("concepts/hybrid.html"),
-    readPage("concepts/project-led.html"),
-    readPage("concepts/notebook.html"),
-    readPage("concepts/technical-index.html"),
+test("exports discovery files, data, and public artifacts", async () => {
+  const [robots, sitemap, feed, packet] = await Promise.all([
+    readPage("robots.txt"), readPage("sitemap.xml"), readPage("feed.xml"), readPage("projects.json"),
   ]);
+  assert.match(robots, /Sitemap: https:\/\/beejmaxx\.github\.io\/sitemap\.xml/);
+  assert.match(sitemap, /blog\/why-depth-history-needs-price-anchors/);
+  assert.match(feed, /Why a depth heatmap needs a price anchor/);
+  assert.equal(JSON.parse(packet).projects.length, 15);
+  for (const asset of [
+    ".nojekyll", "og.jpg", "resume.pdf", "engine-sim/index.html", "aikido/index.html",
+    "aikido/architecture.html", "case-studies/marketplace-integrity.html",
+    "assets/screenshots/depthfield-live.png", "assets/screenshots/trading-fleet-dashboard.png",
+  ]) await access(new URL(asset, clientRoot));
+});
 
-  assert.match(index, /Homepage concepts/);
-  assert.match(personalWeb, /Things that didn’t work/);
-  assert.match(personalWeb, /0 posts published/);
-  assert.match(personalWeb, /Field manual/);
-  assert.match(personalWeb, /Saved across pages/);
-  assert.match(hybrid, /The rest of the work stays visible/);
-  assert.match(projectLed, /I build market systems/);
-  assert.match(notebook, /working notebook/);
-  assert.match(technicalIndex, /FEATURED SYSTEMS/);
+test("removes known broken and duplicate public surfaces", async () => {
+  const htmlFiles = ["index.html", "work.html", "archive.html", "about.html", "case-studies.html"];
+  for (const path of htmlFiles) {
+    const page = await readPage(path);
+    assert.doesNotMatch(page, /fanpilot\.app\/research-engine|apollo-knowledgebase|github\.com\/beejmaxx\/aikido(?:["/])/);
+  }
+  for (const oldPage of [
+    "case-studies/full-stack-operations-workstation.html",
+    "case-studies/hedge-fund-trading-infrastructure.html",
+    "case-studies/quantbox-research-platform.html",
+  ]) await assert.rejects(access(new URL(oldPage, clientRoot)));
+});
+
+test("keeps alternate homepage concepts private from search", async () => {
+  for (const path of [
+    "concepts.html", "concepts/personal-web.html", "concepts/hybrid.html",
+    "concepts/project-led.html", "concepts/notebook.html", "concepts/technical-index.html",
+  ]) {
+    const page = await readPage(path);
+    assert.match(page, /noindex/);
+  }
 });

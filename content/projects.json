@@ -1,29 +1,107 @@
 [
   {
-    "name": "depthfield",
-    "description": "Open-source WebGPU market-depth heatmap with live public exchange data",
-    "language": "TypeScript",
+    "name": "async-rust-guidebook",
+    "description": "",
+    "language": "CSS",
     "stars": 0,
     "forks": 0,
     "fork": false,
     "archived": false,
-    "url": "https://github.com/beejmaxx/depthfield",
-    "homepage": "https://beejmaxx.github.io/depthfield/",
-    "created": "2026-08-11",
-    "updated": "2026-08-11"
+    "url": "https://github.com/beejmaxx/async-rust-guidebook",
+    "homepage": "",
+    "created": "2026-08-13T22:00:15Z",
+    "updated": "2026-08-13T22:07:29Z"
+  },
+  {
+    "name": "rust-api-gallery",
+    "description": "",
+    "language": "Rust",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/rust-api-gallery",
+    "homepage": "",
+    "created": "2026-08-13T21:27:34Z",
+    "updated": "2026-08-13T22:07:09Z"
   },
   {
     "name": "beejmaxx.github.io",
     "description": "Case-study portfolio for senior full-stack and platform engineering work",
-    "language": "HTML",
+    "language": "TypeScript",
     "stars": 0,
     "forks": 0,
     "fork": false,
     "archived": false,
     "url": "https://github.com/beejmaxx/beejmaxx.github.io",
     "homepage": "https://beejmaxx.github.io/",
-    "created": "2026-06-03",
-    "updated": "2026-08-11"
+    "created": "2026-06-03T22:20:58Z",
+    "updated": "2026-08-13T21:56:03Z"
+  },
+  {
+    "name": "rust-api-field-guide",
+    "description": "",
+    "language": "JavaScript",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/rust-api-field-guide",
+    "homepage": "",
+    "created": "2026-08-13T05:50:50Z",
+    "updated": "2026-08-13T16:03:54Z"
+  },
+  {
+    "name": "activegraph",
+    "description": "Event-sourced graph runtime for durable and stateful agents",
+    "language": "—",
+    "stars": 0,
+    "forks": 0,
+    "fork": true,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/activegraph",
+    "homepage": "https://activegraph.ai",
+    "created": "2026-08-12T17:35:40Z",
+    "updated": "2026-08-12T17:35:40Z"
+  },
+  {
+    "name": "rithmic-trade-copier",
+    "description": "Experimental Rust trade copier for Rithmic accounts",
+    "language": "Rust",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/rithmic-trade-copier",
+    "homepage": "",
+    "created": "2026-08-12T14:42:49Z",
+    "updated": "2026-08-12T14:45:08Z"
+  },
+  {
+    "name": "rithmic-rs",
+    "description": "Unofficial Rust client for the Rithmic R Protocol API",
+    "language": "Rust",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/rithmic-rs",
+    "homepage": "",
+    "created": "2026-08-12T14:33:31Z",
+    "updated": "2026-08-12T14:36:44Z"
+  },
+  {
+    "name": "bot-defense-red-team-lab",
+    "description": "Safe adaptive-evasion benchmark and regression lab for marketplace bot defenses",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/bot-defense-red-team-lab",
+    "homepage": "",
+    "created": "2026-08-11T15:51:28Z",
+    "updated": "2026-08-12T14:22:32Z"
   },
   {
     "name": "http-bot-defense-lab",
@@ -35,21 +113,86 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/http-bot-defense-lab",
     "homepage": "",
-    "created": "2026-08-11",
-    "updated": "2026-08-11"
+    "created": "2026-08-11T10:13:03Z",
+    "updated": "2026-08-12T14:21:44Z"
   },
   {
-    "name": "tesla-research-library",
-    "description": "Private, searchable archive of Tesla research texts, notes, and source metadata",
+    "name": "market-integrity-lab",
+    "description": "Synthetic marketplace, coordinated profit-ring detection, and counterfactual intervention lab",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/market-integrity-lab",
+    "homepage": "",
+    "created": "2026-08-11T14:12:03Z",
+    "updated": "2026-08-12T13:51:18Z"
+  },
+  {
+    "name": "marketplace-intervention-lab",
+    "description": "A synthetic offline policy evaluation and canary rollback lab for marketplace anti-bot interventions.",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/marketplace-intervention-lab",
+    "homepage": "",
+    "created": "2026-08-11T16:35:51Z",
+    "updated": "2026-08-12T13:50:56Z"
+  },
+  {
+    "name": "drums",
+    "description": "",
     "language": "JavaScript",
     "stars": 0,
     "forks": 0,
     "fork": false,
     "archived": false,
-    "url": "https://github.com/beejmaxx/tesla-research-library",
+    "url": "https://github.com/beejmaxx/drums",
     "homepage": "",
-    "created": "2026-08-11",
-    "updated": "2026-08-11"
+    "created": "2026-08-11T15:42:51Z",
+    "updated": "2026-08-12T04:36:09Z"
+  },
+  {
+    "name": "depthfield",
+    "description": "Open-source WebGPU market-depth heatmap with live public exchange data",
+    "language": "TypeScript",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/depthfield",
+    "homepage": "https://beejmaxx.github.io/depthfield/",
+    "created": "2026-08-11T10:32:50Z",
+    "updated": "2026-08-11T16:11:47Z"
+  },
+  {
+    "name": "engine-sim-rs",
+    "description": "Safe-Rust engine simulator with a terminal CLI and backendless WebAssembly audio utility",
+    "language": "Rust",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/engine-sim-rs",
+    "homepage": "https://beejmaxx.github.io/engine-sim-rs/",
+    "created": "2026-08-11T14:49:42Z",
+    "updated": "2026-08-11T16:08:09Z"
+  },
+  {
+    "name": "flat-earth-observatory",
+    "description": "An evidence-led interactive observatory for testing flat-Earth and globe-Earth predictions with shadows, horizons, stars, and eclipses.",
+    "language": "TypeScript",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/flat-earth-observatory",
+    "homepage": "https://beejmaxx.github.io/flat-earth-observatory/",
+    "created": "2026-08-11T13:57:16Z",
+    "updated": "2026-08-11T16:01:54Z"
   },
   {
     "name": "ken-wheeler-knowledge-library",
@@ -61,21 +204,86 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ken-wheeler-knowledge-library",
     "homepage": "",
-    "created": "2026-08-11",
-    "updated": "2026-08-11"
+    "created": "2026-08-11T11:31:23Z",
+    "updated": "2026-08-11T15:59:21Z"
   },
   {
-    "name": "bells",
-    "description": "A velocity-sensitive bell instrument in Rust and WebAssembly — playable in your browser",
+    "name": "tesla-research-library",
+    "description": "Private, searchable archive of Tesla research texts, notes, and source metadata",
+    "language": "JavaScript",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/tesla-research-library",
+    "homepage": "",
+    "created": "2026-08-11T10:45:00Z",
+    "updated": "2026-08-11T15:52:26Z"
+  },
+  {
+    "name": "mod_lcs",
+    "description": "a general purpose learning classification system for binary classification",
+    "language": "Ruby",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/mod_lcs",
+    "homepage": "",
+    "created": "2010-08-27T19:59:51Z",
+    "updated": "2026-08-11T15:43:21Z"
+  },
+  {
+    "name": "fire",
+    "description": "",
     "language": "Rust",
     "stars": 0,
     "forks": 0,
     "fork": false,
     "archived": false,
-    "url": "https://github.com/beejmaxx/bells",
-    "homepage": "https://beejmaxx.github.io/bells/",
-    "created": "2026-08-11",
-    "updated": "2026-08-11"
+    "url": "https://github.com/beejmaxx/fire",
+    "homepage": "",
+    "created": "2026-08-11T15:17:02Z",
+    "updated": "2026-08-11T15:20:56Z"
+  },
+  {
+    "name": "aajonus-vonderplanitz-library",
+    "description": "Text-first research corpus of Aajonus Vonderplanitz material, tiered by provenance with explicit health and rights warnings.",
+    "language": "CSS",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/aajonus-vonderplanitz-library",
+    "homepage": "",
+    "created": "2026-08-11T14:44:30Z",
+    "updated": "2026-08-11T15:13:50Z"
+  },
+  {
+    "name": "napoleon-bonaparte-library",
+    "description": "Public-domain Napoleon primary sources, memoirs, and biographies with provenance, classification, and integrity tests.",
+    "language": "HTML",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/napoleon-bonaparte-library",
+    "homepage": "",
+    "created": "2026-08-11T14:45:07Z",
+    "updated": "2026-08-11T15:13:44Z"
+  },
+  {
+    "name": "goethe-library",
+    "description": "Public-domain Goethe texts in German and English with provenance, checksums, and integrity tests.",
+    "language": "CSS",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/goethe-library",
+    "homepage": "",
+    "created": "2026-08-11T14:44:53Z",
+    "updated": "2026-08-11T15:13:35Z"
   },
   {
     "name": "expandpass-rs",
@@ -87,8 +295,60 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/expandpass-rs",
     "homepage": "",
-    "created": "2026-08-11",
-    "updated": "2026-08-11"
+    "created": "2026-08-11T09:48:17Z",
+    "updated": "2026-08-11T15:01:29Z"
+  },
+  {
+    "name": "keyclack-rs",
+    "description": "Private, keyboard-aware typing sound synthesis for memory recall",
+    "language": "Rust",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/keyclack-rs",
+    "homepage": "",
+    "created": "2026-08-11T14:49:06Z",
+    "updated": "2026-08-11T14:52:21Z"
+  },
+  {
+    "name": "orb-lab",
+    "description": "Transparent Opening Range Breakout research, predicate sweeps, and historical results",
+    "language": "HTML",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/orb-lab",
+    "homepage": "",
+    "created": "2026-08-11T13:48:29Z",
+    "updated": "2026-08-11T14:15:54Z"
+  },
+  {
+    "name": "svasti-turning-mark",
+    "description": "A source-led interactive atlas of the ancient swastika: history, living meanings, geometry, chirality, mechanics, and optics.",
+    "language": "TypeScript",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/svasti-turning-mark",
+    "homepage": "https://beejmaxx.github.io/svasti-turning-mark/",
+    "created": "2026-08-11T12:58:53Z",
+    "updated": "2026-08-11T13:00:42Z"
+  },
+  {
+    "name": "bells",
+    "description": "A velocity-sensitive bell instrument in Rust and WebAssembly — playable in your browser",
+    "language": "Rust",
+    "stars": 0,
+    "forks": 0,
+    "fork": false,
+    "archived": false,
+    "url": "https://github.com/beejmaxx/bells",
+    "homepage": "https://beejmaxx.github.io/bells/",
+    "created": "2026-08-11T12:20:20Z",
+    "updated": "2026-08-11T12:26:29Z"
   },
   {
     "name": "airgraph-lab",
@@ -100,8 +360,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/airgraph-lab",
     "homepage": "",
-    "created": "2026-08-04",
-    "updated": "2026-08-05"
+    "created": "2026-08-04T05:22:54Z",
+    "updated": "2026-08-05T03:03:38Z"
   },
   {
     "name": "polymarket-mcp-rs",
@@ -113,8 +373,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/polymarket-mcp-rs",
     "homepage": "https://github.com/beejmaxx/polymarket-mcp-rs/releases",
-    "created": "2026-08-04",
-    "updated": "2026-08-05"
+    "created": "2026-08-04T03:55:48Z",
+    "updated": "2026-08-05T02:32:29Z"
   },
   {
     "name": "homebrew-tap",
@@ -126,8 +386,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/homebrew-tap",
     "homepage": "",
-    "created": "2026-08-04",
-    "updated": "2026-08-04"
+    "created": "2026-08-04T16:24:48Z",
+    "updated": "2026-08-04T16:46:19Z"
   },
   {
     "name": "scoop-bucket",
@@ -139,8 +399,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/scoop-bucket",
     "homepage": "",
-    "created": "2026-08-04",
-    "updated": "2026-08-04"
+    "created": "2026-08-04T16:24:51Z",
+    "updated": "2026-08-04T16:44:23Z"
   },
   {
     "name": "airline-enterprise-graph",
@@ -152,8 +412,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/airline-enterprise-graph",
     "homepage": "",
-    "created": "2026-08-04",
-    "updated": "2026-08-04"
+    "created": "2026-08-04T04:30:51Z",
+    "updated": "2026-08-04T04:31:46Z"
   },
   {
     "name": "apollo-mcp-server",
@@ -165,8 +425,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/apollo-mcp-server",
     "homepage": "https://www.apollographql.com/docs/apollo-mcp-server/quickstart",
-    "created": "2026-08-02",
-    "updated": "2026-08-02"
+    "created": "2026-08-02T14:10:53Z",
+    "updated": "2026-08-02T14:10:53Z"
   },
   {
     "name": "beejmaxx",
@@ -178,8 +438,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/beejmaxx",
     "homepage": "",
-    "created": "2026-06-03",
-    "updated": "2026-07-29"
+    "created": "2026-06-03T20:39:00Z",
+    "updated": "2026-07-29T17:36:12Z"
   },
   {
     "name": "bijanrich",
@@ -191,8 +451,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/bijanrich",
     "homepage": "",
-    "created": "2026-06-03",
-    "updated": "2026-07-29"
+    "created": "2026-06-03T20:35:28Z",
+    "updated": "2026-07-29T15:28:07Z"
   },
   {
     "name": "bitcoin_p2p",
@@ -204,8 +464,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/bitcoin_p2p",
     "homepage": "",
-    "created": "2013-09-19",
-    "updated": "2026-07-14"
+    "created": "2013-09-19T06:04:56Z",
+    "updated": "2026-07-14T20:28:17Z"
   },
   {
     "name": "polymarket-oracle-bot",
@@ -217,8 +477,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/polymarket-oracle-bot",
     "homepage": "",
-    "created": "2026-05-02",
-    "updated": "2026-06-03"
+    "created": "2026-05-02T17:36:41Z",
+    "updated": "2026-06-03T21:24:38Z"
   },
   {
     "name": "polymarket-weather-research",
@@ -230,8 +490,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/polymarket-weather-research",
     "homepage": "",
-    "created": "2026-05-02",
-    "updated": "2026-06-03"
+    "created": "2026-05-02T17:16:45Z",
+    "updated": "2026-06-03T21:24:37Z"
   },
   {
     "name": "matching-system",
@@ -243,8 +503,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/matching-system",
     "homepage": "",
-    "created": "2026-05-02",
-    "updated": "2026-06-03"
+    "created": "2026-05-02T17:35:17Z",
+    "updated": "2026-06-03T21:24:36Z"
   },
   {
     "name": "polymarket-trader-intelligence",
@@ -256,8 +516,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/polymarket-trader-intelligence",
     "homepage": "",
-    "created": "2026-05-02",
-    "updated": "2026-06-03"
+    "created": "2026-05-02T17:16:11Z",
+    "updated": "2026-06-03T21:24:35Z"
   },
   {
     "name": "vector-backtester",
@@ -269,8 +529,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/vector-backtester",
     "homepage": "",
-    "created": "2025-03-17",
-    "updated": "2026-06-03"
+    "created": "2025-03-17T15:04:40Z",
+    "updated": "2026-06-03T21:24:34Z"
   },
   {
     "name": "aikido-systematic-trading",
@@ -281,9 +541,9 @@
     "fork": false,
     "archived": false,
     "url": "https://github.com/beejmaxx/aikido-systematic-trading",
-    "homepage": "https://fanpilot.app/research-engine",
-    "created": "2026-05-02",
-    "updated": "2026-06-03"
+    "homepage": "",
+    "created": "2026-05-02T17:48:34Z",
+    "updated": "2026-06-03T21:24:33Z"
   },
   {
     "name": "create-react-app",
@@ -295,8 +555,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/create-react-app",
     "homepage": "",
-    "created": "2017-11-28",
-    "updated": "2026-05-13"
+    "created": "2017-11-28T12:06:10Z",
+    "updated": "2026-05-13T18:12:35Z"
   },
   {
     "name": "LightGBM",
@@ -308,8 +568,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/LightGBM",
     "homepage": "https://lightgbm.readthedocs.io/en/latest/",
-    "created": "2022-10-06",
-    "updated": "2026-03-08"
+    "created": "2022-10-06T04:02:15Z",
+    "updated": "2026-03-08T05:44:49Z"
   },
   {
     "name": "PyPortfolioOpt",
@@ -321,8 +581,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/PyPortfolioOpt",
     "homepage": "https://pyportfolioopt.readthedocs.io/",
-    "created": "2020-07-30",
-    "updated": "2025-11-08"
+    "created": "2020-07-30T22:42:51Z",
+    "updated": "2025-11-08T16:41:46Z"
   },
   {
     "name": "heroku-buildpack-vips",
@@ -334,8 +594,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/heroku-buildpack-vips",
     "homepage": "",
-    "created": "2019-05-18",
-    "updated": "2025-09-29"
+    "created": "2019-05-18T05:13:28Z",
+    "updated": "2025-09-29T17:18:42Z"
   },
   {
     "name": "tinyempire",
@@ -347,8 +607,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/tinyempire",
     "homepage": "",
-    "created": "2024-06-08",
-    "updated": "2024-06-08"
+    "created": "2024-06-08T07:49:22Z",
+    "updated": "2024-06-08T07:49:22Z"
   },
   {
     "name": "awesome-spectogram",
@@ -360,8 +620,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/awesome-spectogram",
     "homepage": "",
-    "created": "2024-06-08",
-    "updated": "2024-06-08"
+    "created": "2024-06-08T03:08:48Z",
+    "updated": "2024-06-08T03:54:48Z"
   },
   {
     "name": "awesome-audio",
@@ -373,8 +633,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/awesome-audio",
     "homepage": "",
-    "created": "2024-06-07",
-    "updated": "2024-06-07"
+    "created": "2024-06-07T22:07:16Z",
+    "updated": "2024-06-07T22:45:28Z"
   },
   {
     "name": "delta-studio",
@@ -386,8 +646,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/delta-studio",
     "homepage": "",
-    "created": "2024-06-06",
-    "updated": "2024-06-06"
+    "created": "2024-06-06T18:32:54Z",
+    "updated": "2024-06-06T18:32:54Z"
   },
   {
     "name": "bijanx",
@@ -399,8 +659,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/bijanx",
     "homepage": "",
-    "created": "2024-05-24",
-    "updated": "2024-05-24"
+    "created": "2024-05-24T01:20:17Z",
+    "updated": "2024-05-24T01:20:17Z"
   },
   {
     "name": "helicopter_jesus",
@@ -412,8 +672,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/helicopter_jesus",
     "homepage": "",
-    "created": "2024-05-23",
-    "updated": "2024-05-23"
+    "created": "2024-05-23T17:53:53Z",
+    "updated": "2024-05-23T17:53:54Z"
   },
   {
     "name": "devise-token_authenticatable",
@@ -425,8 +685,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/devise-token_authenticatable",
     "homepage": "",
-    "created": "2024-05-12",
-    "updated": "2024-05-12"
+    "created": "2024-05-12T05:28:45Z",
+    "updated": "2024-05-12T05:30:10Z"
   },
   {
     "name": "acts_as_tenant",
@@ -438,8 +698,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/acts_as_tenant",
     "homepage": "",
-    "created": "2024-05-12",
-    "updated": "2024-05-12"
+    "created": "2024-05-12T00:26:55Z",
+    "updated": "2024-05-12T00:29:21Z"
   },
   {
     "name": "Metrc",
@@ -451,8 +711,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/Metrc",
     "homepage": "",
-    "created": "2024-04-26",
-    "updated": "2024-04-26"
+    "created": "2024-04-26T20:03:42Z",
+    "updated": "2024-04-26T20:06:04Z"
   },
   {
     "name": "kelp",
@@ -464,8 +724,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/kelp",
     "homepage": "https://kelpbot.io",
-    "created": "2020-08-04",
-    "updated": "2024-04-24"
+    "created": "2020-08-04T02:06:02Z",
+    "updated": "2024-04-24T14:42:34Z"
   },
   {
     "name": "expandpass",
@@ -477,8 +737,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/expandpass",
     "homepage": "",
-    "created": "2021-05-01",
-    "updated": "2024-03-12"
+    "created": "2021-05-01T03:37:54Z",
+    "updated": "2024-03-12T22:53:29Z"
   },
   {
     "name": "neat-starter",
@@ -490,8 +750,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/neat-starter",
     "homepage": "",
-    "created": "2024-02-16",
-    "updated": "2024-02-16"
+    "created": "2024-02-16T16:31:04Z",
+    "updated": "2024-02-16T16:32:29Z"
   },
   {
     "name": "toybox",
@@ -503,8 +763,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/toybox",
     "homepage": "",
-    "created": "2022-11-02",
-    "updated": "2022-11-02"
+    "created": "2022-11-02T17:33:44Z",
+    "updated": "2022-11-02T17:33:44Z"
   },
   {
     "name": "StockSharp",
@@ -516,8 +776,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/StockSharp",
     "homepage": "https://stocksharp.com",
-    "created": "2022-09-26",
-    "updated": "2022-09-26"
+    "created": "2022-09-26T15:58:50Z",
+    "updated": "2022-09-26T14:33:09Z"
   },
   {
     "name": "flink",
@@ -529,8 +789,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/flink",
     "homepage": "",
-    "created": "2022-09-14",
-    "updated": "2022-09-14"
+    "created": "2022-09-14T18:53:30Z",
+    "updated": "2022-09-14T18:23:45Z"
   },
   {
     "name": "clickhouse",
@@ -542,8 +802,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/clickhouse",
     "homepage": "",
-    "created": "2022-08-27",
-    "updated": "2022-08-23"
+    "created": "2022-08-27T23:00:51Z",
+    "updated": "2022-08-23T07:36:19Z"
   },
   {
     "name": "blackjack",
@@ -555,8 +815,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/blackjack",
     "homepage": "",
-    "created": "2012-01-29",
-    "updated": "2022-06-08"
+    "created": "2012-01-29T15:23:53Z",
+    "updated": "2022-06-08T05:08:42Z"
   },
   {
     "name": "gocryptotrader",
@@ -568,8 +828,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/gocryptotrader",
     "homepage": "",
-    "created": "2021-10-05",
-    "updated": "2021-10-05"
+    "created": "2021-10-05T17:30:42Z",
+    "updated": "2021-10-05T17:30:44Z"
   },
   {
     "name": "unicorn-easy-restart",
@@ -581,8 +841,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/unicorn-easy-restart",
     "homepage": "",
-    "created": "2021-09-10",
-    "updated": "2021-09-10"
+    "created": "2021-09-10T18:32:34Z",
+    "updated": "2021-09-10T18:32:35Z"
   },
   {
     "name": "acts_as_commentable",
@@ -594,8 +854,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/acts_as_commentable",
     "homepage": "http://juixe.com/svn/acts_as_commentable/",
-    "created": "2021-09-08",
-    "updated": "2021-09-08"
+    "created": "2021-09-08T15:33:53Z",
+    "updated": "2021-09-08T15:36:50Z"
   },
   {
     "name": "knowledge-1",
@@ -607,8 +867,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/knowledge-1",
     "homepage": "https://wiki.nikitavoloboev.xyz",
-    "created": "2019-10-07",
-    "updated": "2021-09-04"
+    "created": "2019-10-07T17:59:30Z",
+    "updated": "2021-09-04T08:17:38Z"
   },
   {
     "name": "react-router",
@@ -620,8 +880,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/react-router",
     "homepage": "https://reacttraining.com/react-router/",
-    "created": "2018-01-28",
-    "updated": "2021-08-13"
+    "created": "2018-01-28T10:59:52Z",
+    "updated": "2021-08-13T18:07:46Z"
   },
   {
     "name": "duplicut",
@@ -633,8 +893,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/duplicut",
     "homepage": "",
-    "created": "2021-05-04",
-    "updated": "2021-05-04"
+    "created": "2021-05-04T21:49:32Z",
+    "updated": "2021-05-04T21:57:27Z"
   },
   {
     "name": "maskprocessor",
@@ -646,8 +906,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/maskprocessor",
     "homepage": "",
-    "created": "2021-05-02",
-    "updated": "2021-05-02"
+    "created": "2021-05-02T06:22:36Z",
+    "updated": "2021-05-02T07:06:44Z"
   },
   {
     "name": "Crypto-Signal",
@@ -659,8 +919,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/Crypto-Signal",
     "homepage": "http://www.twitter.com/Mamo_Abenezer",
-    "created": "2021-04-21",
-    "updated": "2021-04-21"
+    "created": "2021-04-21T19:37:57Z",
+    "updated": "2021-04-21T19:37:58Z"
   },
   {
     "name": "univocity-trader",
@@ -672,8 +932,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/univocity-trader",
     "homepage": "",
-    "created": "2021-04-17",
-    "updated": "2021-04-17"
+    "created": "2021-04-17T20:39:34Z",
+    "updated": "2021-04-17T20:39:35Z"
   },
   {
     "name": "tai",
@@ -685,8 +945,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/tai",
     "homepage": "",
-    "created": "2020-07-30",
-    "updated": "2021-03-22"
+    "created": "2020-07-30T08:33:48Z",
+    "updated": "2021-03-22T18:19:45Z"
   },
   {
     "name": "ruby-style-guide",
@@ -698,8 +958,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ruby-style-guide",
     "homepage": "",
-    "created": "2014-08-01",
-    "updated": "2021-02-25"
+    "created": "2014-08-01T15:51:01Z",
+    "updated": "2021-02-25T07:09:00Z"
   },
   {
     "name": "featuretools",
@@ -711,8 +971,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/featuretools",
     "homepage": "https://www.featuretools.com",
-    "created": "2020-07-26",
-    "updated": "2020-11-09"
+    "created": "2020-07-26T08:30:16Z",
+    "updated": "2020-11-09T22:48:42Z"
   },
   {
     "name": "lightweight-charts",
@@ -724,8 +984,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/lightweight-charts",
     "homepage": "https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/",
-    "created": "2020-10-27",
-    "updated": "2020-10-27"
+    "created": "2020-10-27T00:45:25Z",
+    "updated": "2020-10-27T00:45:26Z"
   },
   {
     "name": "cilium",
@@ -737,8 +997,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/cilium",
     "homepage": "https://www.cilium.io",
-    "created": "2020-09-25",
-    "updated": "2020-09-25"
+    "created": "2020-09-25T02:49:54Z",
+    "updated": "2020-09-25T02:49:57Z"
   },
   {
     "name": "flux-get-started",
@@ -750,8 +1010,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/flux-get-started",
     "homepage": "",
-    "created": "2020-09-10",
-    "updated": "2020-09-17"
+    "created": "2020-09-10T16:05:12Z",
+    "updated": "2020-09-17T20:12:49Z"
   },
   {
     "name": "face.evoLVe.PyTorch",
@@ -763,8 +1023,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/face.evoLVe.PyTorch",
     "homepage": "",
-    "created": "2020-08-22",
-    "updated": "2020-08-22"
+    "created": "2020-08-22T04:31:33Z",
+    "updated": "2020-08-22T04:31:35Z"
   },
   {
     "name": "tmux-cpu",
@@ -776,8 +1036,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/tmux-cpu",
     "homepage": "",
-    "created": "2020-08-20",
-    "updated": "2020-08-21"
+    "created": "2020-08-20T14:10:17Z",
+    "updated": "2020-08-21T01:03:31Z"
   },
   {
     "name": "bpourriahi.github.io",
@@ -789,8 +1049,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/bpourriahi.github.io",
     "homepage": "",
-    "created": "2020-08-20",
-    "updated": "2020-08-20"
+    "created": "2020-08-20T11:51:31Z",
+    "updated": "2020-08-20T11:53:16Z"
   },
   {
     "name": "pyts",
@@ -802,8 +1062,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/pyts",
     "homepage": "https://pyts.readthedocs.io",
-    "created": "2020-08-20",
-    "updated": "2020-08-20"
+    "created": "2020-08-20T09:01:16Z",
+    "updated": "2020-08-20T09:01:18Z"
   },
   {
     "name": "FinQuant",
@@ -815,8 +1075,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/FinQuant",
     "homepage": "",
-    "created": "2020-08-20",
-    "updated": "2020-08-20"
+    "created": "2020-08-20T08:37:57Z",
+    "updated": "2020-08-20T08:38:02Z"
   },
   {
     "name": "finmath-lib",
@@ -828,8 +1088,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/finmath-lib",
     "homepage": "",
-    "created": "2020-08-20",
-    "updated": "2020-08-20"
+    "created": "2020-08-20T08:28:55Z",
+    "updated": "2020-08-20T08:28:57Z"
   },
   {
     "name": "Deep-Portfolio-Management",
@@ -841,8 +1101,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/Deep-Portfolio-Management",
     "homepage": "",
-    "created": "2020-08-20",
-    "updated": "2020-08-20"
+    "created": "2020-08-20T00:44:35Z",
+    "updated": "2020-08-20T00:44:37Z"
   },
   {
     "name": "deepdow",
@@ -854,8 +1114,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/deepdow",
     "homepage": "https://deepdow.readthedocs.io",
-    "created": "2020-08-19",
-    "updated": "2020-08-19"
+    "created": "2020-08-19T16:09:40Z",
+    "updated": "2020-08-19T16:09:42Z"
   },
   {
     "name": "feast",
@@ -867,8 +1127,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/feast",
     "homepage": "https://feast.dev",
-    "created": "2020-08-15",
-    "updated": "2020-08-15"
+    "created": "2020-08-15T10:25:46Z",
+    "updated": "2020-08-15T10:25:48Z"
   },
   {
     "name": "vectorbt",
@@ -880,8 +1140,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/vectorbt",
     "homepage": "https://polakowo.io/vectorbt/",
-    "created": "2020-08-04",
-    "updated": "2020-08-04"
+    "created": "2020-08-04T02:12:16Z",
+    "updated": "2020-08-04T02:12:17Z"
   },
   {
     "name": "aat",
@@ -893,8 +1153,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/aat",
     "homepage": "https://aat.readthedocs.io",
-    "created": "2020-08-04",
-    "updated": "2020-08-04"
+    "created": "2020-08-04T01:58:48Z",
+    "updated": "2020-08-04T01:58:50Z"
   },
   {
     "name": "SignificantTrades",
@@ -906,8 +1166,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/SignificantTrades",
     "homepage": "https://aggr.trade",
-    "created": "2020-08-04",
-    "updated": "2020-08-04"
+    "created": "2020-08-04T01:54:30Z",
+    "updated": "2020-08-04T01:54:32Z"
   },
   {
     "name": "ib_insync",
@@ -919,8 +1179,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ib_insync",
     "homepage": "",
-    "created": "2020-08-03",
-    "updated": "2020-08-03"
+    "created": "2020-08-03T18:30:31Z",
+    "updated": "2020-08-03T18:30:33Z"
   },
   {
     "name": "backtrader",
@@ -932,8 +1192,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/backtrader",
     "homepage": "https://www.backtrader.com",
-    "created": "2020-07-28",
-    "updated": "2020-07-28"
+    "created": "2020-07-28T21:21:44Z",
+    "updated": "2020-07-28T21:21:46Z"
   },
   {
     "name": "timeseriescv",
@@ -945,8 +1205,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/timeseriescv",
     "homepage": "",
-    "created": "2020-07-28",
-    "updated": "2020-07-28"
+    "created": "2020-07-28T10:16:58Z",
+    "updated": "2020-07-28T10:17:00Z"
   },
   {
     "name": "Python-ML-rolling-grid-search",
@@ -958,8 +1218,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/Python-ML-rolling-grid-search",
     "homepage": "",
-    "created": "2020-07-28",
-    "updated": "2020-07-28"
+    "created": "2020-07-28T01:42:04Z",
+    "updated": "2020-07-28T01:42:07Z"
   },
   {
     "name": "ffn",
@@ -971,8 +1231,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ffn",
     "homepage": "pmorissette.github.io/ffn",
-    "created": "2020-07-27",
-    "updated": "2020-07-27"
+    "created": "2020-07-27T04:36:18Z",
+    "updated": "2020-07-27T04:36:19Z"
   },
   {
     "name": "xam",
@@ -984,8 +1244,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/xam",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T09:28:51Z",
+    "updated": "2020-07-26T09:28:54Z"
   },
   {
     "name": "pliers",
@@ -997,8 +1257,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/pliers",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T09:23:03Z",
+    "updated": "2020-07-26T09:23:04Z"
   },
   {
     "name": "hctsa",
@@ -1010,8 +1270,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/hctsa",
     "homepage": "https://hctsa-users.gitbook.io/hctsa-manual",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T09:22:05Z",
+    "updated": "2020-07-26T09:22:07Z"
   },
   {
     "name": "ta",
@@ -1023,8 +1283,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ta",
     "homepage": "https://technical-analysis-library-in-python.readthedocs.io/en/latest/",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T09:21:44Z",
+    "updated": "2020-07-26T09:21:45Z"
   },
   {
     "name": "dejavu",
@@ -1036,8 +1296,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/dejavu",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T09:21:16Z",
+    "updated": "2020-07-26T09:21:18Z"
   },
   {
     "name": "awesome-feature-engineering",
@@ -1049,8 +1309,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/awesome-feature-engineering",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T08:30:26Z",
+    "updated": "2020-07-26T08:30:28Z"
   },
   {
     "name": "featureforge",
@@ -1062,8 +1322,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/featureforge",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T08:30:23Z",
+    "updated": "2020-07-26T08:30:25Z"
   },
   {
     "name": "tsfresh",
@@ -1075,8 +1335,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/tsfresh",
     "homepage": "http://tsfresh.readthedocs.io",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T08:30:20Z",
+    "updated": "2020-07-26T08:30:21Z"
   },
   {
     "name": "lambdo",
@@ -1088,8 +1348,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/lambdo",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T08:24:29Z",
+    "updated": "2020-07-26T08:24:30Z"
   },
   {
     "name": "Stock-Prediction-Models",
@@ -1101,8 +1361,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/Stock-Prediction-Models",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T07:20:59Z",
+    "updated": "2020-07-26T07:21:01Z"
   },
   {
     "name": "stockpredictionai",
@@ -1114,8 +1374,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/stockpredictionai",
     "homepage": "",
-    "created": "2020-07-26",
-    "updated": "2020-07-26"
+    "created": "2020-07-26T07:20:37Z",
+    "updated": "2020-07-26T07:20:39Z"
   },
   {
     "name": "knowledge",
@@ -1127,8 +1387,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/knowledge",
     "homepage": "",
-    "created": "2019-10-07",
-    "updated": "2019-10-07"
+    "created": "2019-10-07T17:53:27Z",
+    "updated": "2019-10-07T18:08:12Z"
   },
   {
     "name": "environment-hoofnimble-production",
@@ -1140,8 +1400,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/environment-hoofnimble-production",
     "homepage": "",
-    "created": "2019-06-06",
-    "updated": "2019-06-06"
+    "created": "2019-06-06T17:04:23Z",
+    "updated": "2019-06-06T17:04:35Z"
   },
   {
     "name": "environment-hoofnimble-staging",
@@ -1153,8 +1413,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/environment-hoofnimble-staging",
     "homepage": "",
-    "created": "2019-06-06",
-    "updated": "2019-06-06"
+    "created": "2019-06-06T17:04:08Z",
+    "updated": "2019-06-06T17:04:20Z"
   },
   {
     "name": "zellwk.com",
@@ -1166,8 +1426,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/zellwk.com",
     "homepage": "",
-    "created": "2019-05-07",
-    "updated": "2019-05-07"
+    "created": "2019-05-07T12:31:11Z",
+    "updated": "2019-05-07T12:31:16Z"
   },
   {
     "name": "thailand",
@@ -1179,8 +1439,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/thailand",
     "homepage": "",
-    "created": "2019-03-31",
-    "updated": "2019-03-31"
+    "created": "2019-03-31T10:51:40Z",
+    "updated": "2019-03-31T10:57:13Z"
   },
   {
     "name": "ml",
@@ -1192,8 +1452,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ml",
     "homepage": "",
-    "created": "2018-06-01",
-    "updated": "2018-07-03"
+    "created": "2018-06-01T03:00:55Z",
+    "updated": "2018-07-03T13:40:06Z"
   },
   {
     "name": "spectacle",
@@ -1205,8 +1465,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/spectacle",
     "homepage": "",
-    "created": "2017-11-17",
-    "updated": "2018-06-26"
+    "created": "2017-11-17T04:17:00Z",
+    "updated": "2018-06-26T17:43:04Z"
   },
   {
     "name": "prettytensor",
@@ -1218,8 +1478,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/prettytensor",
     "homepage": "",
-    "created": "2018-05-31",
-    "updated": "2018-05-31"
+    "created": "2018-05-31T22:04:30Z",
+    "updated": "2018-05-31T22:13:32Z"
   },
   {
     "name": "pysc2-examples",
@@ -1231,8 +1491,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/pysc2-examples",
     "homepage": "",
-    "created": "2018-05-31",
-    "updated": "2018-05-31"
+    "created": "2018-05-31T07:30:42Z",
+    "updated": "2018-05-31T07:56:59Z"
   },
   {
     "name": "pysc2",
@@ -1244,8 +1504,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/pysc2",
     "homepage": "",
-    "created": "2018-05-29",
-    "updated": "2018-05-29"
+    "created": "2018-05-29T09:00:21Z",
+    "updated": "2018-05-29T09:00:23Z"
   },
   {
     "name": "kaggle",
@@ -1257,8 +1517,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/kaggle",
     "homepage": "",
-    "created": "2018-05-21",
-    "updated": "2018-05-25"
+    "created": "2018-05-21T21:12:34Z",
+    "updated": "2018-05-25T18:40:50Z"
   },
   {
     "name": "nvidia-linux-fan-curve",
@@ -1270,8 +1530,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/nvidia-linux-fan-curve",
     "homepage": "",
-    "created": "2017-10-27",
-    "updated": "2018-05-23"
+    "created": "2017-10-27T08:34:09Z",
+    "updated": "2018-05-23T06:42:31Z"
   },
   {
     "name": "nvd3",
@@ -1283,8 +1543,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/nvd3",
     "homepage": "http://nvd3-community.github.io/nvd3/",
-    "created": "2018-05-15",
-    "updated": "2018-05-15"
+    "created": "2018-05-15T22:09:49Z",
+    "updated": "2018-05-15T22:09:52Z"
   },
   {
     "name": "travis-web",
@@ -1296,8 +1556,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/travis-web",
     "homepage": "https://travis-ci.org/",
-    "created": "2017-03-19",
-    "updated": "2017-03-19"
+    "created": "2017-03-19T15:35:29Z",
+    "updated": "2017-03-19T15:35:33Z"
   },
   {
     "name": "mediainfo",
@@ -1309,8 +1569,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/mediainfo",
     "homepage": "",
-    "created": "2016-10-25",
-    "updated": "2016-10-25"
+    "created": "2016-10-25T05:21:37Z",
+    "updated": "2016-10-25T05:21:38Z"
   },
   {
     "name": "ansible-dotfiles",
@@ -1322,8 +1582,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ansible-dotfiles",
     "homepage": "",
-    "created": "2016-09-07",
-    "updated": "2016-09-07"
+    "created": "2016-09-07T03:30:12Z",
+    "updated": "2016-09-07T03:30:12Z"
   },
   {
     "name": "ai-experiment",
@@ -1335,8 +1595,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ai-experiment",
     "homepage": "",
-    "created": "2016-04-09",
-    "updated": "2016-05-17"
+    "created": "2016-04-09T17:04:55Z",
+    "updated": "2016-05-17T06:56:18Z"
   },
   {
     "name": "deep-learning-resources",
@@ -1348,8 +1608,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/deep-learning-resources",
     "homepage": "",
-    "created": "2016-05-15",
-    "updated": "2016-05-15"
+    "created": "2016-05-15T02:24:36Z",
+    "updated": "2016-05-15T02:24:36Z"
   },
   {
     "name": "hound",
@@ -1361,8 +1621,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/hound",
     "homepage": "houndci.com",
-    "created": "2014-08-19",
-    "updated": "2016-02-12"
+    "created": "2014-08-19T05:47:23Z",
+    "updated": "2016-02-12T17:55:17Z"
   },
   {
     "name": "rails",
@@ -1374,8 +1634,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/rails",
     "homepage": "http://rubyonrails.org",
-    "created": "2013-03-04",
-    "updated": "2015-03-10"
+    "created": "2013-03-04T17:43:06Z",
+    "updated": "2015-03-10T00:47:39Z"
   },
   {
     "name": "i18n-js",
@@ -1387,8 +1647,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/i18n-js",
     "homepage": "",
-    "created": "2014-10-03",
-    "updated": "2014-10-03"
+    "created": "2014-10-03T19:30:25Z",
+    "updated": "2014-10-03T18:28:18Z"
   },
   {
     "name": "stocker",
@@ -1400,8 +1660,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/stocker",
     "homepage": "",
-    "created": "2014-09-26",
-    "updated": "2014-09-26"
+    "created": "2014-09-26T04:53:44Z",
+    "updated": "2014-09-26T04:53:44Z"
   },
   {
     "name": "baseimage-docker",
@@ -1413,8 +1673,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/baseimage-docker",
     "homepage": "http://phusion.github.io/baseimage-docker/",
-    "created": "2014-09-13",
-    "updated": "2014-09-13"
+    "created": "2014-09-13T06:34:22Z",
+    "updated": "2014-09-13T01:07:03Z"
   },
   {
     "name": "hound_test",
@@ -1426,8 +1686,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/hound_test",
     "homepage": "",
-    "created": "2014-08-04",
-    "updated": "2014-08-04"
+    "created": "2014-08-04T15:34:10Z",
+    "updated": "2014-08-04T15:34:10Z"
   },
   {
     "name": "angularjs_coffee_style",
@@ -1439,8 +1699,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/angularjs_coffee_style",
     "homepage": "",
-    "created": "2014-07-31",
-    "updated": "2014-07-31"
+    "created": "2014-07-31T02:58:59Z",
+    "updated": "2014-07-31T02:58:59Z"
   },
   {
     "name": "guides",
@@ -1452,8 +1712,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/guides",
     "homepage": "",
-    "created": "2014-07-30",
-    "updated": "2014-07-30"
+    "created": "2014-07-30T18:05:39Z",
+    "updated": "2014-07-30T13:30:28Z"
   },
   {
     "name": "dotfiles-1",
@@ -1465,8 +1725,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/dotfiles-1",
     "homepage": "http://robots.thoughtbot.com",
-    "created": "2014-07-24",
-    "updated": "2014-07-24"
+    "created": "2014-07-24T15:30:25Z",
+    "updated": "2014-07-24T10:27:35Z"
   },
   {
     "name": "squeel",
@@ -1478,8 +1738,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/squeel",
     "homepage": "http://erniemiller.org/projects/squeel",
-    "created": "2013-03-11",
-    "updated": "2013-11-15"
+    "created": "2013-03-11T01:46:09Z",
+    "updated": "2013-11-15T21:46:50Z"
   },
   {
     "name": "autobot",
@@ -1491,8 +1751,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/autobot",
     "homepage": "",
-    "created": "2012-10-04",
-    "updated": "2013-09-12"
+    "created": "2012-10-04T22:32:20Z",
+    "updated": "2013-09-12T05:01:42Z"
   },
   {
     "name": "zerista",
@@ -1504,8 +1764,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/zerista",
     "homepage": "",
-    "created": "2010-12-30",
-    "updated": "2013-03-10"
+    "created": "2010-12-30T05:54:24Z",
+    "updated": "2013-03-10T00:47:20Z"
   },
   {
     "name": "delayed_job",
@@ -1517,8 +1777,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/delayed_job",
     "homepage": "http://groups.google.com/group/delayed_job",
-    "created": "2013-03-04",
-    "updated": "2013-03-04"
+    "created": "2013-03-04T21:58:24Z",
+    "updated": "2013-03-04T21:58:24Z"
   },
   {
     "name": "rails-hamljs",
@@ -1530,8 +1790,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/rails-hamljs",
     "homepage": "",
-    "created": "2013-03-01",
-    "updated": "2013-03-01"
+    "created": "2013-03-01T03:08:07Z",
+    "updated": "2013-03-01T03:08:07Z"
   },
   {
     "name": "ruby-pg",
@@ -1543,8 +1803,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ruby-pg",
     "homepage": "http://bitbucket.org/ged/ruby-pg",
-    "created": "2012-12-03",
-    "updated": "2013-01-13"
+    "created": "2012-12-03T21:26:22Z",
+    "updated": "2013-01-13T11:51:56Z"
   },
   {
     "name": "sequel",
@@ -1556,8 +1816,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/sequel",
     "homepage": "http://sequel.rubyforge.org",
-    "created": "2012-12-03",
-    "updated": "2013-01-13"
+    "created": "2012-12-03T02:20:57Z",
+    "updated": "2013-01-13T11:31:35Z"
   },
   {
     "name": "ruby-plsql",
@@ -1569,8 +1829,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ruby-plsql",
     "homepage": "",
-    "created": "2012-12-02",
-    "updated": "2013-01-13"
+    "created": "2012-12-02T19:49:11Z",
+    "updated": "2013-01-13T11:26:10Z"
   },
   {
     "name": "squirm_rails",
@@ -1582,8 +1842,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/squirm_rails",
     "homepage": "",
-    "created": "2012-12-02",
-    "updated": "2013-01-13"
+    "created": "2012-12-02T19:40:05Z",
+    "updated": "2013-01-13T11:26:01Z"
   },
   {
     "name": "github",
@@ -1595,8 +1855,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/github",
     "homepage": "http://peter-murach.github.com/github",
-    "created": "2012-10-29",
-    "updated": "2013-01-12"
+    "created": "2012-10-29T21:39:19Z",
+    "updated": "2013-01-12T21:29:37Z"
   },
   {
     "name": "arel",
@@ -1608,8 +1868,8 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/arel",
     "homepage": "",
-    "created": "2012-06-26",
-    "updated": "2013-01-10"
+    "created": "2012-06-26T03:01:40Z",
+    "updated": "2013-01-10T19:54:31Z"
   },
   {
     "name": "ember.js",
@@ -1621,20 +1881,7 @@
     "archived": false,
     "url": "https://github.com/beejmaxx/ember.js",
     "homepage": "http://www.emberjs.com",
-    "created": "2012-06-24",
-    "updated": "2013-01-10"
-  },
-  {
-    "name": "mod_lcs",
-    "description": "a general purpose learning classification system for binary classification",
-    "language": "—",
-    "stars": 1,
-    "forks": 0,
-    "fork": false,
-    "archived": false,
-    "url": "https://github.com/beejmaxx/mod_lcs",
-    "homepage": "",
-    "created": "2010-08-27",
-    "updated": "2012-12-15"
+    "created": "2012-06-24T09:13:27Z",
+    "updated": "2013-01-10T19:04:56Z"
   }
 ]

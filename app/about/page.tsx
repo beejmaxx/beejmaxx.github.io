@@ -1,32 +1,4 @@
-import type { Metadata } from "next";
-import { PersonalSiteShell } from "@/components/PersonalSiteShell";
-import styles from "../site-pages.module.css";
-
-export const metadata: Metadata = { title: "About", description: "About bijan." };
-
-const rules = [
-  ["01", "show the state", "If a machine knows something important, the person operating it should be able to see it."],
-  ["02", "keep the receipts", "Sources, replays, decisions, failed attempts, and weird intermediate artifacts stay attached."],
-  ["03", "finish the loop", "Architecture, interface, deployment, debugging, and use are one job."],
-] as const;
-
-export default function AboutPage() {
-  return (
-    <PersonalSiteShell section="about">
-      <main>
-        <section className={styles.hero} data-mark="@"><p className={styles.overline}>about the person</p><h1><span>bijan.</span></h1><p className={styles.deck}>Software engineer. I like systems that can explain what they are doing.</p></section>
-        <section className={styles.split}>
-          <ul className={styles.facts}>
-            <li><span>github</span><span>beejmaxx</span></li><li><span>since</span><span>2010</span></li><li><span>repos</span><span>126 public</span></li><li><span>usual tools</span><span>Rust / Python / TS</span></li><li><span>contact</span><span><a href="mailto:bijan.pourriahi@gmail.com">email</a></span></li>
-          </ul>
-          <div className={styles.copy}>
-            <p>I build trading infrastructure, developer tools, APIs, browser experiments, data systems, and agent-facing machinery.</p>
-            <p>A lot of it is about the same thing: preserving enough evidence to understand what happened, then giving a person a useful way to act on it.</p>
-            <p>This site includes the polished work, the small stuff, and the dead ends.</p>
-            <div className={styles.rules}>{rules.map(([number,title,copy]) => <div className={styles.rule} key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div>
-          </div>
-        </section>
-      </main>
-    </PersonalSiteShell>
-  );
-}
+import type{Metadata}from"next";import{SiteShell}from"@/components/SiteShell";import styles from"./about.module.css";
+export const metadata:Metadata={title:"about",description:"About bijan and the recurring ideas behind the work.",alternates:{canonical:"/about"},openGraph:{title:"about — bijan",description:"Software engineer making hidden systems inspectable.",url:"/about"}};
+const timeline=[["2010","small programs, Ruby, Rails, and learning in public"],["later","products, integrations, browser automation, and operational systems"],["then","market data, simulation, execution, and screens for live state"],["now","Rust, agent tools, playable models, books, and source libraries"]];const rules=[["show the state","If a machine knows something important, the person operating it should be able to see it."],["keep the receipts","Sources, replays, rejected paths, results, and limits stay attached."],["finish the loop","Architecture, interface, deployment, debugging, and use are one job."]];
+export default function AboutPage(){return <SiteShell current="about"><main className="page" id="main"><section className="pageHero"><p className="eyebrow">about the person</p><h1><em>bijan.</em></h1><p className="deck">Software engineer. I keep making systems that can explain what they are doing.</p></section><section className={styles.about}><div className={styles.copy}><p>I build market infrastructure, developer tools, browser instruments, data systems, agent-facing machinery, technical books, and research libraries.</p><p>The material changes, but the recurring questions do not: What state matters? Can the behavior be replayed? What evidence survives? What does the operator see? Where did the claim come from?</p><p>This site includes polished work, small things, rejected paths, and projects whose state is simply unfinished.</p><nav><a href="/work">map the work →</a><a href="/attempts">inspect attempts →</a></nav></div><ol className={styles.timeline}>{timeline.map(([date,note])=><li key={date}><span>{date}</span><p>{note}</p></li>)}</ol></section><section className={styles.rules}>{rules.map(([title,note],index)=><article className="panel" key={title}><span>0{index+1}</span><h2>{title}</h2><p>{note}</p></article>)}</section><section className={styles.facts}><div><span>github</span><a href="https://github.com/beejmaxx">beejmaxx ↗</a></div><div><span>public since</span><strong>2010</strong></div><div><span>usual tools</span><strong>Rust / Python / TypeScript / Go</strong></div><div><span>contact</span><a href="mailto:bijan.pourriahi@gmail.com">email ↗</a></div></section></main></SiteShell>}

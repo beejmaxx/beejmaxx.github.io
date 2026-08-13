@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>notes by bijan</title>
+  <id>https://beejmaxx.github.io/notes</id>
+  <link href="https://beejmaxx.github.io/notes"/>
+  <link href="https://beejmaxx.github.io/feed.xml" rel="self" type="application/atom+xml"/>
+  <updated>2026-08-14T00:00:00Z</updated>
+  <author><name>bijan</name><uri>https://beejmaxx.github.io</uri></author>
+  <entry>
+    <title>Why a depth heatmap needs a price anchor for every column</title>
+    <id>https://beejmaxx.github.io/blog/why-depth-history-needs-price-anchors</id>
+    <link href="https://beejmaxx.github.io/blog/why-depth-history-needs-price-anchors"/>
+    <updated>2026-08-14T00:00:00Z</updated>
+    <summary>A small rendering shortcut made old liquidity appear to move. The fix was to preserve the coordinate system with the data.</summary>
+  </entry>
+</feed>

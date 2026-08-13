@@ -8,31 +8,47 @@ export const metadata: Metadata = {
     template: "%s — bijan",
   },
   description:
-    "Software projects, case studies, blog posts, and unfinished work by bijan.",
+    "Instruments, evidence systems, books, collections, and unfinished inquiries by bijan.",
+  alternates: {
+    canonical: "/",
+    types: { "application/atom+xml": "/feed.xml" },
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
     title: "bijan",
-    description: "Projects, case studies, blog posts, and unfinished work.",
+    description: "I make hidden systems inspectable.",
     type: "website",
     url: "https://beejmaxx.github.io",
     siteName: "bijan",
-    images: [{ url: "/og.png", width: 1732, height: 908, alt: "bijan" }],
+    images: [{ url: "/og.jpg", width: 1242, height: 652, alt: "bijan — making hidden systems inspectable" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "bijan",
-    description: "Projects, case studies, blog posts, and unfinished work.",
-    images: ["/og.png"],
+    description: "I make hidden systems inspectable.",
+    images: ["/og.jpg"],
   },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "bijan",
+  url: "https://beejmaxx.github.io",
+  sameAs: ["https://github.com/beejmaxx"],
+  knowsAbout: ["Rust", "Python", "interactive systems", "simulation", "research infrastructure"],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body id="top">{children}</body>
+      <body id="top">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        {children}
+      </body>
     </html>
   );
 }

@@ -4,7 +4,7 @@ import { projects } from "@/lib/projects";
 import { conceptLinks, conceptProjects, secondaryProjects } from "../concept-data";
 import styles from "./hybrid.module.css";
 
-export const metadata: Metadata = { title: "Hybrid homepage concept" };
+export const metadata: Metadata = { title: "Hybrid homepage concept", robots: { index: false, follow: false } };
 
 export default function HybridConcept() {
   const originals = projects.filter((project) => !project.fork).length;

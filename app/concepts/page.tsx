@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import styles from "./concepts.module.css";
 import { conceptLinks } from "./concept-data";
 
-export const metadata: Metadata = { title: "Homepage concepts" };
+export const metadata: Metadata = { title: "Homepage concepts", robots: { index: false, follow: false } };
 
 const descriptions: Record<string, string> = {
   "/": "The current working homepage.",

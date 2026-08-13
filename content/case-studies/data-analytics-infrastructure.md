@@ -25,7 +25,6 @@ Data-heavy workflows needed reliable ingestion, local and analytical storage, re
 - Normalizing messy external data into stable internal representations.
 - Making results inspectable instead of returning opaque aggregates.
 
-## What this demonstrates
+## Limits and what I would change
 
-Data modeling, SQL-heavy engineering, query optimization, analytics infrastructure, ETL, event-driven workflows, and the ability to turn raw data into useful operational decisions.
-
+This record describes recurring infrastructure rather than one named system. Future versions should include representative schemas, query plans, and before/after latency evidence where those can be published safely.

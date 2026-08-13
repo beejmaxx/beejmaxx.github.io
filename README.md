@@ -1,4 +1,4 @@
-# Bijan Pourriahi — portfolio and field notes
+# bijan — portfolio and field notes
 
 A static portfolio, complete public project archive, and Markdown blog built for `beejmaxx.github.io`.
 
@@ -33,4 +33,3 @@ npm run dev
 ## Publish
 
 Push to the `main` branch of `beejmaxx/beejmaxx.github.io`. The included GitHub Actions workflow builds the static site and deploys `dist/client` to GitHub Pages. In the repository’s **Settings → Pages**, set the source to **GitHub Actions** once.
-

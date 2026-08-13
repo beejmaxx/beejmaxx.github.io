@@ -3,7 +3,7 @@ import Image from "next/image";
 import { conceptLinks, conceptProjects, secondaryProjects } from "../concept-data";
 import styles from "./project-led.module.css";
 
-export const metadata: Metadata = { title: "Project-led homepage concept" };
+export const metadata: Metadata = { title: "Project-led homepage concept", robots: { index: false, follow: false } };
 
 export default function ProjectLedConcept() {
   return (

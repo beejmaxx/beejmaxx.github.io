@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { SimpleFooter, SiteHeader } from "@/components/SiteHeader";
+import { SiteShell } from "@/components/SiteShell";
 import { getCaseStudyBySlug, getCaseStudySlugs } from "@/lib/case-studies";
 
 export const dynamicParams = false;
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   if (!getCaseStudySlugs().includes(slug)) return {};
   const study = getCaseStudyBySlug(slug);
-  return { title: study.title, description: study.subtitle };
+  return { title: study.title, description: study.subtitle, alternates: { canonical: `/case-studies/${slug}` }, openGraph: { title: `${study.title} — bijan`, description: study.subtitle, url: `/case-studies/${slug}`, ...(study.image ? { images: [study.image] } : {}) } };
 }
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -24,13 +24,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   if (!getCaseStudySlugs().includes(slug)) notFound();
   const study = getCaseStudyBySlug(slug);
   return (
-    <>
-      <SiteHeader />
-      <main className="page-main wrap">
+    <SiteShell current="work">
+      <main className="page" id="main">
         <article className="article-shell case-article-shell">
-          <a className="article-back" href="/case-studies">← All case studies</a>
+          <a className="article-back" href="/case-studies">← all dossiers</a>
           <header className="article-header">
-            <p className="eyebrow">Case study {study.index} · {study.tags.join(" · ")}</p>
+            <p className="eyebrow">dossier {study.index} · {study.tags.join(" · ")}</p>
             <h1>{study.title}</h1>
             <p className="article-excerpt">{study.subtitle}</p>
           </header>
@@ -50,7 +49,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           </div>
         </article>
       </main>
-      <SimpleFooter />
-    </>
+    </SiteShell>
   );
 }

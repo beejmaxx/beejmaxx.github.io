@@ -1,0 +1,319 @@
+export type WorkStatus = "live" | "working" | "paused" | "superseded" | "attempt";
+export type WorkKind = "instrument" | "system" | "book" | "collection" | "attempt";
+
+export type WorkItem = {
+  id: string;
+  title: string;
+  thesis: string;
+  description: string;
+  kind: WorkKind;
+  status: WorkStatus;
+  year: number;
+  trails: string[];
+  stack: string[];
+  demo?: string;
+  source: string;
+  caseStudy?: string;
+  evidence?: string;
+  evidenceAlt?: string;
+  proof: string;
+  limit?: string;
+};
+
+export const trails = [
+  {
+    id: "instruments",
+    number: "01",
+    title: "instruments",
+    description: "Things that turn changing systems into something visible, audible, or playable.",
+  },
+  {
+    id: "receipts",
+    number: "02",
+    title: "systems with receipts",
+    description: "Replay, evidence, operator state, and decisions that can be inspected after the fact.",
+  },
+  {
+    id: "library",
+    number: "03",
+    title: "books & collections",
+    description: "API decisions, source texts, provenance, checksums, and different ways through the material.",
+  },
+] as const;
+
+export const obsessions = [
+  { id: "replay", label: "replay it", description: "Keep enough history to explain what happened." },
+  { id: "state", label: "show the state", description: "Give the operator the same important facts as the machine." },
+  { id: "receipts", label: "keep the receipts", description: "Attach sources, decisions, results, and limits." },
+  { id: "rust-browser", label: "Rust in the browser", description: "Put systems code somewhere people can immediately touch it." },
+  { id: "simulation", label: "simulate first", description: "Make the behavior falsifiable before it becomes consequential." },
+  { id: "provenance", label: "trace the source", description: "Keep claims connected to where they came from." },
+] as const;
+
+export const work: WorkItem[] = [
+  {
+    id: "depthfield",
+    title: "Depthfield",
+    thesis: "Market depth, rendered as history.",
+    description: "A live browser workstation that reconstructs an exchange order book and preserves liquidity history instead of showing only the present frame.",
+    kind: "instrument",
+    status: "live",
+    year: 2026,
+    trails: ["instruments", "receipts", "replay", "state"],
+    stack: ["TypeScript", "WebGPU", "Web Workers", "IndexedDB"],
+    demo: "https://beejmaxx.github.io/depthfield/",
+    source: "https://github.com/beejmaxx/depthfield",
+    evidence: "/assets/screenshots/depthfield-live.png",
+    evidenceAlt: "Depthfield showing a live BTC order-book liquidity heatmap",
+    proof: "Public market data, sequence-aware reconstruction, three history resolutions, portable recordings, and no application backend.",
+    limit: "The public exchange does not provide depth from before the browser connects; empty time stays empty rather than being invented.",
+  },
+  {
+    id: "bells",
+    title: "Bells",
+    thesis: "A physical-feeling browser instrument.",
+    description: "Pointer velocity becomes strike energy; nine split modal pairs create the slow beating of a hand-hammered bowl.",
+    kind: "instrument",
+    status: "live",
+    year: 2026,
+    trails: ["instruments", "rust-browser", "simulation"],
+    stack: ["Rust", "WebAssembly", "Web Audio"],
+    demo: "https://beejmaxx.github.io/bells/",
+    source: "https://github.com/beejmaxx/bells",
+    proof: "The instrument is synthesized, not sampled: mallet velocity, hardness, and strike position all alter the sound.",
+  },
+  {
+    id: "engine-sim",
+    title: "Engine Simulator",
+    thesis: "Eleven engines you can hear and perturb.",
+    description: "A safe-Rust engine model with a backendless WebAssembly audio utility and browser controls.",
+    kind: "instrument",
+    status: "live",
+    year: 2026,
+    trails: ["instruments", "rust-browser", "simulation"],
+    stack: ["Rust", "WebAssembly", "Web Audio"],
+    demo: "/engine-sim/",
+    source: "https://github.com/beejmaxx/engine-sim-rs",
+    proof: "Playable cached references and custom browser rendering across boxer, inline, V, and motorcycle engine layouts.",
+  },
+  {
+    id: "observatory",
+    title: "Flat Earth Observatory",
+    thesis: "Claims turned into measurements.",
+    description: "An interactive observatory for comparing globe and flat-Earth predictions across shadows, horizons, stars, and eclipses.",
+    kind: "instrument",
+    status: "live",
+    year: 2026,
+    trails: ["instruments", "receipts", "simulation", "provenance"],
+    stack: ["TypeScript", "Geometry", "Evidence"],
+    demo: "https://beejmaxx.github.io/flat-earth-observatory/",
+    source: "https://github.com/beejmaxx/flat-earth-observatory",
+    proof: "Each model states a prediction and gives the visitor a way to compare it with observable consequences.",
+  },
+  {
+    id: "aikido",
+    title: "Aikido / QuantBox",
+    thesis: "A research system that keeps the evidence.",
+    description: "Rust-first infrastructure for systematic-trading research, replay, simulation, runtime decisions, and review.",
+    kind: "system",
+    status: "working",
+    year: 2026,
+    trails: ["receipts", "replay", "state", "simulation"],
+    stack: ["Rust", "Python", "Research systems"],
+    demo: "/aikido/",
+    source: "https://github.com/beejmaxx/aikido-systematic-trading",
+    caseStudy: "/case-studies/rust-python-execution-platform",
+    evidence: "/assets/screenshots/strategy-explorer.png",
+    evidenceAlt: "A strategy research explorer showing experiment results",
+    proof: "Historical, simulated, and live-style workflows share evidence and review boundaries instead of producing opaque scores.",
+  },
+  {
+    id: "operations",
+    title: "Operations Workstation",
+    thesis: "Show the operator what the machine knows.",
+    description: "A multi-account control surface for execution state, risk, monitoring, and explicit emergency actions.",
+    kind: "system",
+    status: "working",
+    year: 2026,
+    trails: ["receipts", "state", "replay"],
+    stack: ["Real-time systems", "Operational UX", "Risk"],
+    source: "https://github.com/beejmaxx/aikido-systematic-trading",
+    caseStudy: "/case-studies/operations-workstation",
+    evidence: "/assets/screenshots/trading-fleet-dashboard.png",
+    evidenceAlt: "A trading fleet dashboard showing account and execution state",
+    proof: "Account health, exposure, limits, fan-out behavior, and emergency controls are visible in the same operational model.",
+  },
+  {
+    id: "bot-defense",
+    title: "Bot Defense Lab",
+    thesis: "Security policy you can replay and reject.",
+    description: "A deterministic marketplace lab connecting request-time signals, longer-window behavior, shadow policy, analyst evidence, and intervention cost.",
+    kind: "system",
+    status: "working",
+    year: 2026,
+    trails: ["receipts", "replay", "simulation", "state"],
+    stack: ["Go", "Policy", "Evaluation"],
+    demo: "/case-studies/marketplace-integrity.html",
+    source: "https://github.com/beejmaxx/http-bot-defense-lab",
+    proof: "The seeded scenario exposes a 41.67% request-time recall baseline, a layered result, threshold failures, and rejected mitigations.",
+    limit: "All behavior is synthetic and hypothesis-driven; the results are acceptance tests, not production accuracy estimates.",
+  },
+  {
+    id: "polymarket-mcp",
+    title: "Polymarket MCP",
+    thesis: "Market data and guarded execution for agents.",
+    description: "A typed Rust interface for market data, replay, simulation, and explicitly opt-in execution.",
+    kind: "system",
+    status: "working",
+    year: 2026,
+    trails: ["receipts", "replay", "state"],
+    stack: ["Rust", "MCP", "Prediction markets"],
+    source: "https://github.com/beejmaxx/polymarket-mcp-rs",
+    proof: "Read paths, replay, and simulation stay separate from actions that can change external state.",
+  },
+  {
+    id: "rust-field-guide",
+    title: "Rust API Field Guide",
+    thesis: "One curriculum, four complete reading orders.",
+    description: "A source-reading book about idiomatic Rust API design built from the standard library and mature production libraries.",
+    kind: "book",
+    status: "live",
+    year: 2026,
+    trails: ["library", "receipts", "provenance"],
+    stack: ["Rust", "mdBook", "API design"],
+    demo: "https://beejmaxx.github.io/rust-api-field-guide/",
+    source: "https://github.com/beejmaxx/rust-api-field-guide",
+    proof: "Nineteen chapters, twelve case studies, and four full paths: classic, problem-first, example-led, and workshop.",
+  },
+  {
+    id: "rust-gallery",
+    title: "Rust API Gallery",
+    thesis: "Consumer-visible API decisions, specimen by specimen.",
+    description: "Complete programs and observed behavior from important Rust libraries, organized around design questions.",
+    kind: "book",
+    status: "working",
+    year: 2026,
+    trails: ["library", "receipts", "provenance"],
+    stack: ["Rust", "Source reading", "API design"],
+    source: "https://github.com/beejmaxx/rust-api-gallery",
+    proof: "Examples cover schemas, ownership, errors, composition, concurrency, library lineages, and focused source deep dives.",
+  },
+  {
+    id: "async-guide",
+    title: "Async Rust Guidebook",
+    thesis: "A consumer-first guide currently under construction.",
+    description: "An mdBook scaffold for complete programs, observed output, ordering timelines, and cancellation-safety decisions.",
+    kind: "book",
+    status: "working",
+    year: 2026,
+    trails: ["library", "receipts"],
+    stack: ["Rust", "Async", "mdBook"],
+    source: "https://github.com/beejmaxx/async-rust-guidebook",
+    proof: "The chapter hierarchy and editorial constraints exist; the substantive chapters are explicitly still being written.",
+  },
+  {
+    id: "napoleon-library",
+    title: "Napoleon Library",
+    thesis: "Primary sources kept distinct from later accounts.",
+    description: "Fourteen public-domain English and French editions with provenance, classification, sizes, and SHA-256 checksums.",
+    kind: "collection",
+    status: "live",
+    year: 2026,
+    trails: ["library", "provenance", "receipts"],
+    stack: ["14 editions", "English / French", "Checksums"],
+    source: "https://github.com/beejmaxx/napoleon-bonaparte-library",
+    proof: "Napoleon’s writing, memoirs, and biographies remain visibly different source classes.",
+  },
+  {
+    id: "goethe-library",
+    title: "Goethe Library",
+    thesis: "German originals beside English editions.",
+    description: "Sixteen public-domain editions spanning drama, fiction, poetry, autobiography, travel, aesthetics, and natural inquiry.",
+    kind: "collection",
+    status: "live",
+    year: 2026,
+    trails: ["library", "provenance", "receipts"],
+    stack: ["16 editions", "German / English", "Checksums"],
+    source: "https://github.com/beejmaxx/goethe-library",
+    proof: "Every catalog entry records language, edition identifiers, translators when known, source URLs, byte counts, and hashes.",
+  },
+  {
+    id: "ken-library",
+    title: "Ken Wheeler Library",
+    thesis: "A corpus with explicit evidence and rights tiers.",
+    description: "A GitHub-native archive of texts, page markers, checksums, provenance, reading lists, transcripts, and source links.",
+    kind: "collection",
+    status: "live",
+    year: 2026,
+    trails: ["library", "provenance", "receipts"],
+    stack: ["17 source records", "13 text exports", "Rights labels"],
+    demo: "https://beejmaxx.github.io/ken-wheeler-knowledge-library/",
+    source: "https://github.com/beejmaxx/ken-wheeler-knowledge-library",
+    proof: "Restricted and image-only material remains metadata instead of being silently treated as reusable text.",
+  },
+  {
+    id: "tesla-library",
+    title: "Tesla Research Library",
+    thesis: "Seventy source exports, with uncertainty attached.",
+    description: "A searchable archive with page markers, rights notes, evidence tiers, checksums, and an interactive induction-motor model.",
+    kind: "collection",
+    status: "live",
+    year: 2026,
+    trails: ["library", "provenance", "receipts", "instruments"],
+    stack: ["71 records", "70 text exports", "Evidence tiers"],
+    demo: "https://beejmaxx.github.io/tesla-research-library/",
+    source: "https://github.com/beejmaxx/tesla-research-library",
+    proof: "Public-domain works, research-only material, low-confidence leads, and personal notes stay in separate declared tiers.",
+  },
+];
+
+export const attempts = [
+  {
+    id: "cadence-mitigation",
+    status: "superseded" as WorkStatus,
+    title: "The detector that caught everything",
+    thought: "A cadence rule that caught the first adaptive evasion might close the gap without changing the rest of the policy.",
+    built: "A mitigation replayed against the exact 94-action evasion and declared hard-negative personas.",
+    happened: "It caught the evasion—and every synthetic power-trader and delegated-household seed.",
+    decision: "Reject the mitigation. Preserve the failure as a regression case instead of calling the detector improved.",
+    survived: "A narrower coordination hypothesis, an explicit false-positive gate, and the failing trace that the next policy must keep passing.",
+    href: "https://github.com/beejmaxx/http-bot-defense-lab/blob/main/docs/adaptive-closure.md",
+  },
+  {
+    id: "native-depthfield",
+    status: "superseded" as WorkStatus,
+    title: "The native market-depth prototype",
+    thought: "A Rust desktop prototype was the clearest route to a high-performance depth renderer.",
+    built: "A native egui/wgpu implementation running against synthetic data.",
+    happened: "It proved the rendering direction, but made the thing harder to open, share, and connect to public data.",
+    decision: "Move the primary experience into the browser and keep the native implementation as the earlier prototype.",
+    survived: "The rendering model, clean-room boundary, and the insistence that historical pixels never shift after the fact.",
+    href: "https://github.com/beejmaxx/depthfield#native-prototype",
+  },
+  {
+    id: "async-scaffold",
+    status: "working" as WorkStatus,
+    title: "A book that is still mostly structure",
+    thought: "The editorial rules and navigation model should exist before filling an async Rust guide with chapters.",
+    built: "A complete hierarchy, responsive book theme, and prompts for examples, output, timelines, and cancellation safety.",
+    happened: "The shell is coherent; the substantive programs and explanations are not finished.",
+    decision: "Publish its state honestly as working, not as a completed book.",
+    survived: "A strong constraint: observed behavior first, source spelunking second, and cancellation discussed wherever work can be dropped.",
+    href: "https://github.com/beejmaxx/async-rust-guidebook",
+  },
+] as const;
+
+export const bench = [
+  ["2026-08-13", "built", "Split one Rust API curriculum into four complete reading paths."],
+  ["2026-08-13", "working", "Started a consumer-first async Rust guide; the structure exists before the chapters do."],
+  ["2026-08-12", "rejected", "Discarded a bot cadence mitigation because it caught every declared hard-negative persona."],
+  ["2026-08-11", "shipped", "Put live market depth, a bell model, and eleven engine voices in the browser."],
+] as const;
+
+export function getWork(id: string) {
+  return work.find((item) => item.id === id);
+}
+
+export function workForTrail(trail: string) {
+  return work.filter((item) => item.trails.includes(trail));
+}

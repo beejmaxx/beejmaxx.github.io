@@ -18,7 +18,6 @@ The organization needed infrastructure for large-scale research workflows, autom
 - Grafana dashboards for resources, deployed systems, executions, and manual controls.
 - Cloud and production operations workflows across AWS, Linux, and DevOps tooling.
 
-## What this demonstrates
+## Limits and what I would change
 
-End-to-end infrastructure ownership, Python, Pandas, and Go engineering, cloud operations, monitoring, automation, data pipelines, and the ability to build serious systems for operationally demanding environments.
-
+The public description cannot expose private workload data or internal operating history. A stronger public record would attach one sanitized pipeline trace and one dashboard decision to each claim.

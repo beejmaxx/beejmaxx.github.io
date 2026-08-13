@@ -30,7 +30,6 @@ external APIs and browser sessions → integration adapters → normalized state
 - Keeping live WebSocket state understandable for operators and debugging workflows.
 - Designing boundaries that kept provider complexity out of the rest of the system.
 
-## What this demonstrates
+## Limits and what I would change
 
-API design, external integrations, operational reliability, WebSocket systems, failure handling, browser automation, and practical debugging for systems that depend on services outside your control.
-
+This dossier combines patterns that occurred across multiple systems; it is less concrete than the named project records. I would split future additions into provider-specific records with example failures, recovery traces, and explicit ownership boundaries.

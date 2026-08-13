@@ -8,6 +8,7 @@ import styles from "./personal-web.module.css";
 export const metadata: Metadata = {
   title: "Personal web homepage concept",
   description: "An independent, personal-web-inspired portfolio concept for bijan.",
+  robots: { index: false, follow: false },
 };
 
 export function PersonalWebHomepage({ showConceptNavigation = true, fixedTheme }: { showConceptNavigation?: boolean; fixedTheme?: ThemeId }) {

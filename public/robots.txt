@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /concepts/
+
+Sitemap: https://beejmaxx.github.io/sitemap.xml
+Host: https://beejmaxx.github.io

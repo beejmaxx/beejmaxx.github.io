@@ -6,26 +6,29 @@ tags: Rust, Python, replay, simulation
 image: /assets/screenshots/strategy-explorer.png
 ---
 
-## Problem
+## What exists
 
 Research and runtime workflows needed to be comparable across historical replay, simulation, and live evaluation. The platform needed fast feedback, clear interfaces, reproducible execution, and enough observability to make complex behavior debuggable.
 
-## What I built
+## The hard part
 
-- Rust and Python components for ingestion, replay, simulation, and runtime workflows.
-- Runtime paths with evidence capture, artifact tracking, and operational review.
-- Evaluation workflows for fixed-start, walk-forward, and robustness-oriented research.
-- Policy simulation and bridge work connecting evaluation outputs to runtime behavior.
-- State, sizing, and control concepts designed for operational use.
+Historical replay, simulation, and live-style execution are easy to make individually. The harder problem is keeping their semantics close enough that a result can be compared without silently changing the rules.
 
-## Technical challenges
+## Key decisions
 
-- Keeping live-style, replay, and simulation behavior aligned enough to compare.
-- Capturing enough evidence to explain why a runtime path behaved a certain way.
-- Managing experiment metadata and artifacts without turning research into manual bookkeeping.
-- Balancing performance, correctness, and iteration speed across Rust and Python.
+- Keep frozen inputs and experiment metadata attached to results.
+- Treat evidence capture as part of execution, not a reporting task afterward.
+- Use Rust where runtime boundaries and performance matter; keep Python useful for inspection and iteration.
+- Separate policy evaluation from the bridge that can affect external state.
 
-## What this demonstrates
+## Evidence
 
-Platform architecture, Rust and Python engineering, simulation design, replayable workflows, evidence-based debugging, runtime thinking, and ownership of complex developer-facing systems.
+The public Aikido overview, architecture record, source repository, and strategy explorer show the system from four different distances.
 
+## Limits
+
+The public material documents architecture and interfaces. It does not make private data, credentials, or live trading results public.
+
+## What I would change
+
+I would define the cross-mode semantic contract earlier and make every divergence between replay, simulation, and runtime a first-class test artifact.

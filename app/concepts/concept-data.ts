@@ -39,7 +39,7 @@ export const conceptProjects = [
     stack: ["Rust", "Python", "Research systems"],
     status: "Active research",
     source: "https://github.com/beejmaxx/aikido-systematic-trading",
-    demo: "https://fanpilot.app/research-engine",
+    demo: "/aikido/",
     image: "/assets/screenshots/strategy-explorer.png",
   },
   {

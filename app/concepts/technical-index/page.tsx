@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { conceptLinks, conceptProjects, secondaryProjects } from "../concept-data";
 import styles from "./technical-index.module.css";
 
-export const metadata: Metadata = { title: "Technical index homepage concept" };
+export const metadata: Metadata = { title: "Technical index homepage concept", robots: { index: false, follow: false } };
 
 export default function TechnicalIndexConcept() {
   return (
@@ -22,7 +22,7 @@ export default function TechnicalIndexConcept() {
           <dl>
             <div><dt>Primary work</dt><dd>Real-time systems, developer platforms, research infrastructure</dd></div>
             <div><dt>Languages</dt><dd>Rust, Python, TypeScript, Go</dd></div>
-            <div><dt>Public history</dt><dd>45 original repositories since 2010</dd></div>
+            <div><dt>Public history</dt><dd>63 original repositories since 2010</dd></div>
             <div><dt>Contact</dt><dd><a href="mailto:bijan.pourriahi@gmail.com">email</a></dd></div>
           </dl>
         </section>

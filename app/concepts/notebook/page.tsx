@@ -3,7 +3,7 @@ import Image from "next/image";
 import { conceptLinks, conceptProjects, secondaryProjects } from "../concept-data";
 import styles from "./notebook.module.css";
 
-export const metadata: Metadata = { title: "Notebook homepage concept" };
+export const metadata: Metadata = { title: "Notebook homepage concept", robots: { index: false, follow: false } };
 
 export default function NotebookConcept() {
   return (

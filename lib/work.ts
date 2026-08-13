@@ -122,10 +122,10 @@ export const work: WorkItem[] = [
     stack: ["Rust", "Python", "Research systems"],
     demo: "/aikido/",
     source: "https://github.com/beejmaxx/aikido-systematic-trading",
-    caseStudy: "/case-studies/rust-python-execution-platform",
+    caseStudy: "/case-studies/predicate-sweep",
     evidence: "/assets/screenshots/strategy-explorer.png",
     evidenceAlt: "A strategy research explorer showing experiment results",
-    proof: "Historical, simulated, and live-style workflows share evidence and review boundaries instead of producing opaque scores.",
+    proof: "Its predicate sweep turns billion-scale combination spaces into a staged bitset and graph search, then exact-verifies the finalists.",
   },
   {
     id: "operations",

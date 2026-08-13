@@ -29,6 +29,7 @@ test("exports the portfolio and every public index", async () => {
   assert.match(archive, /63(?:<!-- -->)? mine/i);
   assert.match(about, /Ruby, Rails/i);
   assert.match(cases, /engineering records/i);
+  assert.match(cases, /The Predicate Sweep/);
   assert.match(blogAlias, /price anchor for every column/i);
   assert.match(workAlias, /same obsession/i);
 
@@ -43,6 +44,18 @@ test("publishes one real note and keeps old drafts out", async () => {
   assert.match(note, /History should be immutable/);
   assert.match(note, /coordinate system/i);
   await assert.rejects(access(new URL("blog/the-things-that-didnt-ship-belong-here.html", clientRoot)));
+});
+
+test("publishes the predicate sweep as a specific evidence-backed dossier", async () => {
+  const study = await readPage("case-studies/predicate-sweep.html");
+  assert.match(study, /85,968,659,700/);
+  assert.match(study, /757,000 bars/);
+  assert.match(study, /24 GB/);
+  assert.match(study, /1–2 GB/);
+  assert.match(study, /Pair-support graph/i);
+  assert.match(study, /500 block-bootstrap resamples/i);
+  assert.match(study, /controlled benchmark/i);
+  assert.match(study, /predicate-sweep-og\.jpg/);
 });
 
 test("exports discovery files, data, and public artifacts", async () => {

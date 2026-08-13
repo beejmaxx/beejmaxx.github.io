@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { SiteShell } from "@/components/SiteShell";
+import { PredicateSweepDiagram } from "@/components/PredicateSweepDiagram";
 import { getCaseStudyBySlug, getCaseStudySlugs } from "@/lib/case-studies";
 
 export const dynamicParams = false;
@@ -16,7 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   if (!getCaseStudySlugs().includes(slug)) return {};
   const study = getCaseStudyBySlug(slug);
-  return { title: study.title, description: study.subtitle, alternates: { canonical: `/case-studies/${slug}` }, openGraph: { title: `${study.title} — bijan`, description: study.subtitle, url: `/case-studies/${slug}`, ...(study.image ? { images: [study.image] } : {}) } };
+  const socialImage = slug === "predicate-sweep" ? "/predicate-sweep-og.jpg" : study.image;
+  return { title: study.title, description: study.subtitle, alternates: { canonical: `/case-studies/${slug}` }, openGraph: { title: `${study.title} — bijan`, description: study.subtitle, url: `/case-studies/${slug}`, ...(socialImage ? { images: [socialImage] } : {}) }, ...(socialImage ? { twitter: { card: "summary_large_image", title: `${study.title} — bijan`, description: study.subtitle, images: [socialImage] } } : {}) };
 }
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -44,6 +46,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               priority
             />
           )}
+          {study.slug === "predicate-sweep" && <PredicateSweepDiagram />}
           <div className="prose case-prose">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{study.content}</ReactMarkdown>
           </div>

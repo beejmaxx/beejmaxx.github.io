@@ -46,7 +46,7 @@ export default function HomePage() {
           <div className={`${styles.evidenceGrid} panel`}>
             <div><span>see it</span><strong>Depthfield</strong><p>Watch public liquidity accumulate, disappear, and trade.</p></div>
             <div><span>hear it</span><strong>Bells</strong><p>Strike a synthesized bowl with velocity and position.</p><a href="https://beejmaxx.github.io/bells/">play ↗</a></div>
-            <div><span>test it</span><strong>Bot defense</strong><p>Read the false-positive gate that rejected an attractive policy.</p><a href="/attempts">inspect ↗</a></div>
+            <div><span>search it</span><strong>Predicate sweep</strong><p>See how 86 billion possible quads became a staged bitset and graph search.</p><a href="/case-studies/predicate-sweep">open dossier ↗</a></div>
             <div><span>read it four ways</span><strong>Rust API Field Guide</strong><p>One curriculum, reordered around different ways of learning.</p><a href="https://beejmaxx.github.io/rust-api-field-guide/">open ↗</a></div>
           </div>
         </section>

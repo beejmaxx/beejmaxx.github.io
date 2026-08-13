@@ -2,22 +2,33 @@
 
 ## Reporting job
 
-- **Audience:** product, engineering, security, marketplace, and hiring leadership
-- **Question:** what do the four independent portfolio projects collectively demonstrate about owning a marketplace anti-bot function?
-- **Answer:** they form a reviewable operating model from server-side observation through adaptive testing, economic-harm investigation, and reversible intervention.
-- **Scope:** deterministic synthetic results committed or documented in the four public repositories as of August 12, 2026.
-- **Success criterion:** a reader can distinguish demonstrated mechanics from assumptions and production claims that remain unsupported.
+- **Audience:** technical, security, marketplace integrity, risk, and product reviewers
+- **Question:** what has been implemented across the four anti-bot repositories, what evidence supports it, and what remains unvalidated?
+- **Answer:** the repositories form a reviewable control model from server-side observation through adaptive testing, economic-harm investigation, and reversible intervention; only the HTTP scorer and Red Queen harness are integrated in code.
+- **Scope:** deterministic synthetic results committed or documented in the four public repositories as of August 2026.
+- **Success criterion:** a technical reader can audit the architecture, metric definitions, evidence boundaries, material risks, and production-validation requirements without encountering promotional claims.
 
-## Executive-report structure
+## Technical-report structure
 
 | Required role | Visible report section |
 |---|---|
 | Title | Marketplace Integrity & Anti-Bot Systems |
-| Executive summary | Executive Summary |
-| Key findings with evidence | Four project evidence cards |
-| Recommended next steps | 0–30 / 31–60 / 61–90 production path |
-| Further questions | Questions I would ask internally |
-| Caveats and assumptions | Caveats and assumptions |
+| Technical summary | Technical summary |
+| Key findings with evidence | Results and limitations |
+| Scope, data, and metric definitions | Architecture; Evaluation basis and metric definitions |
+| Methodology | Control and decision model; project evidence methods |
+| Limitations, uncertainty, and robustness | Adjacent result limitations; Assumptions and unknowns |
+| Recommended next steps | Production-validation plan |
+| Further questions | Required discovery questions |
+| Governance implications | Risk and governance requirements |
+
+## Editorial policy
+
+- No hiring, candidate, capability, or self-promotional framing.
+- No first-person claims or calls to contact the author.
+- Name implementation status precisely: integrated, independently executable, or conceptual/schema-level.
+- Present synthetic results as fixture-specific engineering evidence, never as production efficacy.
+- Keep material user, market, privacy, operational, and governance risks visible.
 
 ## Source inventory
 

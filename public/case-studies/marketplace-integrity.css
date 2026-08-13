@@ -351,6 +351,46 @@
   font-size: 0.86rem;
 }
 
+.definition-grid,
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 38px;
+  border: 1px solid var(--mi-line);
+  background: var(--mi-line);
+}
+
+.definition-grid article,
+.risk-grid article {
+  background: var(--mi-panel);
+  padding: 25px;
+}
+
+.definition-grid h3,
+.risk-grid h3,
+.acceptance-standard h3 {
+  margin: 0 0 9px;
+  color: var(--mi-text);
+  font-size: 1rem;
+}
+
+.definition-grid p,
+.risk-grid p,
+.acceptance-standard p {
+  margin: 0;
+  color: var(--mi-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.acceptance-standard {
+  margin-top: 30px;
+  border-left: 3px solid var(--mi-amber);
+  background: rgba(255, 196, 92, 0.07);
+  padding: 25px 28px;
+}
+
 .evidence-card {
   margin-top: 30px;
   border: 1px solid var(--mi-line);
@@ -887,7 +927,9 @@
   }
 
   .boundary-grid,
-  .principles-grid {
+  .principles-grid,
+  .definition-grid,
+  .risk-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -949,6 +991,8 @@
   .metric-triptych,
   .policy-grid,
   .principles-grid,
+  .definition-grid,
+  .risk-grid,
   .assumption-columns,
   .questions-panel,
   .finding-copy.wide {

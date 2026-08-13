@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Marketplace Integrity &amp; Anti-Bot Systems | bijan</title>
-    <meta name="description" content="An evidence-backed portfolio report covering four synthetic anti-bot systems: HTTP detection, adaptive red-teaming, economic ring investigation, and guarded marketplace intervention.">
+    <title>Marketplace Anti-Bot Engineering | Technical Program Report</title>
+    <meta name="description" content="Technical report covering four synthetic marketplace anti-bot systems: HTTP detection, adaptive red-teaming, economic coordination analysis, and guarded intervention.">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Marketplace Integrity &amp; Anti-Bot Systems">
-    <meta property="og:description" content="Four prototypes. One operating thesis: protect player marketplaces by connecting telemetry, adversarial testing, economic harm, and reversible intervention.">
+    <meta property="og:title" content="Marketplace Anti-Bot Engineering — Technical Program Report">
+    <meta property="og:description" content="Scope, architecture, synthetic evidence, limitations, and production-validation requirements across four anti-bot engineering prototypes.">
     <meta property="og:url" content="https://beejmaxx.github.io/case-studies/marketplace-integrity.html">
     <meta property="og:image" content="https://beejmaxx.github.io/assets/marketplace-integrity-og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Marketplace Integrity — Anti-Bot Systems Portfolio by bijan">
+    <meta property="og:image:alt" content="Marketplace Anti-Bot Engineering technical report">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://beejmaxx.github.io/assets/marketplace-integrity-og.png">
     <meta name="theme-color" content="#07111f">
@@ -22,66 +22,66 @@
     <a class="skip-link" href="#report">Skip to report</a>
 
     <header class="integrity-header">
-      <a class="integrity-brand" href="/">bijan</a>
-      <nav class="integrity-nav" aria-label="Marketplace integrity report">
-        <a href="#system">System</a>
+      <a class="integrity-brand" href="/">Marketplace Anti-Bot Engineering</a>
+      <nav class="integrity-nav" aria-label="Technical report navigation">
+        <a href="#system">Architecture</a>
         <a href="#evidence">Evidence</a>
         <a href="#assumptions">Assumptions</a>
-        <a href="#production">Production path</a>
-        <a href="https://github.com/beejmaxx">GitHub</a>
+        <a href="#production">Validation plan</a>
+        <a href="#risks">Risks</a>
       </nav>
     </header>
 
     <main id="report">
       <section class="report-hero" aria-labelledby="report-title">
         <div class="hero-copy">
-          <p class="eyebrow">Marketplace integrity portfolio report · August 2026</p>
-          <h1 id="report-title">Bot defense is not a classifier. It is an operating system for marketplace fairness.</h1>
+          <p class="eyebrow">Technical program report · Updated August 2026</p>
+          <h1 id="report-title">Marketplace anti-bot engineering</h1>
           <p class="hero-lede">
-            I built four independent, synthetic prototypes to explore the full decision chain:
-            observe HTTP behavior, test the defense against adaptation, connect activity to economic
-            harm, and choose reversible interventions under player-friction constraints.
+            Four synthetic prototypes examine the decision chain from server-side observation to
+            controlled intervention: HTTP behavior analysis, adaptive evaluation, economic coordination
+            investigation, and policy selection under explicit player-impact constraints.
           </p>
           <div class="hero-actions">
-            <a class="integrity-button" href="#executive-summary">Read the report</a>
-            <a class="integrity-button secondary" href="https://github.com/beejmaxx?tab=repositories&amp;q=lab">Review the code</a>
+            <a class="integrity-button" href="#technical-summary">Technical summary</a>
+            <a class="integrity-button secondary" href="#system">Repository map</a>
           </div>
         </div>
         <aside class="scope-card" aria-label="Scope statement">
-          <p class="scope-label">Scope</p>
-          <p class="scope-value">4 independent labs</p>
-          <p class="scope-copy">Go + Python · deterministic simulations · committed evidence · analyst-facing tools</p>
+          <p class="scope-label">Evidence status</p>
+          <p class="scope-value">Synthetic prototype</p>
+          <p class="scope-copy">Four repositories · Go and Python · deterministic simulations · versioned evidence</p>
           <div class="scope-rule"></div>
           <p class="scope-warning">No Sony or PlayStation data, architecture, endpoints, accounts, or production controls are represented.</p>
         </aside>
       </section>
 
-      <section class="report-section executive" id="executive-summary">
+      <section class="report-section executive" id="technical-summary">
         <div class="section-label">01</div>
         <div class="section-content">
-          <p class="eyebrow">Executive Summary</p>
-          <h2>The portfolio demonstrates an end-to-end integrity program—not four disconnected detectors.</h2>
+          <p class="eyebrow">Technical summary</p>
+          <h2>The work evaluates a layered control system, not a standalone classifier.</h2>
           <div class="summary-grid">
             <article>
-              <h3>Detection needs layers.</h3>
-              <p>A bounded HTTP policy catches obvious automation, while longer-window behavior and entity correlation expose slower activity that request-time rules miss.</p>
+              <h3>Request-time evidence is incomplete.</h3>
+              <p>A bounded HTTP policy identifies obvious automation. Longer-window behavior and entity correlation are required for activity that remains ordinary at the individual-request level.</p>
             </article>
             <article>
-              <h3>Attackers adapt.</h3>
-              <p>A reference detector that catches its scripted test bot fails completely against a bounded, holdout-validated adaptive strategy. Counterexamples become permanent regressions.</p>
+              <h3>Static evaluation overstates control strength.</h3>
+              <p>A reference detector catches its scripted positive control but fails against bounded adaptive search. Captured failures are minimized, replayed, and retained as regressions.</p>
             </article>
             <article>
-              <h3>Economic behavior survives identifier rotation.</h3>
-              <p>Accounts with unique device and network identifiers remain individually ordinary, yet synchronized repricing and shared market impact reveal a six-account profit ring.</p>
+              <h3>Economic coordination can outlast weak identifiers.</h3>
+              <p>In the authored scenario, accounts with distinct device and network identifiers remain individually ordinary while synchronized market behavior supplies case-level evidence.</p>
             </article>
             <article>
-              <h3>Approval must be reversible.</h3>
-              <p>An offline-supported intervention is approved for canary, then automatically rolled back when shifted legitimate behavior breaches the declared friction budget.</p>
+              <h3>Policy approval requires evidence and rollback.</h3>
+              <p>An offline-supported intervention advances only to canary and is rolled back when shifted legitimate behavior breaches the declared friction budget.</p>
             </article>
           </div>
           <p class="thesis-callout">
-            <span>The operating thesis</span>
-            Optimize for harm prevented and player fairness—not bot scores, raw flags, or enforcement volume.
+            <span>Program objective</span>
+            Reduce measurable automated advantage while bounding adverse effects on legitimate users, marketplace function, review operations, and privacy.
           </p>
         </div>
       </section>
@@ -89,9 +89,9 @@
       <section class="report-section" id="system">
         <div class="section-label">02</div>
         <div class="section-content">
-          <p class="eyebrow">System view</p>
-          <h2>Each project owns one decision boundary.</h2>
-          <p class="section-lede">The projects remain separate deployable codebases. The Go scorer and Red Queen harness now integrate through a loopback-only observable-event contract; the other boundaries remain offline schemas and operating-model links.</p>
+          <p class="eyebrow">Architecture and repository boundaries</p>
+          <h2>Each repository addresses a distinct control boundary.</h2>
+          <p class="section-lede">The repositories are independently executable. The Go scorer and Red Queen harness integrate through a loopback-only observable-event contract. Connections to the economic investigation and intervention labs are architectural and schema-level; an end-to-end production pipeline is not claimed.</p>
 
           <div class="system-flow" aria-label="Four-stage marketplace integrity system">
             <article class="flow-stage">
@@ -133,22 +133,52 @@
             <div><span>Primary outcome</span><strong>Player and marketplace harm reduced</strong></div>
             <div><span>Safety mechanism</span><strong>Progressive action with rollback</strong></div>
           </div>
+
+          <div class="ownership-table-wrap">
+            <table class="ownership-table">
+              <caption>Repository scope and current integration status</caption>
+              <thead><tr><th>Repository</th><th>Control boundary</th><th>Implementation</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><a href="https://github.com/beejmaxx/http-bot-defense-lab">http-bot-defense-lab</a></td><td>Online HTTP evidence and progressive enforcement</td><td>Go</td><td>Integrated with Red Queen through a loopback scorer contract</td></tr>
+                <tr><td><a href="https://github.com/beejmaxx/bot-defense-red-team-lab">bot-defense-red-team-lab</a></td><td>Adaptive search, replay, and regression generation</td><td>Python</td><td>Attacks the Go scorer and retains machine-readable evidence</td></tr>
+                <tr><td><a href="https://github.com/beejmaxx/market-integrity-lab">market-integrity-lab</a></td><td>Offline economic and coordination investigation</td><td>Python</td><td>Independent event-sourced simulation; schema-level program link</td></tr>
+                <tr><td><a href="https://github.com/beejmaxx/marketplace-intervention-lab">marketplace-intervention-lab</a></td><td>Offline policy evaluation and guarded rollout</td><td>Python</td><td>Independent logged-policy simulation; schema-level program link</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="report-section" id="evaluation-basis">
+        <div class="section-label">03</div>
+        <div class="section-content">
+          <p class="eyebrow">Evaluation basis and metric definitions</p>
+          <h2>All reported outcomes are fixture-specific engineering evidence.</h2>
+          <p class="section-lede">The evaluations are deterministic or seeded synthetic scenarios authored alongside the systems. They test implementation behavior, failure handling, replayability, and evaluation discipline. They do not estimate production prevalence, precision, recall, financial loss, or causal policy impact.</p>
+          <div class="definition-grid">
+            <article><h3>Detection</h3><p>A run is detected when the scorer emits a challenge or restriction. An observe decision is not counted as detection.</p></article>
+            <article><h3>Legitimate friction</h3><p>The relevant action- or episode-level denominator is stated beside each result. Aggregate rates must be read with persona-level intervention risk.</p></article>
+            <article><h3>Retained harm</h3><p>Synthetic realized profit under a detector divided by profit for the same strategy under a no-op detector. It is a scenario ratio, not a monetary estimate.</p></article>
+            <article><h3>Ring precision and recall</h3><p>Account-membership measures for constructed rings, not case-level production precision and recall.</p></article>
+            <article><h3>Residual harm</h3><p>An offline policy-value estimate over mature held-out episodes. Support, uncertainty, and guardrail gates are evaluated separately.</p></article>
+            <article><h3>Latency</h3><p>Reported detector or evidence timing is named according to implementation. The market case threshold is retrospective offline timing, not streaming alert latency.</p></article>
+          </div>
         </div>
       </section>
 
       <section class="report-section" id="evidence">
-        <div class="section-label">03</div>
+        <div class="section-label">04</div>
         <div class="section-content">
-          <p class="eyebrow">Key findings with visual evidence</p>
-          <h2>The labs are designed to expose failure—not manufacture a perfect score.</h2>
-          <p class="section-lede">Every number below is a deterministic result from a declared synthetic scenario. The values validate mechanics and reasoning; they do not estimate production accuracy, prevalence, loss, or policy impact.</p>
+          <p class="eyebrow">Results and limitations</p>
+          <h2>The evidence identifies both implemented capabilities and unresolved failures.</h2>
+          <p class="section-lede">Each result is tied to a declared synthetic fixture and a public source. Interpretation and limitations are stated adjacent to the measurement.</p>
 
           <article class="evidence-card">
             <div class="evidence-heading">
               <div>
                 <p class="project-index">Project 01 · Go</p>
                 <h3>HTTP Bot Defense Lab</h3>
-                <p>A low-latency policy is useful, but it cannot see the whole abuse journey.</p>
+                <p>Request-time scoring covers a narrower evidence window than longer-running correlation.</p>
               </div>
               <a class="repo-link" href="https://github.com/beejmaxx/http-bot-defense-lab">Repository ↗</a>
             </div>
@@ -184,7 +214,7 @@
               <div>
                 <p class="project-index">Project 02 · Python</p>
                 <h3>Red Queen Lab</h3>
-                <p>A test suite that never changes with the attacker is a confidence trap.</p>
+                <p>Static positive-control performance does not measure robustness to adaptation.</p>
               </div>
               <a class="repo-link" href="https://github.com/beejmaxx/bot-defense-red-team-lab">Repository ↗</a>
             </div>
@@ -234,7 +264,7 @@
               <div>
                 <p class="project-index">Project 03 · Python</p>
                 <h3>Market Integrity Lab</h3>
-                <p>When identifiers look clean, repeated economic coordination can remain visible.</p>
+                <p>Repeated economic coordination can remain observable when weak identifiers differ.</p>
               </div>
               <a class="repo-link" href="https://github.com/beejmaxx/market-integrity-lab">Repository ↗</a>
             </div>
@@ -270,7 +300,7 @@
               <div>
                 <p class="project-index">Project 04 · Python</p>
                 <h3>Marketplace Intervention Lab</h3>
-                <p>A promising point estimate is not permission to deploy.</p>
+                <p>Point estimates are insufficient without support, uncertainty, and guardrail checks.</p>
               </div>
               <a class="repo-link" href="https://github.com/beejmaxx/marketplace-intervention-lab">Repository ↗</a>
             </div>
@@ -316,10 +346,10 @@
       </section>
 
       <section class="report-section">
-        <div class="section-label">04</div>
+        <div class="section-label">05</div>
         <div class="section-content">
-          <p class="eyebrow">Engineering and operating model</p>
-          <h2>The portfolio separates evidence, truth, policy, and authority.</h2>
+          <p class="eyebrow">Control and decision model</p>
+          <h2>The design separates evidence, ground truth, policy, and enforcement authority.</h2>
           <div class="principles-grid">
             <article><span>01</span><h3>Truth stays offline</h3><p>Detection and investigator surfaces cannot read synthetic actor labels. Evaluators alone join predictions to truth.</p></article>
             <article><span>02</span><h3>Signals are not verdicts</h3><p>Network, device, speed, coordination, profitability, and model scores are evidence—not standalone proof.</p></article>
@@ -346,11 +376,11 @@
       </section>
 
       <section class="report-section" id="assumptions">
-        <div class="section-label">05</div>
+        <div class="section-label">06</div>
         <div class="section-content">
-          <p class="eyebrow">Caveats and assumptions</p>
-          <h2>The prototypes are intentionally honest about outsider information.</h2>
-          <p class="section-lede">The work begins from one provisional premise: meaningful companion-marketplace actions ultimately reach server-controlled HTTP services. Everything else is a hypothesis to validate, not a claim about PlayStation.</p>
+          <p class="eyebrow">Assumptions and unknowns</p>
+          <h2>The architecture rests on provisional external assumptions.</h2>
+          <p class="section-lede">The central premise is that meaningful companion-marketplace actions ultimately reach server-controlled HTTP services. This is a design hypothesis, not a statement about PlayStation architecture. Internal discovery could materially change the telemetry model, system boundaries, or appropriate controls.</p>
 
           <div class="assumption-columns">
             <div>
@@ -385,10 +415,10 @@
       </section>
 
       <section class="report-section" id="production">
-        <div class="section-label">06</div>
+        <div class="section-label">07</div>
         <div class="section-content">
-          <p class="eyebrow">Recommended next steps</p>
-          <h2>The production path begins with discovery and measurement—not a model rewrite.</h2>
+          <p class="eyebrow">Production-validation plan</p>
+          <h2>No production decision should precede discovery, measurement, and shadow evaluation.</h2>
           <div class="timeline">
             <article>
               <p class="timeline-day">Days 0–30</p>
@@ -427,8 +457,8 @@
 
           <div class="questions-panel">
             <div>
-              <p class="eyebrow">Questions I would ask internally</p>
-              <h3>The information needed before choosing architecture or policy</h3>
+              <p class="eyebrow">Required discovery questions</p>
+              <h3>Inputs needed before selecting architecture or enforcement policy</h3>
             </div>
             <ol>
               <li>Which player or marketplace harms matter most, and how are they currently measured?</li>
@@ -441,29 +471,23 @@
         </div>
       </section>
 
-      <section class="report-section portfolio-close">
-        <div class="section-label">07</div>
+      <section class="report-section risk-section" id="risks">
+        <div class="section-label">08</div>
         <div class="section-content">
-          <p class="eyebrow">What this portfolio demonstrates</p>
-          <h2>Technical depth plus the judgment to operate an integrity function.</h2>
-          <div class="capability-list">
-            <span>Low-latency Go systems</span>
-            <span>Event and identity contracts</span>
-            <span>Behavioral and graph analytics</span>
-            <span>Adversarial evaluation</span>
-            <span>Offline policy evaluation</span>
-            <span>Investigator experience</span>
-            <span>Marketplace economics</span>
-            <span>Guardrails and rollback</span>
-            <span>Privacy-aware design</span>
-            <span>Operational measurement</span>
+          <p class="eyebrow">Risk and governance requirements</p>
+          <h2>Incorrect intervention can harm users and the marketplace.</h2>
+          <p class="section-lede">Anti-bot systems can restrict account access, alter market liquidity, create support and appeal burdens, and introduce privacy risk. Detection quality is therefore only one part of the acceptance standard.</p>
+          <div class="risk-grid">
+            <article><h3>False attribution</h3><p>Fast or coordinated behavior can be legitimate. Shared households, accessibility tools, delegated use, and expert traders require explicit hard-negative coverage and review paths.</p></article>
+            <article><h3>Disproportionate action</h3><p>Evidence strength should determine action strength. Uncertain cases should favor observation, challenge, cooldown, or narrowly scoped restriction over irreversible account action.</p></article>
+            <article><h3>Marketplace distortion</h3><p>Controls can reduce liquidity, increase spreads, delay fills, or shift abuse elsewhere. Harm prevention and market-health guardrails must be evaluated together.</p></article>
+            <article><h3>Privacy and linkage</h3><p>Entity correlation can create sensitive relationship inferences. Collection, retention, regional use, and investigator access require explicit authorization and minimization.</p></article>
+            <article><h3>Adaptive displacement</h3><p>A mitigation changes attacker incentives and the observed population. Permanent regressions and renewed adaptive evaluation are required after every material policy change.</p></article>
+            <article><h3>Audit and recourse</h3><p>Versioned decisions, reason codes, evidence provenance, exposure logging, appeal handling, and rollback ownership are required before consequential enforcement.</p></article>
           </div>
-          <blockquote>
-            “The objective is not to identify bots in the abstract. It is to reduce unfair automated advantage and measurable harm while protecting legitimate players.”
-          </blockquote>
-          <div class="final-actions">
-            <a class="integrity-button" href="mailto:bijan.pourriahi@gmail.com">Discuss the work</a>
-            <a class="integrity-button secondary" href="https://github.com/beejmaxx">View GitHub profile</a>
+          <div class="acceptance-standard">
+            <h3>Minimum acceptance standard</h3>
+            <p>A candidate control should not advance beyond shadow operation without representative labels, explicit metric denominators, calibrated base-rate evaluation, hard-negative coverage, privacy review, operational capacity, reversible rollout, and named rollback and appeal owners.</p>
           </div>
         </div>
       </section>
@@ -471,14 +495,13 @@
 
     <footer class="integrity-footer">
       <div>
-        <strong>bijan</strong>
-        <p>Software systems · applied research · production ownership</p>
+        <strong>Marketplace Anti-Bot Engineering</strong>
+        <p>Independent synthetic research prototypes · updated August 2026</p>
       </div>
       <div class="footer-links">
-        <a href="/">Portfolio</a>
-        <a href="/resume.pdf">Resume</a>
-        <a href="mailto:bijan.pourriahi@gmail.com">Email</a>
-        <a href="https://github.com/beejmaxx">GitHub</a>
+        <a href="#report">Report top</a>
+        <a href="#system">Repositories</a>
+        <a href="#assumptions">Assumptions</a>
       </div>
     </footer>
   </body>

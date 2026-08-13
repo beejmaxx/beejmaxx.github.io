@@ -4,26 +4,26 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://beejmaxx.github.io"),
   title: {
-    default: "Bijan Pourriahi",
-    template: "%s — Bijan Pourriahi",
+    default: "bijan",
+    template: "%s — bijan",
   },
   description:
-    "Software projects, case studies, blog posts, and unfinished work by Bijan Pourriahi.",
+    "Software projects, case studies, blog posts, and unfinished work by bijan.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: "Bijan Pourriahi",
+    title: "bijan",
     description: "Projects, case studies, blog posts, and unfinished work.",
     type: "website",
     url: "https://beejmaxx.github.io",
-    siteName: "Bijan Pourriahi",
-    images: [{ url: "/og.png", width: 1733, height: 909, alt: "Bijan Pourriahi" }],
+    siteName: "bijan",
+    images: [{ url: "/og.png", width: 1732, height: 908, alt: "bijan" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bijan Pourriahi",
+    title: "bijan",
     description: "Projects, case studies, blog posts, and unfinished work.",
     images: ["/og.png"],
   },

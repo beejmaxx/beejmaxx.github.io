@@ -9,7 +9,7 @@ export default function ProjectLedConcept() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <a className={styles.name} href="/concepts">Bijan Pourriahi</a>
+        <a className={styles.name} href="/concepts">bijan</a>
         <nav aria-label="Homepage concepts">
           {conceptLinks.slice(1).map(([label, href]) => <a href={href} key={href}>{label}</a>)}
         </nav>

@@ -7,7 +7,7 @@ import styles from "./personal-web.module.css";
 
 export const metadata: Metadata = {
   title: "Personal web homepage concept",
-  description: "An independent, personal-web-inspired portfolio concept for Bijan Pourriahi.",
+  description: "An independent, personal-web-inspired portfolio concept for bijan.",
 };
 
 export function PersonalWebHomepage({ showConceptNavigation = true, fixedTheme }: { showConceptNavigation?: boolean; fixedTheme?: ThemeId }) {
@@ -22,9 +22,9 @@ export function PersonalWebHomepage({ showConceptNavigation = true, fixedTheme }
           </a>
         )}
         <div className={styles.identity} aria-hidden="true">
-          <span>bp</span>
+          <span>b</span>
         </div>
-        <h1>Bijan Pourriahi</h1>
+        <h1>bijan</h1>
         <p className={styles.subtitle}>software · systems · experiments</p>
         <nav aria-label="Primary navigation" className={styles.iconNav}>
           <a href="#work">work</a>
@@ -175,7 +175,7 @@ export function PersonalWebHomepage({ showConceptNavigation = true, fixedTheme }
           <a href="/resume.pdf" title="Resume">
             <span aria-hidden="true">↓</span> Résumé
           </a>
-          <a href="mailto:bijan.pourriahi@gmail.com" title="Email Bijan">
+          <a href="mailto:bijan.pourriahi@gmail.com" title="Email bijan">
             <span aria-hidden="true">@</span> Email
           </a>
         </nav>

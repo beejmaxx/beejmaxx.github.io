@@ -12,7 +12,7 @@ export default function HybridConcept() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <a className={styles.name} href="/concepts">Bijan Pourriahi</a>
+        <a className={styles.name} href="/concepts">bijan</a>
         <nav aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a href="#systems">Systems</a>
@@ -26,7 +26,7 @@ export default function HybridConcept() {
         <section className={styles.hero}>
           <div>
             <p className={styles.eyebrow}>Software engineer</p>
-            <h1>Bijan Pourriahi.<br /><span>Work and experiments.</span></h1>
+            <h1>bijan.<br /><span>Work and experiments.</span></h1>
             <p className={styles.intro}>
               I build market systems, developer tools, research infrastructure, and browser
               experiments. This site collects the strongest work and the larger public record.
@@ -103,7 +103,7 @@ export default function HybridConcept() {
       </main>
 
       <footer className={styles.footer}>
-        <div><p className={styles.eyebrow}>Contact</p><a href="mailto:bijan.pourriahi@gmail.com">bijan.pourriahi@gmail.com</a></div>
+        <div><p className={styles.eyebrow}>Contact</p><a href="mailto:bijan.pourriahi@gmail.com">email</a></div>
         <nav aria-label="Homepage concepts">{conceptLinks.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
       </footer>
     </div>

@@ -14,8 +14,8 @@ export function PersonalSiteShell({
     <ThemeShell>
       <div className={styles.page} id="top">
         <header className={styles.masthead}>
-          <a className={styles.identity} href="/" aria-label="Bijan Pourriahi, home"><span>bp</span></a>
-          <div><a className={styles.name} href="/">Bijan Pourriahi</a><p>{section}</p></div>
+          <a className={styles.identity} href="/" aria-label="bijan, home"><span>b</span></a>
+          <div><a className={styles.name} href="/">bijan</a><p>{section}</p></div>
           <nav aria-label="Main navigation">
             <a href="/work-map">stuff</a>
             <a href="/archive">everything</a>

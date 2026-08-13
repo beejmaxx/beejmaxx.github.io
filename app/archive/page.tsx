@@ -6,7 +6,7 @@ import styles from "./archive.module.css";
 
 export const metadata: Metadata = {
   title: "Everything",
-  description: "All public repositories by Bijan Pourriahi.",
+  description: "All public repositories by bijan.",
 };
 
 export default function ArchivePage() {

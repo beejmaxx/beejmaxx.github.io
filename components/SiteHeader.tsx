@@ -2,9 +2,9 @@ export function SiteHeader() {
   return (
     <div className="inner-header">
       <header className="site-header">
-        <a className="wordmark" href="/" aria-label="Bijan Pourriahi, home">
-          <span className="wordmark-mark">BP</span>
-          <span>Bijan Pourriahi</span>
+        <a className="wordmark" href="/" aria-label="bijan, home">
+          <span className="wordmark-mark">b</span>
+          <span>bijan</span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
           <a href="/case-studies">Case studies</a>
@@ -23,7 +23,7 @@ export function SimpleFooter() {
     <footer className="site-footer wrap">
       <div>
         <p className="eyebrow">Contact</p>
-        <a className="footer-email" href="mailto:bijan.pourriahi@gmail.com">bijan.pourriahi@gmail.com ↗</a>
+        <a className="footer-email" href="mailto:bijan.pourriahi@gmail.com">email ↗</a>
       </div>
       <div className="footer-links">
         <a href="https://github.com/beejmaxx" target="_blank" rel="noreferrer">GitHub</a>

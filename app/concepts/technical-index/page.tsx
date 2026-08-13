@@ -8,7 +8,7 @@ export default function TechnicalIndexConcept() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <div><b>BIJAN POURRIAHI</b><span>SOFTWARE ENGINEER</span></div>
+        <div><b>bijan</b><span>SOFTWARE ENGINEER</span></div>
         <nav aria-label="Homepage concepts">{conceptLinks.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
         <div className={styles.status}><span>OPEN TO INTERESTING WORK</span><i /></div>
       </header>
@@ -23,7 +23,7 @@ export default function TechnicalIndexConcept() {
             <div><dt>Primary work</dt><dd>Real-time systems, developer platforms, research infrastructure</dd></div>
             <div><dt>Languages</dt><dd>Rust, Python, TypeScript, Go</dd></div>
             <div><dt>Public history</dt><dd>45 original repositories since 2010</dd></div>
-            <div><dt>Contact</dt><dd><a href="mailto:bijan.pourriahi@gmail.com">bijan.pourriahi@gmail.com</a></dd></div>
+            <div><dt>Contact</dt><dd><a href="mailto:bijan.pourriahi@gmail.com">email</a></dd></div>
           </dl>
         </section>
 

@@ -4,7 +4,7 @@ import styles from "./work-map.module.css";
 
 export const metadata: Metadata = {
   title: "Stuff I’ve Made",
-  description: "Projects, books, systems, experiments, and unfinished things by Bijan Pourriahi.",
+  description: "Projects, books, systems, experiments, and unfinished things by bijan.",
 };
 
 const goodPlaces = [

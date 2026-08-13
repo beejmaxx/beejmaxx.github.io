@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PersonalSiteShell } from "@/components/PersonalSiteShell";
 import styles from "../site-pages.module.css";
 
-export const metadata: Metadata = { title: "About", description: "About Bijan Pourriahi." };
+export const metadata: Metadata = { title: "About", description: "About bijan." };
 
 const rules = [
   ["01", "show the state", "If a machine knows something important, the person operating it should be able to see it."],
@@ -14,10 +14,10 @@ export default function AboutPage() {
   return (
     <PersonalSiteShell section="about">
       <main>
-        <section className={styles.hero} data-mark="@"><p className={styles.overline}>about the person</p><h1>Bijan<br /><span>Pourriahi.</span></h1><p className={styles.deck}>Software engineer. I like systems that can explain what they are doing.</p></section>
+        <section className={styles.hero} data-mark="@"><p className={styles.overline}>about the person</p><h1><span>bijan.</span></h1><p className={styles.deck}>Software engineer. I like systems that can explain what they are doing.</p></section>
         <section className={styles.split}>
           <ul className={styles.facts}>
-            <li><span>github</span><span>beejmaxx</span></li><li><span>since</span><span>2010</span></li><li><span>repos</span><span>126 public</span></li><li><span>usual tools</span><span>Rust / Python / TS</span></li><li><span>email</span><span>bijan.pourriahi@gmail.com</span></li>
+            <li><span>github</span><span>beejmaxx</span></li><li><span>since</span><span>2010</span></li><li><span>repos</span><span>126 public</span></li><li><span>usual tools</span><span>Rust / Python / TS</span></li><li><span>contact</span><span><a href="mailto:bijan.pourriahi@gmail.com">email</a></span></li>
           </ul>
           <div className={styles.copy}>
             <p>I build trading infrastructure, developer tools, APIs, browser experiments, data systems, and agent-facing machinery.</p>

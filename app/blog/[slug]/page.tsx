@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <h1>{post.title}</h1>
             <p className="article-excerpt">{post.excerpt}</p>
             <div className="article-byline">
-              <span>By Bijan Pourriahi</span>
+              <span>by bijan</span>
               <span><time dateTime={post.date}>{post.displayDate}</time> · {post.readingTime}</span>
             </div>
           </header>

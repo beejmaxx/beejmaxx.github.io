@@ -3,7 +3,7 @@ import { PersonalSiteShell } from "@/components/PersonalSiteShell";
 import { getAllPosts } from "@/lib/posts";
 import styles from "../site-pages.module.css";
 
-export const metadata: Metadata = { title: "Notes", description: "Notes by Bijan Pourriahi." };
+export const metadata: Metadata = { title: "Notes", description: "Notes by bijan." };
 
 export default function BlogPage() {
   const posts = getAllPosts();

@@ -9,9 +9,9 @@ export default function NotebookConcept() {
   return (
     <div className={styles.page}>
       <aside className={styles.sidebar}>
-        <a className={styles.identity} href="/concepts">BP / WORK LOG</a>
+        <a className={styles.identity} href="/concepts">b / work log</a>
         <div className={styles.meta}>
-          <span>Bijan Pourriahi</span>
+          <span>bijan</span>
           <span>Software engineer</span>
           <span>Shanghai · UTC+8</span>
           <span>GitHub since 2010</span>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { projects } from "@/lib/projects";
 import { conceptLinks, conceptProjects, secondaryProjects } from "../concept-data";
 import ThemeShell from "./ThemeShell";
+import type { ThemeId } from "./ThemeShell";
 import styles from "./personal-web.module.css";
 
 export const metadata: Metadata = {
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
   description: "An independent, personal-web-inspired portfolio concept for Bijan Pourriahi.",
 };
 
-export function PersonalWebHomepage({ showConceptNavigation = true }: { showConceptNavigation?: boolean }) {
+export function PersonalWebHomepage({ showConceptNavigation = true, fixedTheme }: { showConceptNavigation?: boolean; fixedTheme?: ThemeId }) {
   const originalProjects = projects.filter((project) => !project.fork).length;
 
   return (
-    <ThemeShell>
+    <ThemeShell fixedTheme={fixedTheme}>
       <header className={styles.masthead}>
         {showConceptNavigation && (
           <a className={styles.conceptBack} href="/concepts">

@@ -7,8 +7,11 @@
   --clay: #c6ada0;
   --rust: #803d2a;
   --rust-dark: #572b20;
+  --link: var(--rust);
+  --link-dark: var(--rust-dark);
   --ink: #20272a;
   --muted: #5b625f;
+  --line: color-mix(in srgb, var(--ink) 55%, transparent);
   --nav: #293b43;
   --nav-text: #f1eadc;
   --tag: rgb(242 237 224 / 55%);
@@ -656,7 +659,7 @@
   right: 18px;
   bottom: 18px;
   display: grid;
-  grid-template-columns: 42px minmax(138px, 1fr) 42px;
+  grid-template-columns: minmax(176px, 1fr);
   gap: 7px;
   align-items: stretch;
   padding: 9px;
@@ -667,7 +670,6 @@
   color: var(--ink);
 }
 
-.themeSwitcher button,
 .themeSwitcher select {
   min-height: 42px;
   border: 1px solid var(--ink);
@@ -678,8 +680,6 @@
   font: 800 14px/1 var(--body-font);
 }
 
-.themeSwitcher button:hover,
-.themeSwitcher button:focus-visible,
 .themeSwitcher select:hover,
 .themeSwitcher select:focus-visible {
   outline: 2px solid var(--rust);
@@ -764,7 +764,7 @@
     right: 10px;
     bottom: 10px;
     left: 10px;
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .projects,

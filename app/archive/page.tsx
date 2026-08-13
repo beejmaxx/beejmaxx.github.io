@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { PersonalSiteShell } from "@/components/PersonalSiteShell";
 import { ProjectArchive } from "@/components/ProjectArchive";
-import { SimpleFooter, SiteHeader } from "@/components/SiteHeader";
 import { projects } from "@/lib/projects";
+import styles from "./archive.module.css";
 
 export const metadata: Metadata = {
-  title: "Repository Archive",
-  description: "Every public Bijan Pourriahi repository: original work, experiments, forks, utilities, and old ideas.",
+  title: "Everything",
+  description: "All public repositories by Bijan Pourriahi.",
 };
 
 export default function ArchivePage() {
@@ -13,22 +14,30 @@ export default function ArchivePage() {
   const forks = projects.length - originals;
 
   return (
-    <>
-      <SiteHeader />
-      <main className="page-main">
-        <section className="page-hero wrap">
-          <p className="eyebrow">GitHub archive</p>
-          <h1>{projects.length} public<br /><span className="serif">repositories.</span></h1>
-          <p className="page-deck">
-            {originals} original projects and {forks} forks from 2010 to now, including experiments,
-            utilities, old ideas, and unfinished work.
+    <PersonalSiteShell section="everything" footerNote="end of pile">
+      <main className={styles.page}>
+        <section className={styles.hero}>
+          <p className={styles.overline}>the unfiltered pile</p>
+          <h1><span>{projects.length}</span><br />repositories.</h1>
+          <div className={styles.tally}>
+            <p><strong>{originals}</strong> mine</p>
+            <p><strong>{forks}</strong> forks</p>
+            <p><strong>2010—now</strong> more or less</p>
+          </div>
+          <p className={styles.deck}>
+            {projects.length} public repositories. Finished things, dead things, forks, utilities,
+            tests, bad names, and projects I’ve forgotten.
           </p>
         </section>
-        <section className="wrap">
+
+        <section className={styles.archive} id="repos" aria-label="All repositories">
+          <div className={styles.archiveHeading}>
+            <span>name / note / language / year</span>
+            <a href="/work-map">want the organized version? →</a>
+          </div>
           <ProjectArchive projects={projects} />
         </section>
       </main>
-      <SimpleFooter />
-    </>
+    </PersonalSiteShell>
   );
 }

@@ -30,7 +30,7 @@ export function ProjectArchive({ projects }: { projects: Project[] }) {
             type="button"
             aria-pressed={filter === value}
           >
-            {value === "all" ? "Everything" : value === "original" ? "Original work" : "Forks"}
+            {value === "all" ? "All" : value === "original" ? "Mine" : "Forks"}
           </button>
         ))}
         <span className="archive-count" aria-live="polite">{visibleProjects.length} shown</span>
@@ -39,7 +39,7 @@ export function ProjectArchive({ projects }: { projects: Project[] }) {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search name, language, or idea…"
+          placeholder="find something…"
           aria-label="Search projects"
         />
       </div>
@@ -49,12 +49,12 @@ export function ProjectArchive({ projects }: { projects: Project[] }) {
           <a className="archive-row" href={project.url} target="_blank" rel="noreferrer" key={project.name}>
             <span className="archive-number">{String(index + 1).padStart(2, "0")}</span>
             <span className="archive-name">{project.name}</span>
-            <p className="archive-description">{project.description || "A public repository from the working archive."}</p>
+            <p className="archive-description">{project.description || "No description."}</p>
             <span className="archive-language">{project.fork ? `Fork · ${project.language}` : project.language}</span>
             <span className="archive-year">{project.created.slice(0, 4)} ↗</span>
           </a>
         ))}
-        {visibleProjects.length === 0 && <p className="archive-empty">Nothing matches that search — which may be a project idea in itself.</p>}
+        {visibleProjects.length === 0 && <p className="archive-empty">No matches.</p>}
       </div>
     </>
   );

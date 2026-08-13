@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./personal-web.module.css";
 
 const themes = [
@@ -14,7 +14,7 @@ const themes = [
   { id: "casa", name: "Casa" },
 ] as const;
 
-type ThemeId = (typeof themes)[number]["id"];
+export type ThemeId = (typeof themes)[number]["id"];
 
 const storageKey = "portfolio-personal-web-theme";
 
@@ -22,50 +22,31 @@ function isThemeId(value: string | null): value is ThemeId {
   return themes.some((theme) => theme.id === value);
 }
 
-export default function ThemeShell({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<ThemeId>("field-manual");
-
-  const cycleTheme = useCallback((direction: number) => {
-    setTheme((current) => {
-      const currentIndex = themes.findIndex((item) => item.id === current);
-      const nextIndex = (currentIndex + direction + themes.length) % themes.length;
-      return themes[nextIndex].id;
-    });
-  }, []);
+export default function ThemeShell({ children, fixedTheme }: { children: React.ReactNode; fixedTheme?: ThemeId }) {
+  const [theme, setTheme] = useState<ThemeId>(fixedTheme ?? "arctic");
+  const [hasRestoredTheme, setHasRestoredTheme] = useState(Boolean(fixedTheme));
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem(storageKey);
-    if (!isThemeId(savedTheme)) return;
-    const restoreTheme = window.setTimeout(() => setTheme(savedTheme), 0);
+    if (fixedTheme) return;
+    const restoreTheme = window.setTimeout(() => {
+      const savedTheme = window.localStorage.getItem(storageKey);
+      if (isThemeId(savedTheme)) setTheme(savedTheme);
+      setHasRestoredTheme(true);
+    }, 0);
     return () => window.clearTimeout(restoreTheme);
-  }, []);
+  }, [fixedTheme]);
 
   useEffect(() => {
+    if (fixedTheme || !hasRestoredTheme) return;
     window.localStorage.setItem(storageKey, theme);
-  }, [theme]);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const target = event.target as HTMLElement | null;
-      if (target?.matches("input, textarea, select, [contenteditable='true']")) return;
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      event.preventDefault();
-      cycleTheme(event.key === "ArrowRight" ? 1 : -1);
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [cycleTheme]);
+  }, [fixedTheme, hasRestoredTheme, theme]);
 
   const themeIndex = themes.findIndex((item) => item.id === theme);
 
   return (
     <div className={styles.page} data-theme={theme}>
       {children}
-      <aside className={styles.themeSwitcher} aria-label="Theme switcher">
-        <button type="button" onClick={() => cycleTheme(-1)} aria-label="Previous theme">
-          ←
-        </button>
+      {!fixedTheme && <aside className={styles.themeSwitcher} aria-label="Theme switcher">
         <label>
           <span>
             Theme {themeIndex + 1}/{themes.length}
@@ -78,9 +59,6 @@ export default function ThemeShell({ children }: { children: React.ReactNode }) 
             ))}
           </select>
         </label>
-        <button type="button" onClick={() => cycleTheme(1)} aria-label="Next theme">
-          →
-        </button>
         <div className={styles.themeDots} aria-label="Choose a theme">
           {themes.map((item, index) => (
             <button
@@ -94,8 +72,8 @@ export default function ThemeShell({ children }: { children: React.ReactNode }) 
             />
           ))}
         </div>
-        <small>Use ← → keys</small>
-      </aside>
+        <small>Saved across pages</small>
+      </aside>}
     </div>
   );
 }

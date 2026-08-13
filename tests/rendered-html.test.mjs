@@ -9,24 +9,30 @@ async function readPage(path) {
 }
 
 test("exports the portfolio and all primary routes", async () => {
-  const [home, archive, blog, about, caseStudies] = await Promise.all([
+  const [home, archive, blog, about, caseStudies, workMap] = await Promise.all([
     readPage("index.html"),
     readPage("archive.html"),
     readPage("blog.html"),
     readPage("about.html"),
     readPage("case-studies.html"),
+    readPage("work-map.html"),
   ]);
 
   assert.match(home, /Four projects, each interesting for a different reason/);
   assert.match(home, /Depthfield/);
-  assert.match(home, /Polymarket MCP/);
-  assert.match(home, /Field manual/);
+  assert.match(workMap, /Polymarket MCP/);
   assert.match(home, /Rust API Field Guide/);
-  assert.match(home, /Problem-first/);
-  assert.match(archive, /126(?:<!-- -->)? public/i);
-  assert.match(blog, /No posts published yet/);
+  assert.match(home, /problem-first/);
+  assert.match(archive, /the unfiltered pile/i);
+  assert.match(blog, /nothing here yet/i);
   assert.match(about, /engineer/i);
-  assert.match(caseStudies, /Selected systems/);
+  assert.match(caseStudies, /systems/);
+  assert.match(workMap, /stuff/);
+  assert.match(workMap, /same obsession, different project/);
+  for (const page of [home, archive, blog, about, caseStudies, workMap]) {
+    assert.match(page, /Saved across pages/);
+    assert.match(page, /Arctic/);
+  }
 });
 
 test("keeps unpublished drafts out of the export and preserves public assets", async () => {
@@ -57,7 +63,7 @@ test("exports independent homepage concepts", async () => {
   assert.match(personalWeb, /Things that didn’t work/);
   assert.match(personalWeb, /0 posts published/);
   assert.match(personalWeb, /Field manual/);
-  assert.match(personalWeb, /Use ← → keys/);
+  assert.match(personalWeb, /Saved across pages/);
   assert.match(hybrid, /The rest of the work stays visible/);
   assert.match(projectLed, /I build market systems/);
   assert.match(notebook, /working notebook/);

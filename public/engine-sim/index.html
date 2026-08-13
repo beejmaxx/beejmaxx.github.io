@@ -9,8 +9,8 @@
     />
     <meta name="theme-color" content="#171717" />
     <title>Engine sound utility</title>
-    <script type="module" crossorigin src="./assets/index-Y27Z04RH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CON8DeaK.css">
+    <script type="module" crossorigin src="./assets/index-DPmhtsFa.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-cnCkd0q6.css">
   </head>
   <body>
     <main class="app">
@@ -69,6 +69,43 @@
           </div>
           <progress id="render-progress" max="1" value="0">0%</progress>
         </div>
+      </section>
+
+      <section class="panel model-panel" aria-labelledby="model-heading">
+        <div class="model-head">
+          <h2 id="model-heading">Model inspector</h2>
+          <span id="model-state">Selected configuration</span>
+        </div>
+
+        <dl class="model-facts">
+          <div><dt>Engine</dt><dd id="model-engine">Subaru EJ25</dd></div>
+          <div><dt>Geometry</dt><dd id="model-geometry">4 cylinders · Boxer</dd></div>
+          <div><dt>Displacement</dt><dd id="model-displacement">2.5 L</dd></div>
+          <div><dt>Physics rate</dt><dd id="model-frequency">Load a render</dd></div>
+          <div><dt>Gas paths</dt><dd id="model-routing">Load a render</dd></div>
+          <div><dt>Acoustics</dt><dd id="model-acoustics">Impulse-response convolution</dd></div>
+        </dl>
+
+        <ol class="model-flow" aria-label="Physical model to audio signal path">
+          <li><strong>Mechanics</strong><span>crank · rods · pistons · valvetrain</span></li>
+          <li><strong>Gas exchange</strong><span>throttle · intake · valve flow</span></li>
+          <li><strong>Combustion</strong><span>mixture · ignition · flame travel</span></li>
+          <li><strong>Exhaust</strong><span>runner pressure · bidirectional flow</span></li>
+          <li><strong>Acoustics</strong><span>resample · convolution · leveling</span></li>
+          <li><strong>PCM</strong><span>44.1 kHz mono output</span></li>
+        </ol>
+
+        <dl class="telemetry" aria-label="Live simulation telemetry">
+          <div><dt>RPM</dt><dd id="telemetry-rpm">—</dd></div>
+          <div><dt>Manifold</dt><dd id="telemetry-manifold">—</dd></div>
+          <div><dt>Intake AFR</dt><dd id="telemetry-afr">—</dd></div>
+          <div><dt>Cylinder</dt><dd id="telemetry-cylinder">—</dd></div>
+          <div><dt>Exhaust</dt><dd id="telemetry-exhaust">—</dd></div>
+        </dl>
+        <p class="model-note">
+          Readouts come from the Wasm simulation during custom rendering. This display only observes
+          state; it never clocks or schedules audio.
+        </p>
       </section>
 
       <section id="player-panel" class="panel output-panel" hidden aria-labelledby="output-heading">

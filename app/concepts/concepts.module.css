@@ -1,0 +1,14 @@
+.page { min-height: 100vh; background: #f4f4f1; color: #171717; font-family: Arial, Helvetica, sans-serif; padding: 72px 24px; }
+.shell { width: min(1040px, 100%); margin: 0 auto; }
+.kicker { margin: 0 0 18px; color: #6a6a66; font: 12px/1.4 monospace; text-transform: uppercase; letter-spacing: .06em; }
+.page h1 { margin: 0; font-size: clamp(42px, 7vw, 72px); line-height: 1; letter-spacing: -.05em; }
+.intro { max-width: 680px; margin: 28px 0 60px; color: #555; font-size: 18px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #222; }
+.grid a { min-height: 250px; display: flex; flex-direction: column; padding: 24px 28px 26px 0; border-bottom: 1px solid #ccc; }
+.grid a:nth-child(odd) { border-right: 1px solid #ccc; }
+.grid a:nth-child(even) { padding-left: 28px; }
+.grid span { color: #777; font: 11px monospace; }
+.grid strong { margin-top: 40px; font-size: 25px; }
+.grid p { max-width: 380px; color: #666; }
+.grid i { margin-top: auto; color: #174ea6; font-size: 13px; font-style: normal; }
+@media (max-width: 650px) { .grid { grid-template-columns: 1fr; } .grid a, .grid a:nth-child(even) { min-height: 220px; padding: 22px 0; border-right: 0; } }

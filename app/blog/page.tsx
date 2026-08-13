@@ -23,6 +23,12 @@ export default function BlogPage() {
           </p>
         </section>
         <section className="blog-list wrap" aria-label="Articles">
+          {posts.length === 0 && (
+            <div className="blog-empty">
+              <h2>No posts published yet.</h2>
+              <p>The blog is set up, but the current drafts are staying private.</p>
+            </div>
+          )}
           {posts.map((post) => (
             <a className="blog-row" href={`/blog/${post.slug}`} key={post.slug}>
               <time dateTime={post.date}>{post.displayDate}</time>

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Current and target architecture of the Aikido policy research and execution system.">
+    <title>Aikido architecture</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-name" href="./">Aikido</a>
+        <nav aria-label="Primary navigation">
+          <a href="./">Overview</a>
+          <a aria-current="page" href="architecture.html">Architecture</a>
+          <a href="https://github.com/beejmaxx/aikido">Repository</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <header class="document-header">
+        <p class="document-type">Architecture summary</p>
+        <h1>Aikido architecture</h1>
+        <p class="summary">
+          This document summarizes the implemented system, the locked target
+          architecture, and the migration boundary between them. It does not
+          replace the versioned architecture documents in the repository.
+        </p>
+        <dl class="metadata">
+          <div><dt>Architecture object</dt><dd>Policy operating system</dd></div>
+          <div><dt>Decision contract</dt><dd>Immutable policy-state pack</dd></div>
+          <div><dt>Realized-truth owner</dt><dd>Runtime and evaluator</dd></div>
+          <div><dt>Migration status</dt><dd>In progress</dd></div>
+        </dl>
+      </header>
+
+      <nav class="toc" aria-label="On this page">
+        <strong>Contents</strong>
+        <ol>
+          <li><a href="#target">Target flow</a></li>
+          <li><a href="#authority">Authority model</a></li>
+          <li><a href="#current">Current implementation</a></li>
+          <li><a href="#contracts">Core contracts</a></li>
+          <li><a href="#storage">Storage roles</a></li>
+          <li><a href="#invariants">Runtime and research invariants</a></li>
+          <li><a href="#migration">Migration order</a></li>
+        </ol>
+      </nav>
+
+      <section id="target">
+        <h2>1. Target flow</h2>
+        <pre class="diagram" aria-label="Target architecture"><code>Git
+  code, schemas, versioned contracts
+
+market + discovery          research_control
+  facts + evidence           queues + operational boards
+        |                              |
+        +-------------+----------------+
+                      |
+                      v
+             pack compiler / publication
+                      |
+                      v
+            immutable PolicyStatePack
+                      |
+                      v
+PolicyStatePack -&gt; Policy -&gt; RequestedTargetExposure
+                                      |
+                                      v
+                             Runtime / Realizer
+                                      |
+                                      v
+                              ExecutionReport
+                                      |
+                                      v
+                           Evaluation / EpisodeResult</code></pre>
+        <p>
+          Point-in-time compilation occurs at one publication boundary. Once a
+          pack is loaded, policy and runtime do not depend on live warehouse
+          reads. Policy produces intent; runtime applies executable mechanics;
+          evaluation judges realized outcomes.
+        </p>
+      </section>
+
+      <section id="authority">
+        <h2>2. Authority model</h2>
+        <p>The architecture distinguishes three forms of authority:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Question</th><th>Authority</th><th>Includes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>What research evidence exists?</td>
+                <td><code>discovery</code></td>
+                <td>Config payloads, exact evaluations, trades, daily evidence, provenance</td>
+              </tr>
+              <tr>
+                <td>What was available to policy?</td>
+                <td>Frozen <code>PolicyStatePack</code></td>
+                <td>Decision-time slice, cutoff, identity, hashes, lineage, allowed context</td>
+              </tr>
+              <tr>
+                <td>What actually happened?</td>
+                <td>Runtime and evaluator output</td>
+                <td>Executable state, fills, account ledger, drawdown, episode outcome</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Scores, dashboards, mutable current views, compatibility snapshots,
+          and leaderboards are projections. They are not substitutes for one of
+          these authority surfaces.
+        </p>
+      </section>
+
+      <section id="current">
+        <h2>3. Current implementation</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Concern</th><th>Current surface</th><th>Target role</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Market facts</td>
+                <td>Legacy and <code>market.*</code> compatibility surfaces</td>
+                <td><code>market</code></td>
+                <td><span class="status status-progress">Converging</span></td>
+              </tr>
+              <tr>
+                <td>Signal research evidence</td>
+                <td><code>discovery.signal_*</code> and legacy discovery surfaces</td>
+                <td><code>discovery</code></td>
+                <td><span class="status status-progress">Converging</span></td>
+              </tr>
+              <tr>
+                <td>Research operations</td>
+                <td><code>research_control</code> jobs, plans, and boards</td>
+                <td>Operational control plane</td>
+                <td><span class="status status-aligned">Aligned</span></td>
+              </tr>
+              <tr>
+                <td>Decision publication</td>
+                <td>Pack registry, manifests, builders, and active pointer</td>
+                <td>Single pack compiler and publication boundary</td>
+                <td><span class="status status-progress">Converging</span></td>
+              </tr>
+              <tr>
+                <td>Policy and simulation</td>
+                <td><code>policy-kernel</code>, <code>policy-sim</code>, <code>policy-sim-env</code></td>
+                <td>Pack input to requested exposure</td>
+                <td><span class="status status-progress">Converging</span></td>
+              </tr>
+              <tr>
+                <td>Realization and accounting</td>
+                <td>Runtime and shared simulation/evaluation components</td>
+                <td>One execution and account truth core</td>
+                <td><span class="status status-progress">Converging</span></td>
+              </tr>
+              <tr>
+                <td>Historical PIT snapshots</td>
+                <td><code>portfolio.snapshot*</code> and compatibility views</td>
+                <td>Optional rebuildable cache only</td>
+                <td><span class="status status-legacy">Transitional</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="contracts">
+        <h2>4. Core contracts</h2>
+        <h3>Policy input and output</h3>
+        <pre class="contract"><code>PolicyStatePack -&gt; Policy -&gt; RequestedTargetExposure</code></pre>
+        <p>
+          The policy state pack is an immutable point-in-time input. The policy
+          output expresses desired exposure; it is not a fill or an account fact.
+        </p>
+
+        <h3>Runtime realization and audit</h3>
+        <pre class="contract"><code>RequestedTargetExposure
+    -&gt; ExecutableExposure
+    -&gt; RealizedExecutionState
+    -&gt; ExecutionReport</code></pre>
+        <p>
+          Contract binding, rounding, continuity, fill representation, and
+          accounting belong to the realizer. Policy-specific selection or sizing
+          logic does not.
+        </p>
+
+        <h3>Evaluation</h3>
+        <pre class="contract"><code>ExecutionReport + account path -&gt; EpisodeResult -&gt; promotion gates</code></pre>
+        <p>
+          Only realized runtime/evaluator output can support claims about
+          deployability. Research-screening scores and constituent-level results
+          cannot substitute for account-path replay.
+        </p>
+      </section>
+
+      <section id="storage">
+        <h2>5. Storage roles</h2>
+        <dl class="definition-list">
+          <div>
+            <dt>Git</dt>
+            <dd>Code, schemas, contracts, documentation, and deliberately reviewed small manifests.</dd>
+          </div>
+          <div>
+            <dt>ClickHouse</dt>
+            <dd>Market facts, canonical research evidence, and large immutable warehouse data.</dd>
+          </div>
+          <div>
+            <dt>Postgres</dt>
+            <dd>Queues, operational control state, publication pointers, deployment state, and runtime coordination.</dd>
+          </div>
+          <div>
+            <dt>Artifact storage</dt>
+            <dd>Immutable generated pack payloads, manifests, checksums, and lineage sidecars.</dd>
+          </div>
+        </dl>
+        <p>
+          Postgres is not a second research warehouse. ClickHouse is not a hot
+          decision-loop dependency. Git is not used as bulk evidence storage.
+        </p>
+      </section>
+
+      <section id="invariants">
+        <h2>6. Runtime and research invariants</h2>
+        <ul>
+          <li>At least 126 out-of-sample trading days are required for a result to count as evidence; 189 is the target.</li>
+          <li>Holdout data is measurement-only and cannot change weights, filters, parameters, or gates.</li>
+          <li>Replay and live runtime use the same session and accounting semantics.</li>
+          <li>Positions are flat at 16:00 ET and are not carried overnight.</li>
+          <li>All market-bar and trade time reasoning uses America/New_York.</li>
+          <li>Every evidence-producing run records its exact data publication and provenance.</li>
+          <li>Search, training, canonical replay, and live-shadow may differ in speed but not in account truth.</li>
+          <li>A challenger is not promoted from one scalar metric or one short window.</li>
+        </ul>
+      </section>
+
+      <section id="migration">
+        <h2>7. Migration order</h2>
+        <ol>
+          <li>Keep the target boundaries and authority rules fixed.</li>
+          <li>Ground research inventory and boards in canonical discovery evidence.</li>
+          <li>Move one real baseline end to end through the frozen pack contract.</li>
+          <li>Demonstrate parity with the legacy scheduled path using realized outcomes.</li>
+          <li>Move downstream consumers from live PIT reads to pack consumption.</li>
+          <li>Drain or minimize transitional <code>portfolio.*</code> surfaces.</li>
+          <li>Continue converging runtime, simulation, and evaluation on one truth core.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Source documents</h2>
+        <ul class="document-list">
+          <li><code>docs/problem_frame.md</code></li>
+          <li><code>docs/SYSTEM_INVARIANTS.md</code></li>
+          <li><code>docs/architecture.md</code></li>
+          <li><code>docs/research/ideal_system_target_state_2026-04-21.md</code></li>
+          <li><code>docs/research/current_to_target_system_map_2026-04-21.md</code></li>
+          <li><code>docs/research/target_state_compliance_checklist_2026-04-21.md</code></li>
+          <li><code>docs/policy_pack_system_v1.md</code></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="./">Aikido overview</a> · Architecture summary</p>
+    </footer>
+  </body>
+</html>

@@ -32,7 +32,7 @@ export function SimpleFooter() {
         <a href="/archive">Archive</a>
         <a href="/blog">Blog</a>
       </div>
-      <p className="footer-note">Source code and blog posts are stored on GitHub.</p>
+      <p className="footer-note">Site source and public project history are stored on GitHub.</p>
     </footer>
   );
 }

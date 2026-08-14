@@ -93,7 +93,13 @@ test("publishes the Aikido subsystem dossier series with its evidence visuals", 
   assert.match(convergence, /practice position reaches −150/i);
   assert.match(evidence, /126 out-of-sample trading days/i);
   assert.match(evidence, /canonical_authoritative/);
-  assert.match(hub, /One project, several truth boundaries/i);
+  assert.match(hub, /From question to verdict/i);
+  assert.match(hub, /Follow the truth boundaries/i);
+  assert.equal(hub.match(/data-stage-link/g)?.length, 6);
+  assert.equal(hub.match(/data-stage-panel/g)?.length, 6);
+  assert.doesNotMatch(hub, /data-stage-panel[^>]*hidden/i);
+  assert.match(hub, /Retrying a delta command into a doubled position/i);
+  assert.match(hub, /scalar score outrunning its evidence/i);
   assert.match(hub, /Choose site treatment/i);
   assert.match(hub, /href="\/books"/i);
   assert.doesNotMatch(hub, /href="\/archive"/i);
@@ -115,7 +121,7 @@ test("exports discovery files, data, and public artifacts", async () => {
   assert.equal(JSON.parse(packet).projects.length, 16);
   for (const asset of [
     ".nojekyll", "og.jpg", "resume.pdf", "engine-sim/index.html", "aikido/index.html",
-    "aikido/architecture.html", "case-studies/marketplace-integrity.html",
+    "aikido/architecture.html", "aikido/system-map.js", "case-studies/marketplace-integrity.html",
     "assets/screenshots/depthfield-live.png", "assets/screenshots/trading-fleet-dashboard.png",
   ]) await access(new URL(asset, clientRoot));
 });

@@ -42,17 +42,60 @@
         </div>
       </header>
 
-      <section class="system-slide" aria-labelledby="system-flow-title">
-        <header><span>system / 01</span><h2 id="system-flow-title">One project, several truth boundaries</h2></header>
-        <ol class="system-flow">
-          <li><span>01</span><strong>market facts</strong><small>bars · features · causal state</small></li>
-          <li><span>02</span><strong>research</strong><small>search · score · retain evidence</small></li>
-          <li><span>03</span><strong>frozen input</strong><small>what was knowable then</small></li>
-          <li><span>04</span><strong>policy</strong><small>requested target exposure</small></li>
-          <li><span>05</span><strong>runtime</strong><small>converge observed to desired</small></li>
-          <li><span>06</span><strong>evaluation</strong><small>account path · confidence · verdict</small></li>
+      <section class="one-pass" aria-labelledby="one-pass-title">
+        <header><p class="document-type">End to end / one pass</p><h2 id="one-pass-title">From question to verdict</h2><p>Aikido is not one strategy. It is the machinery that controls how a research idea becomes evidence, then—only if it survives—executable intent.</p></header>
+        <ol>
+          <li><span>01</span><div><strong>Search</strong><p>Ask a bounded question over causal market facts. Fast screening finds candidates; exact replay decides which ones survive.</p></div><small>candidate + evidence</small></li>
+          <li><span>02</span><div><strong>Freeze</strong><p>Compile the decision-time inputs, cutoff, identity, and lineage into an immutable policy-state pack.</p></div><small>published input</small></li>
+          <li><span>03</span><div><strong>Decide</strong><p>Policy reads the frozen pack and current state, then asks for target exposure. It does not claim a fill.</p></div><small>requested intent</small></li>
+          <li><span>04</span><div><strong>Realize</strong><p>Runtime reconciles intent with the broker and moves observed state toward desired state using one account model.</p></div><small>execution report</small></li>
+          <li><span>05</span><div><strong>Judge</strong><p>Exact account-path evaluation, evidence gates, and confidence rules decide what the result is allowed to mean.</p></div><small>verdict or retraction</small></li>
         </ol>
-        <p class="slide-note">The dossiers below follow the boundaries where computation, state, and authority change hands.</p>
+      </section>
+
+      <section class="system-explorer" data-system-map aria-labelledby="system-map-title">
+        <header><span>system map / 01</span><div><h2 id="system-map-title">Follow the truth boundaries</h2><p>Choose a stage. The record below shows its job, authority, surviving evidence, and the failure it is designed to contain.</p></div></header>
+        <nav class="stage-rail" aria-label="Aikido system stages">
+          <a href="#stage-market" data-stage-link><span>01</span><strong>market facts</strong><small>causal state</small></a>
+          <a href="#stage-research" data-stage-link><span>02</span><strong>research</strong><small>search + verify</small></a>
+          <a href="#stage-frozen" data-stage-link><span>03</span><strong>frozen input</strong><small>publish state</small></a>
+          <a href="#stage-policy" data-stage-link><span>04</span><strong>policy</strong><small>request intent</small></a>
+          <a href="#stage-runtime" data-stage-link><span>05</span><strong>runtime</strong><small>realize intent</small></a>
+          <a href="#stage-evaluation" data-stage-link><span>06</span><strong>evaluation</strong><small>judge outcome</small></a>
+        </nav>
+        <div class="stage-records">
+          <article id="stage-market" data-stage-panel>
+            <header><span>01 / market facts</span><h3>Causal inputs, before any claim</h3></header>
+            <dl><div><dt>Job</dt><dd>Prepare bars, features, sessions, and predicate truth without importing information from the future.</dd></div><div><dt>Authority</dt><dd>The versioned market publication and its recorded cutoff—not a mutable dashboard view.</dd></div><div><dt>Evidence left behind</dt><dd>Dataset identity, publication ID, time range, feature requirements, and provenance.</dd></div><div><dt>Failure boundary</dt><dd>Changed source data, hidden lookahead, or a result that cannot say which facts it used.</dd></div></dl>
+            <a href="/case-studies/results-allowed-to-count">related dossier: When a Result Is Allowed to Count →</a>
+          </article>
+          <article id="stage-research" data-stage-panel>
+            <header><span>02 / research</span><h3>Spend exact compute where it can matter</h3></header>
+            <dl><div><dt>Job</dt><dd>Enumerate, prune, screen, rank, and exact-verify candidate ideas while retaining the evidence needed to reproduce them.</dd></div><div><dt>Authority</dt><dd>Canonical exact evaluation is authoritative; the fast screen only decides where expensive evaluation goes.</dd></div><div><dt>Evidence left behind</dt><dd>Search configuration, candidate counts, exact evaluations, trades, daily results, and cache lineage where available.</dd></div><div><dt>Failure boundary</dt><dd>Brute-force combinatorics, approximate outcomes promoted as truth, or a leaderboard with no reconstructable run.</dd></div></dl>
+            <a href="/case-studies/predicate-sweep">related dossier: The Predicate Sweep →</a>
+          </article>
+          <article id="stage-frozen" data-stage-panel>
+            <header><span>03 / frozen input</span><h3>Publish what was knowable then</h3></header>
+            <dl><div><dt>Job</dt><dd>Compile decision-time facts, cutoff, identity, hashes, and allowed context into an immutable policy-state pack.</dd></div><div><dt>Authority</dt><dd>The published pack is the policy input. Live warehouse reads are outside the decision contract.</dd></div><div><dt>Evidence left behind</dt><dd>Manifest, content hashes, lineage sidecar, cutoff, pack identity, and publication pointer.</dd></div><div><dt>Failure boundary</dt><dd>A historical decision silently reading revised or future information from a mutable store.</dd></div></dl>
+            <a href="/case-studies/results-allowed-to-count">related dossier: When a Result Is Allowed to Count →</a>
+          </article>
+          <article id="stage-policy" data-stage-panel>
+            <header><span>04 / policy</span><h3>Express intent without inventing a fill</h3></header>
+            <dl><div><dt>Job</dt><dd>Map the frozen pack and current policy state to requested target exposure.</dd></div><div><dt>Authority</dt><dd>Policy owns desired exposure. It does not own broker state, fills, account equity, or realized outcome.</dd></div><div><dt>Evidence left behind</dt><dd>Decision inputs, selected policy identity, requested exposure, and the trace connecting the request to its pack.</dd></div><div><dt>Failure boundary</dt><dd>Strategy logic quietly absorbing execution mechanics and producing results that cannot be replayed under the same contract.</dd></div></dl>
+            <a href="architecture.html#contracts">see the policy contract in the architecture summary →</a>
+          </article>
+          <article id="stage-runtime" data-stage-panel>
+            <header><span>05 / runtime</span><h3>Converge observed state to desired state</h3></header>
+            <dl><div><dt>Job</dt><dd>Bind contracts, reconcile broker truth, submit only the required delta, and update one account-state model from events.</dd></div><div><dt>Authority</dt><dd>Observed broker state, fills, and the shared account kernel own realized position and account truth.</dd></div><div><dt>Evidence left behind</dt><dd>Requested targets, broker observations, commands, acknowledgements, fills, ledger transitions, and execution reports.</dd></div><div><dt>Failure boundary</dt><dd>Retrying a delta command into a doubled position, or two protection owners fighting over one live position.</dd></div></dl>
+            <div class="record-links"><a href="/case-studies/converge-dont-command">dossier: Converge, Don’t Command →</a><a href="/case-studies/one-account-truth">dossier: One Account, One Truth →</a></div>
+          </article>
+          <article id="stage-evaluation" data-stage-panel>
+            <header><span>06 / evaluation</span><h3>Decide what a result is allowed to mean</h3></header>
+            <dl><div><dt>Job</dt><dd>Replay realized account paths, apply evidence gates and confidence rules, and issue a verdict that can later be retracted.</dd></div><div><dt>Authority</dt><dd>Exact runtime/evaluator output owns deployability claims—not a research screen, constituent score, or short-window summary.</dd></div><div><dt>Evidence left behind</dt><dd>Resolved configuration, trades, daily path, equity, metrics, provenance, matched trials, and promotion status.</dd></div><div><dt>Failure boundary</dt><dd>A scalar score outrunning its evidence or remaining promoted after its authority boundary changes.</dd></div></dl>
+            <a href="/case-studies/results-allowed-to-count">related dossier: When a Result Is Allowed to Count →</a>
+          </article>
+        </div>
+        <p class="explorer-note">The map is an index, not a claim that every migration seam is finished. The architecture summary records the current and target surfaces separately.</p>
       </section>
 
       <section class="dossier-section" aria-labelledby="dossiers-title">
@@ -111,5 +154,6 @@
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Choose site treatment" aria-expanded="false" aria-controls="theme-options"><span></span></button>
     </aside>
     <script src="theme.js"></script>
+    <script src="system-map.js"></script>
   </body>
 </html>

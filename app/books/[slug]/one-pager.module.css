@@ -1,0 +1,204 @@
+.main {
+  width: min(100%, 1040px);
+  margin-inline: auto;
+  padding: 40px 0 90px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 42px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hero {
+  position: relative;
+  padding: 58px 0 72px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.status {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  margin: 0;
+  color: var(--accent);
+  font: 750 10px/1.3 var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 920px;
+  margin: 16px 0 0;
+  font-family: var(--display);
+  font-size: clamp(64px, 11vw, 118px);
+  line-height: .82;
+  letter-spacing: -.065em;
+}
+
+.subtitle {
+  max-width: 740px;
+  margin: 32px 0 0;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.05;
+}
+
+.promise {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin-top: 34px;
+  font-size: 12px;
+}
+
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid var(--line);
+}
+
+.actions .primary {
+  border-color: var(--nav);
+  background: var(--nav);
+  color: var(--nav-text);
+}
+
+.problem,
+.outcomes,
+.framework,
+.fit,
+.cta {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.problem {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 12px 48px;
+}
+
+.problem > p:first-child { grid-row: 1 / span 3; }
+.problem h2,
+.outcomes h2,
+.framework h2,
+.fit h2,
+.cta h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(35px, 5vw, 54px);
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+.problem > p:not(:first-child) {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.problem blockquote {
+  max-width: 760px;
+  margin: 26px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.outcomes {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(360px, 1.3fr);
+  gap: 64px;
+}
+
+.outcomes ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outcomes li {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 14px;
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+}
+
+.outcomes li:last-child { border-bottom: 1px solid var(--line); }
+.outcomes li span { color: var(--accent); font: 750 10px var(--mono); }
+.outcomes li p { margin: 0; font-weight: 650; }
+
+.framework header { max-width: 700px; }
+
+.decisionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 46px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.decisionGrid article { padding: 27px; background: var(--paper-light); }
+.decisionGrid span { color: var(--accent); font: 750 10px var(--mono); text-transform: uppercase; }
+.decisionGrid h3 { margin: 11px 0 8px; font-family: var(--display); font-size: 25px; line-height: 1.1; }
+.decisionGrid p { margin: 0; color: var(--muted); }
+
+.chain {
+  overflow-x: auto;
+  margin: 28px 0 0;
+  padding: 16px 0;
+  color: var(--accent);
+  font: 750 12px/1.6 var(--mono);
+  white-space: nowrap;
+}
+
+.fit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 72px;
+}
+
+.fit ul { margin: 28px 0 0; padding: 0; list-style: none; }
+.fit li { padding: 9px 0; border-bottom: 1px solid var(--line); }
+.evidence p:not(.eyebrow) { margin: 27px 0 20px; color: var(--muted); }
+
+.cta { border-bottom: 0; }
+.cta > p:not(.eyebrow) { max-width: 760px; margin: 22px 0 0; color: var(--muted); font-size: 18px; }
+
+@media (max-width: 760px) {
+  .main { padding-top: 28px; }
+  .hero { padding: 42px 0 52px; }
+  .status { position: static; margin-top: 14px; }
+  .hero h1 { font-size: clamp(56px, 19vw, 86px); }
+  .problem,
+  .outcomes,
+  .fit { grid-template-columns: 1fr; gap: 34px; }
+  .problem > p:first-child { grid-row: auto; }
+  .decisionGrid { grid-template-columns: 1fr; }
+  .problem,
+  .outcomes,
+  .framework,
+  .fit,
+  .cta { padding: 52px 0; }
+}

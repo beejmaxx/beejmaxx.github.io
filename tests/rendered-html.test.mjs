@@ -25,6 +25,7 @@ test("exports the portfolio and every public index", async () => {
   assert.match(books, /Platform Integrity/);
   assert.match(books, /Building Dependable Data Systems/);
   assert.match(books, /Distributed Systems Guidebook/);
+  assert.match(books, /href="\/books\/platform-integrity"/);
   assert.doesNotMatch(books, /Rust API Field Guide/);
   assert.match(library, /Rust API Design Guidebook/);
   assert.match(library, /Platform Integrity/);
@@ -41,6 +42,16 @@ test("exports the portfolio and every public index", async () => {
     assert.match(page, /Choose site palette/);
     assert.match(page, />bijan</);
   }
+});
+
+test("publishes a dedicated Platform Integrity one-pager", async () => {
+  const page = await readPage("books/platform-integrity.html");
+  assert.match(page, /Don’t ask “Is this a bot\?” first/);
+  assert.match(page, /From detector thinking to defensible decisions/);
+  assert.match(page, /Read the working draft/);
+  assert.match(page, /Discuss an engagement/);
+  assert.match(page, /NIST risk and identity frameworks/);
+  assert.match(page, /https:\/\/beejmaxx\.github\.io\/platform-integrity\//);
 });
 
 test("publishes one real note and keeps old drafts out", async () => {
@@ -89,6 +100,7 @@ test("exports discovery files, data, and public artifacts", async () => {
   ]);
   assert.match(robots, /Sitemap: https:\/\/beejmaxx\.github\.io\/sitemap\.xml/);
   assert.match(sitemap, /beejmaxx\.github\.io\/books/);
+  assert.match(sitemap, /beejmaxx\.github\.io\/books\/platform-integrity/);
   assert.doesNotMatch(sitemap, /\/(?:blog|notes|attempts|archive)/);
   assert.match(feed, /Why a depth heatmap needs a price anchor/);
   assert.equal(JSON.parse(packet).projects.length, 16);

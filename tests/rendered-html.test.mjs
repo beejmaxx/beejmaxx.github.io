@@ -53,9 +53,30 @@ test("publishes the predicate sweep as a specific evidence-backed dossier", asyn
   assert.match(study, /24 GB/);
   assert.match(study, /1–2 GB/);
   assert.match(study, /Pair-support graph/i);
-  assert.match(study, /500 block-bootstrap resamples/i);
+  assert.match(study, /500 resamples using 20-trading-day blocks/i);
   assert.match(study, /controlled benchmark/i);
   assert.match(study, /predicate-sweep-og\.jpg/);
+});
+
+test("publishes the Aikido subsystem dossier series with its evidence visuals", async () => {
+  const [cases, account, convergence, evidence, hub] = await Promise.all([
+    readPage("case-studies.html"),
+    readPage("case-studies/one-account-truth.html"),
+    readPage("case-studies/converge-dont-command.html"),
+    readPage("case-studies/results-allowed-to-count.html"),
+    readPage("aikido/index.html"),
+  ]);
+
+  assert.match(cases, /four subsystem dossiers/i);
+  assert.match(cases, /One Account, One Truth/);
+  assert.match(account, /OneAccountState/);
+  assert.match(account, /the close can lie/i);
+  assert.match(convergence, /2× position overshoot/i);
+  assert.match(convergence, /practice position reaches −150/i);
+  assert.match(evidence, /126 out-of-sample trading days/i);
+  assert.match(evidence, /canonical_authoritative/);
+  assert.match(hub, /One project, several truth boundaries/i);
+  assert.doesNotMatch(`${account}${convergence}${evidence}`, /\[\[visual:/);
 });
 
 test("exports discovery files, data, and public artifacts", async () => {

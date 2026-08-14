@@ -70,7 +70,6 @@ export const secondaryProjects = [
 
 export const conceptLinks = [
   ["Current", "/"],
-  ["Site system lab", "/concepts/site-system"],
   ["Personal web", "/concepts/personal-web"],
   ["Hybrid", "/concepts/hybrid"],
   ["01 Project-led", "/concepts/project-led"],

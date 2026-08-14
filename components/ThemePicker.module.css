@@ -1,9 +1,9 @@
 .picker { position: fixed; z-index: 30; right: 16px; bottom: 16px; opacity: 0; transition: opacity .15s ease; }
 .picker[data-ready] { opacity: 1; }
-.trigger { width: 46px; height: 46px; display: grid; place-items: center; padding: 0; border: var(--border); border-radius: 50%; background: var(--paper-light); box-shadow: var(--shadow); cursor: pointer; }
+.trigger { width: 42px; height: 42px; display: grid; place-items: center; padding: 0; border: var(--border); border-radius: 50%; background: var(--paper-light); box-shadow: 2px 2px 0 color-mix(in srgb,var(--ink) 58%,transparent); cursor: pointer; }
 .trigger span { width: 20px; height: 20px; border: 1px solid var(--ink); border-radius: 50%; background: linear-gradient(135deg,var(--steel) 0 50%,var(--accent) 50%); }
 .trigger:focus-visible,.popover button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-.popover { position: absolute; right: 0; bottom: 56px; width: 218px; padding: 12px; border: var(--border); border-radius: var(--radius); background: var(--paper-light); box-shadow: var(--shadow); }
+.popover { position: absolute; right: 0; bottom: 52px; width: 205px; padding: 12px; border: var(--border); border-radius: var(--radius); background: var(--paper-light); box-shadow: var(--shadow); }
 .popover p { margin: 0 0 9px; color: var(--muted); font: 750 9px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .popover > div { display: grid; gap: 5px; }
 .popover button { min-height: 36px; display: flex; gap: 7px; align-items: center; padding: 6px 7px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: var(--ink); cursor: pointer; font-size: 10px; text-align: left; }

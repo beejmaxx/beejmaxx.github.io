@@ -6,7 +6,6 @@ export const metadata: Metadata = { title: "Homepage concepts", robots: { index:
 
 const descriptions: Record<string, string> = {
   "/": "The current working homepage.",
-  "/concepts/site-system": "Three complete visual systems, each applied consistently to both the homepage and Aikido.",
   "/concepts/personal-web": "A warmer, personal-web direction inspired by independent technical blogs.",
   "/concepts/hybrid": "The current homepage structure with stronger project evidence and hierarchy.",
   "/concepts/project-led": "Large evidence, named projects, and a clear narrative.",
@@ -21,7 +20,7 @@ export default function ConceptsPage() {
         <p className={styles.kicker}>Unpublished working area</p>
         <h1>Homepage concepts</h1>
         <p className={styles.intro}>
-          Several independent directions using the same body of work. The current homepage is still
+          Five independent directions using the same body of work. The current homepage is still
           available for comparison, and none of these concepts changes it.
         </p>
         <div className={styles.grid}>

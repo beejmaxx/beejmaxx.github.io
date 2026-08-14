@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --paper:#e8f0f2;--paper-light:#f8fbfc;--ochre:#c8dde4;--sage:#d4e3df;--steel:#b9d2dc;--clay:#d7dce8;
-  --accent:#125a75;--accent-dark:#073d55;--ink:#172c38;--muted:#556c78;--nav:#173c4d;--nav-text:#f4fbfd;
-  --tag:rgb(248 251 252 / 72%);--line:color-mix(in srgb,var(--ink) 42%,transparent);
-  --texture:radial-gradient(rgb(23 44 56 / 30%) .7px,transparent .7px);--texture-size:48px 48px;--texture-position:-12px -12px;
+  --paper:#f0eee7;--paper-light:#fbfaf5;--ochre:#e4d4b0;--sage:#c9d9d8;--steel:#b9d2dc;--clay:#dcc1b9;
+  --accent:#9d3f2f;--accent-dark:#6f281e;--ink:#1b3038;--muted:#5d6c70;--nav:#183943;--nav-text:#f7f3e8;
+  --tag:rgb(251 250 245 / 72%);--line:color-mix(in srgb,var(--ink) 42%,transparent);
+  --texture:repeating-linear-gradient(0deg,transparent 0 31px,rgb(27 48 56 / 7%) 32px);--texture-size:auto;--texture-position:0 0;
   --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--display:"Iowan Old Style","Palatino Linotype",Georgia,serif;--mono:"SFMono-Regular",Consolas,monospace;
-  --radius:14px;--border:1px solid #44606e;--shadow:0 8px 22px rgb(23 44 56 / 18%);
+  --radius:4px;--border:1px solid #52676e;--shadow:5px 5px 0 #1b3038;
 }
+:root[data-theme="personal"]{--paper:#f6c978;--paper-light:#ffe0a5;--ochre:#f3a35c;--sage:#efb482;--steel:#e9a0aa;--clay:#f6c2b9;--accent:#74244a;--accent-dark:#48112c;--ink:#211d1b;--muted:#66564d;--nav:#74244a;--nav-text:#ffe9bd;--tag:rgb(255 240 207 / 55%);--texture:radial-gradient(var(--ink) 1px,transparent 1px);--texture-size:40px 40px;--texture-position:-14px -14px;--radius:24px 5px 24px 5px;--border:3px solid var(--ink);--shadow:7px 7px 0 var(--ink)}
+:root[data-theme="dossier"]{--paper:#edf4f6;--paper-light:#fff;--ochre:#d6e6eb;--sage:#dfeaed;--steel:#bed4dc;--clay:#d8e1e8;--accent:#0d5874;--accent-dark:#083c50;--ink:#17303d;--muted:#536d79;--nav:#173c4d;--nav-text:#f4fbfd;--tag:rgb(255 255 255 / 58%);--texture:radial-gradient(rgb(23 48 61 / 18%) .7px,transparent .7px);--texture-size:46px 46px;--texture-position:-11px -11px;--radius:0;--border:1px solid #6f8994;--shadow:8px 8px 0 #0b2734}
+:root[data-theme="hybrid"]{--paper:#f0eee7;--paper-light:#fbfaf5;--ochre:#e4d4b0;--sage:#c9d9d8;--steel:#b9d2dc;--clay:#dcc1b9;--accent:#9d3f2f;--accent-dark:#6f281e;--ink:#1b3038;--muted:#5d6c70;--nav:#183943;--nav-text:#f7f3e8;--tag:rgb(251 250 245 / 72%);--texture:repeating-linear-gradient(0deg,transparent 0 31px,rgb(27 48 56 / 7%) 32px);--texture-size:auto;--texture-position:0 0;--radius:4px;--border:1px solid #52676e;--shadow:5px 5px 0 #1b3038}
 :root[data-theme="field-manual"]{--paper:#d6ccb7;--paper-light:#eee7d9;--ochre:#c29a5c;--sage:#bdc2ad;--steel:#b5c0c5;--clay:#c6ada0;--accent:#803d2a;--accent-dark:#572b20;--ink:#20272a;--muted:#5b625f;--nav:#293b43;--nav-text:#f1eadc;--tag:rgb(242 237 224 / 55%);--texture:radial-gradient(rgb(32 39 42 / 70%) .8px,transparent .8px);--texture-size:40px 40px;--texture-position:-14px -14px;--radius:8px;--border:2px solid var(--ink);--shadow:5px 5px 0 var(--ink)}
 :root[data-theme="newsprint"]{--paper:#e8e2d6;--paper-light:#f7f3e9;--ochre:#d7d0c1;--sage:#ded8cb;--steel:#d1d6d6;--clay:#e2d1c7;--accent:#9b2d22;--accent-dark:#641d17;--ink:#181818;--muted:#58544e;--nav:#181818;--nav-text:#f7f3e9;--tag:#f7f3e9;--texture:repeating-linear-gradient(0deg,transparent 0 27px,rgb(24 24 24 / 8%) 28px);--texture-size:auto;--texture-position:0 0;--sans:Georgia,"Times New Roman",serif;--display:Georgia,"Times New Roman",serif;--radius:0;--border:1px solid var(--ink);--shadow:3px 3px 0 var(--ink)}
 :root[data-theme="terminal"]{--paper:#0d1712;--paper-light:#14221a;--ochre:#213a2a;--sage:#183524;--steel:#172c24;--clay:#26392d;--accent:#e8b44d;--accent-dark:#ffd978;--ink:#c9e5bc;--muted:#89a889;--nav:#b5d66d;--nav-text:#0d1712;--tag:#0d1712;--texture:linear-gradient(rgb(181 214 109 / 6%) 1px,transparent 1px),linear-gradient(90deg,rgb(181 214 109 / 6%) 1px,transparent 1px);--texture-size:24px 24px;--texture-position:0 0;--sans:var(--mono);--display:var(--mono);--radius:0;--border:1px solid #6f9863;--shadow:4px 4px 0 #050a07}

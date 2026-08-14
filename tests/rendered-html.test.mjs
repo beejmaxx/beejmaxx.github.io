@@ -18,6 +18,8 @@ test("exports the portfolio and every public index", async () => {
 
   assert.match(home, /making hidden systems inspectable/i);
   assert.match(home, /Depthfield/);
+  assert.match(home, /01 \/ flagship system/i);
+  assert.match(home, /start with Aikido/i);
   assert.match(home, /systems with receipts/i);
   assert.match(work, /same obsession/i);
   assert.match(work, /Polymarket MCP/);
@@ -39,7 +41,7 @@ test("exports the portfolio and every public index", async () => {
   assert.match(workAlias, /same obsession/i);
 
   for (const page of pages) {
-    assert.match(page, /Choose site palette/);
+    assert.match(page, /Choose site treatment/);
     assert.match(page, />bijan</);
   }
 });
@@ -74,12 +76,13 @@ test("publishes the predicate sweep as a specific evidence-backed dossier", asyn
 });
 
 test("publishes the Aikido subsystem dossier series with its evidence visuals", async () => {
-  const [cases, account, convergence, evidence, hub] = await Promise.all([
+  const [cases, account, convergence, evidence, hub, architecture] = await Promise.all([
     readPage("case-studies.html"),
     readPage("case-studies/one-account-truth.html"),
     readPage("case-studies/converge-dont-command.html"),
     readPage("case-studies/results-allowed-to-count.html"),
     readPage("aikido/index.html"),
+    readPage("aikido/architecture.html"),
   ]);
 
   assert.match(cases, /four subsystem dossiers/i);
@@ -91,6 +94,10 @@ test("publishes the Aikido subsystem dossier series with its evidence visuals", 
   assert.match(evidence, /126 out-of-sample trading days/i);
   assert.match(evidence, /canonical_authoritative/);
   assert.match(hub, /One project, several truth boundaries/i);
+  assert.match(hub, /Choose site treatment/i);
+  assert.match(hub, /href="\/archive"/i);
+  assert.match(architecture, /Choose site treatment/i);
+  assert.match(architecture, /href="\/notes"/i);
   assert.doesNotMatch(`${account}${convergence}${evidence}`, /\[\[visual:/);
 });
 

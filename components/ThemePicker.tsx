@@ -4,14 +4,9 @@ import { useEffect, useState } from "react";
 import styles from "./ThemePicker.module.css";
 
 const themes = [
-  ["arctic", "Arctic"],
-  ["field-manual", "Field manual"],
-  ["newsprint", "Newsprint"],
-  ["terminal", "Terminal"],
-  ["blueprint", "Blueprint"],
-  ["monochrome", "Monochrome"],
-  ["desert", "Desert"],
-  ["casa", "Casa"],
+  ["personal", "Personal web"],
+  ["dossier", "Dossier"],
+  ["hybrid", "Hybrid"],
 ] as const;
 
 export type ThemeId = (typeof themes)[number][0];
@@ -23,13 +18,13 @@ function isTheme(value: string | null): value is ThemeId {
 
 export function ThemePicker() {
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState<ThemeId>("arctic");
+  const [theme, setTheme] = useState<ThemeId>("hybrid");
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
       const saved = window.localStorage.getItem(storageKey);
-      const nextTheme = isTheme(saved) ? saved : "arctic";
+      const nextTheme = isTheme(saved) ? saved : "hybrid";
       setTheme(nextTheme);
       document.documentElement.dataset.theme = nextTheme;
       setReady(true);
@@ -52,7 +47,7 @@ export function ThemePicker() {
     <div className={styles.picker} data-ready={ready || undefined}>
       {open && (
         <div className={styles.popover} id="theme-options">
-          <p>site palette</p>
+          <p>site treatment</p>
           <div>
             {themes.map(([id, label]) => (
               <button type="button" key={id} data-swatch={id} aria-pressed={id === theme} onClick={() => choose(id)}>
@@ -65,7 +60,7 @@ export function ThemePicker() {
       <button
         className={styles.trigger}
         type="button"
-        aria-label="Choose site palette"
+        aria-label="Choose site treatment"
         aria-expanded={open}
         aria-controls="theme-options"
         onClick={() => setOpen((value) => !value)}

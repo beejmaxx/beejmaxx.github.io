@@ -112,7 +112,7 @@ export const work: WorkItem[] = [
   },
   {
     id: "aikido",
-    title: "Aikido / QuantBox",
+    title: "Aikido",
     thesis: "A research system that keeps the evidence.",
     description: "Rust-first infrastructure for systematic-trading research, replay, simulation, runtime decisions, and review.",
     kind: "system",

@@ -45,6 +45,9 @@ const structuredData = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("portfolio-theme");if(t==="personal"||t==="dossier"||t==="hybrid")document.documentElement.dataset.theme=t;}catch(_){}})();` }} />
+      </head>
       <body id="top">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         {children}

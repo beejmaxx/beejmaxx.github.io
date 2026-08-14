@@ -4,22 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Current and target architecture of the Aikido policy research and execution system.">
+    <link rel="canonical" href="https://beejmaxx.github.io/aikido/architecture.html">
+    <meta property="og:title" content="Aikido architecture">
+    <meta property="og:description" content="Current and target architecture of the Aikido policy research and execution system.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://beejmaxx.github.io/aikido/architecture.html">
     <title>Aikido architecture</title>
+    <script>(function(){try{var t=localStorage.getItem("portfolio-theme");if(t==="personal"||t==="dossier"||t==="hybrid")document.documentElement.dataset.theme=t;}catch(_){}})();</script>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main">skip to content</a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="site-name" href="./">Aikido</a>
-        <nav aria-label="Primary navigation">
-          <a href="./">Overview</a>
-          <a aria-current="page" href="architecture.html">Architecture</a>
-          <a href="https://github.com/beejmaxx/aikido-systematic-trading">Repository</a>
+        <a class="site-name" href="/" aria-label="bijan, home"><span>b</span><strong>bijan</strong></a>
+        <nav class="global-nav" aria-label="Main navigation">
+          <a aria-current="page" href="/work">work</a><a href="/library">library</a><a href="/attempts">attempts</a><a href="/notes">notes</a><a href="/archive">archive</a><a href="/about">about</a>
         </nav>
+        <a class="github-link" href="https://github.com/beejmaxx">github ↗</a>
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <header class="document-header">
         <p class="document-type">Architecture summary</p>
         <h1>Aikido architecture</h1>
@@ -28,6 +34,7 @@
           architecture, and the migration boundary between them. It does not
           replace the versioned architecture documents in the repository.
         </p>
+        <nav class="project-nav" aria-label="Aikido navigation"><a href="./">overview</a><a aria-current="page" href="architecture.html">architecture</a><a href="/case-studies">four dossiers</a><a href="https://github.com/beejmaxx/aikido-systematic-trading">public repository ↗</a></nav>
         <dl class="metadata">
           <div><dt>Architecture object</dt><dd>Policy operating system</dd></div>
           <div><dt>Decision contract</dt><dd>Immutable policy-state pack</dd></div>
@@ -272,5 +279,15 @@ PolicyStatePack -&gt; Policy -&gt; RequestedTargetExposure
     <footer>
       <p><a href="./">Aikido overview</a> · Architecture summary</p>
     </footer>
+    <aside class="theme-picker" data-theme-picker aria-label="Site treatment">
+      <div class="theme-popover" data-theme-popover id="theme-options" hidden>
+        <p>site treatment</p>
+        <button type="button" data-theme-option="personal"><i></i><span>Personal web</span></button>
+        <button type="button" data-theme-option="dossier"><i></i><span>Dossier</span></button>
+        <button type="button" data-theme-option="hybrid"><i></i><span>Hybrid</span></button>
+      </div>
+      <button class="theme-trigger" type="button" data-theme-trigger aria-label="Choose site treatment" aria-expanded="false" aria-controls="theme-options"><span></span></button>
+    </aside>
+    <script src="theme.js"></script>
   </body>
 </html>

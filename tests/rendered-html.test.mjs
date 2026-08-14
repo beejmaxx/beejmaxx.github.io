@@ -46,10 +46,10 @@ test("exports the portfolio and every public index", async () => {
 
 test("publishes a dedicated Platform Integrity one-pager", async () => {
   const page = await readPage("books/platform-integrity.html");
-  assert.match(page, /Don’t ask “Is this a bot\?” first/);
-  assert.match(page, /From detector thinking to defensible decisions/);
-  assert.match(page, /Read the working draft/);
-  assert.match(page, /Discuss an engagement/);
+  assert.match(page, /Most platforms start with the wrong question/);
+  assert.match(page, /A field guide for decisions that detectors cannot make/);
+  assert.match(page, /Read the public draft/);
+  assert.match(page, /Discuss the work/);
   assert.match(page, /NIST risk and identity frameworks/);
   assert.match(page, /https:\/\/beejmaxx\.github\.io\/platform-integrity\//);
 });

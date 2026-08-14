@@ -7,9 +7,9 @@ export function SiteHeader() {
           <span>bijan</span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
+          <a href="/work">Work</a>
+          <a href="/books">Books</a>
           <a href="/case-studies">Case studies</a>
-          <a href="/archive">Archive</a>
-          <a href="/blog">Blog</a>
           <a href="/about">About</a>
         </nav>
         <a className="availability" href="mailto:bijan.pourriahi@gmail.com">Email</a>
@@ -29,8 +29,7 @@ export function SimpleFooter() {
         <a href="https://github.com/beejmaxx" target="_blank" rel="noreferrer">GitHub</a>
         <a href="/resume.pdf">Résumé</a>
         <a href="/engine-sim/">Engine sim</a>
-        <a href="/archive">Archive</a>
-        <a href="/blog">Blog</a>
+        <a href="/books">Books</a>
       </div>
       <p className="footer-note">Site source and public project history are stored on GitHub.</p>
     </footer>

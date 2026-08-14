@@ -3,10 +3,8 @@ import styles from "./SiteShell.module.css";
 
 const navigation = [
   ["work", "/work"],
-  ["library", "/library"],
-  ["attempts", "/attempts"],
-  ["notes", "/notes"],
-  ["archive", "/archive"],
+  ["books", "/books"],
+  ["case studies", "/case-studies"],
   ["about", "/about"],
 ] as const;
 

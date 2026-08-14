@@ -10,23 +10,27 @@ async function readPage(path) {
 
 test("exports the portfolio and every public index", async () => {
   const paths = [
-    "index.html", "work.html", "library.html", "attempts.html", "notes.html",
-    "archive.html", "about.html", "case-studies.html", "blog.html", "work-map.html",
+    "index.html", "work.html", "books.html", "library.html", "notes.html",
+    "about.html", "case-studies.html", "blog.html", "work-map.html",
   ];
   const pages = await Promise.all(paths.map(readPage));
-  const [home, work, library, attempts, notes, archive, about, cases, blogAlias, workAlias] = pages;
+  const [home, work, books, library, notes, about, cases, blogAlias, workAlias] = pages;
 
   assert.match(home, /making hidden systems inspectable/i);
   assert.match(home, /Depthfield/);
   assert.match(home, /systems with receipts/i);
   assert.match(work, /same obsession/i);
   assert.match(work, /Polymarket MCP/);
-  assert.match(library, /Rust API Field Guide/);
-  assert.match(library, /Napoleon Library/);
-  assert.match(attempts, /detector that caught everything/i);
+  assert.match(books, /Async Rust Guidebook/);
+  assert.match(books, /Platform Integrity/);
+  assert.match(books, /Building Dependable Data Systems/);
+  assert.match(books, /Distributed Systems Guidebook/);
+  assert.doesNotMatch(books, /Rust API Field Guide/);
+  assert.match(library, /Rust API Design Guidebook/);
+  assert.match(library, /Platform Integrity/);
+  assert.doesNotMatch(home, /href="\/attempts"/);
+  assert.doesNotMatch(home, /href="\/(?:notes|blog|archive)"/);
   assert.match(notes, /price anchor for every column/i);
-  assert.match(archive, /145(?:<!-- -->)? public repositories/i);
-  assert.match(archive, /63(?:<!-- -->)? mine/i);
   assert.match(about, /Ruby, Rails/i);
   assert.match(cases, /engineering records/i);
   assert.match(cases, /The Predicate Sweep/);
@@ -84,9 +88,10 @@ test("exports discovery files, data, and public artifacts", async () => {
     readPage("robots.txt"), readPage("sitemap.xml"), readPage("feed.xml"), readPage("projects.json"),
   ]);
   assert.match(robots, /Sitemap: https:\/\/beejmaxx\.github\.io\/sitemap\.xml/);
-  assert.match(sitemap, /blog\/why-depth-history-needs-price-anchors/);
+  assert.match(sitemap, /beejmaxx\.github\.io\/books/);
+  assert.doesNotMatch(sitemap, /\/(?:blog|notes|attempts|archive)/);
   assert.match(feed, /Why a depth heatmap needs a price anchor/);
-  assert.equal(JSON.parse(packet).projects.length, 15);
+  assert.equal(JSON.parse(packet).projects.length, 16);
   for (const asset of [
     ".nojekyll", "og.jpg", "resume.pdf", "engine-sim/index.html", "aikido/index.html",
     "aikido/architecture.html", "case-studies/marketplace-integrity.html",
@@ -95,12 +100,14 @@ test("exports discovery files, data, and public artifacts", async () => {
 });
 
 test("removes known broken and duplicate public surfaces", async () => {
-  const htmlFiles = ["index.html", "work.html", "archive.html", "about.html", "case-studies.html"];
+  const htmlFiles = ["index.html", "work.html", "about.html", "case-studies.html"];
   for (const path of htmlFiles) {
     const page = await readPage(path);
     assert.doesNotMatch(page, /fanpilot\.app\/research-engine|apollo-knowledgebase|github\.com\/beejmaxx\/aikido(?:["/])/);
   }
   for (const oldPage of [
+    "attempts.html",
+    "archive.html",
     "case-studies/full-stack-operations-workstation.html",
     "case-studies/hedge-fund-trading-infrastructure.html",
     "case-studies/quantbox-research-platform.html",

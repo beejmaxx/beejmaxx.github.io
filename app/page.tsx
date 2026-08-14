@@ -35,7 +35,7 @@ export default function HomePage() {
               <article className="panel" key={trail.id}>
                 <span>{trail.number}</span><h3>{trail.title}</h3><p>{trail.description}</p>
                 <ol>{workForTrail(trail.id).slice(0,5).map((item) => <li key={item.id}><a href={item.demo ?? item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.status}</span></a></li>)}</ol>
-                <a href={trail.id === "library" ? "/library" : `/work#${trail.id}`}>follow this trail →</a>
+                <a href={trail.id === "library" ? "/books" : `/work#${trail.id}`}>follow this trail →</a>
               </article>
             ))}
           </div>
@@ -57,10 +57,6 @@ export default function HomePage() {
           <p className={styles.benchNote}>Not a feed. Just enough dated state to show what is moving.</p>
         </section>
 
-        <section className={`${styles.attemptCallout} panel`}>
-          <div><p className="eyebrow">attempt 001 / rejected</p><h2>The detector that caught everything.</h2></div>
-          <div><p>It caught the evasion. It also caught every declared hard-negative persona. So I rejected it and kept the failing trace.</p><a href="/attempts">read what survived →</a></div>
-        </section>
       </main>
     </SiteShell>
   );

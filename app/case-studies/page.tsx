@@ -26,7 +26,7 @@ export default function CasesPage() {
   const otherStudies = studies.filter((study) => !aikidoSlugs.has(study.slug));
 
   return (
-    <SiteShell current="work">
+    <SiteShell current="case studies">
       <main className="page" id="main">
         <section className="pageHero">
           <p className="eyebrow">engineering records / not capability claims</p>

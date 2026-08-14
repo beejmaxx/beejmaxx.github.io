@@ -1,9 +1,1 @@
-import type { Metadata } from "next";
-import { SiteShell } from "@/components/SiteShell";
-import { work } from "@/lib/work";
-import styles from "./library.module.css";
-
-export const metadata:Metadata={title:"library",description:"Books written and source collections assembled by bijan.",alternates:{canonical:"/library"},openGraph:{title:"library — bijan",description:"Books written. Collections assembled. Sources kept attached.",url:"/library"}};
-const books=work.filter(item=>item.kind==="book");const collections=work.filter(item=>item.kind==="collection");
-function Shelf({title,note,items}:{title:string;note:string;items:typeof work}){return <section className={styles.shelf}><header><div><p className="eyebrow">reading room</p><h2>{title}</h2></div><p>{note}</p></header><div>{items.map(item=><article className="panel" key={item.id}><div className={styles.spine}><span>{item.year}</span><strong>{item.title}</strong><small>{item.status}</small></div><div className={styles.book}><p className="eyebrow">{item.stack.join(" · ")}</p><h3>{item.thesis}</h3><p>{item.description}</p><blockquote>{item.proof}</blockquote><nav>{item.demo&&<a href={item.demo}>read / explore ↗</a>}<a href={item.source}>source ↗</a></nav></div></article>)}</div></section>}
-export default function LibraryPage(){return <SiteShell current="library"><main className="page" id="main"><section className="pageHero"><p className="eyebrow">books / corpora / provenance</p><h1>a reading<br/><em>room.</em></h1><p className="deck">Things I wrote and collections I assembled. Sources, editions, rights, uncertainty, and checksums stay attached.</p></section><Shelf title="books I wrote" note="The books are executable curricula: examples, observed behavior, multiple reading orders, and explicit unfinished state." items={books}/><Shelf title="collections I assembled" note="These are not endorsement machines. They keep source class, provenance, rights, and confidence visible." items={collections}/></main></SiteShell>}
+export { default, metadata } from "../books/page";

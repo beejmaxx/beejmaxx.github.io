@@ -1,13 +1,73 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import {
+  AccountKernelVisual,
+  AccountTraceVisual,
+  ConfidenceLadderVisual,
+  ConvergenceVisual,
+  EvidenceGateVisual,
+  ProtectionIncidentVisual,
+} from "@/components/AikidoDossierVisuals";
 import { SiteShell } from "@/components/SiteShell";
-import { PredicateSweepDiagram } from "@/components/PredicateSweepDiagram";
+import {
+  PredicateCacheReuseDiagram,
+  PredicateCorrectionsDiagram,
+  PredicatePruningDiagram,
+  PredicatePyramidDiagram,
+  PredicateSweepDiagram,
+} from "@/components/PredicateSweepDiagram";
 import { getCaseStudyBySlug, getCaseStudySlugs } from "@/lib/case-studies";
 
 export const dynamicParams = false;
+
+const caseStudyVisuals: Record<string, Record<string, ReactNode>> = {
+  "predicate-sweep": {
+    pruning: <PredicatePruningDiagram />,
+    pyramid: <PredicatePyramidDiagram />,
+    "cache-reuse": <PredicateCacheReuseDiagram />,
+    corrections: <PredicateCorrectionsDiagram />,
+  },
+  "one-account-truth": {
+    "account-kernel": <AccountKernelVisual />,
+    "account-trace": <AccountTraceVisual />,
+  },
+  "converge-dont-command": {
+    convergence: <ConvergenceVisual />,
+    "protection-incident": <ProtectionIncidentVisual />,
+  },
+  "results-allowed-to-count": {
+    "evidence-gate": <EvidenceGateVisual />,
+    "confidence-ladder": <ConfidenceLadderVisual />,
+  },
+};
+
+const aikidoSeries = [
+  ["00", "The Predicate Sweep", "predicate-sweep"],
+  ["01", "One Account, One Truth", "one-account-truth"],
+  ["02", "Converge, Don’t Command", "converge-dont-command"],
+  ["03", "When a Result Is Allowed to Count", "results-allowed-to-count"],
+] as const;
+
+function CaseStudyMarkdown({ content, slug }: { content: string; slug: string }) {
+  const visuals = caseStudyVisuals[slug];
+  if (!visuals) {
+    return <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>;
+  }
+
+  const visualNames = Object.keys(visuals).join("|");
+  const visualPattern = new RegExp(`(\\[\\[visual:(?:${visualNames})\\]\\])`, "g");
+  return content.split(visualPattern).map((part, index) => {
+    const match = part.match(/^\[\[visual:([a-z-]+)\]\]$/);
+    if (match) {
+      return <div key={`${match[1]}-${index}`}>{visuals[match[1]]}</div>;
+    }
+    return part.trim() ? <ReactMarkdown key={`copy-${index}`} remarkPlugins={[remarkGfm]}>{part}</ReactMarkdown> : null;
+  });
+}
 
 export function generateStaticParams() {
   return getCaseStudySlugs().map((slug) => ({ slug }));
@@ -25,11 +85,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   const { slug } = await params;
   if (!getCaseStudySlugs().includes(slug)) notFound();
   const study = getCaseStudyBySlug(slug);
+  const isAikidoDossier = aikidoSeries.some(([, , seriesSlug]) => seriesSlug === slug);
   return (
     <SiteShell current="work">
       <main className="page" id="main">
         <article className="article-shell case-article-shell">
-          <a className="article-back" href="/case-studies">← all dossiers</a>
+          <a className="article-back" href={isAikidoDossier ? "/aikido/" : "/case-studies"}>{isAikidoDossier ? "← Aikido dossiers" : "← all dossiers"}</a>
           <header className="article-header">
             <p className="eyebrow">dossier {study.index} · {study.tags.join(" · ")}</p>
             <h1>{study.title}</h1>
@@ -48,8 +109,18 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           )}
           {study.slug === "predicate-sweep" && <PredicateSweepDiagram />}
           <div className="prose case-prose">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{study.content}</ReactMarkdown>
+            <CaseStudyMarkdown content={study.content} slug={study.slug} />
           </div>
+          {isAikidoDossier && (
+            <nav className="case-series" aria-label="Aikido dossier series">
+              <p className="eyebrow">Aikido / subsystem dossiers</p>
+              {aikidoSeries.map(([index, title, seriesSlug]) => (
+                <a href={`/case-studies/${seriesSlug}`} key={seriesSlug} aria-current={seriesSlug === slug ? "page" : undefined}>
+                  <span>{index}</span><strong>{title}</strong><i>{seriesSlug === slug ? "current" : "open →"}</i>
+                </a>
+              ))}
+            </nav>
+          )}
         </article>
       </main>
     </SiteShell>

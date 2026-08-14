@@ -3,178 +3,102 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Technical overview of the Aikido research, policy, simulation, and execution system.">
-    <title>Aikido — technical overview</title>
+    <meta name="description" content="Aikido: four engineering dossiers covering combinatorial research, account truth, evidence certification, and recoverable live execution.">
+    <link rel="canonical" href="https://beejmaxx.github.io/aikido/">
+    <meta property="og:title" content="Aikido — system dossiers">
+    <meta property="og:description" content="Four engineering dossiers covering combinatorial research, account truth, evidence certification, and recoverable live execution.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beejmaxx.github.io/aikido/">
+    <title>Aikido — system dossiers</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="hub-page">
     <header class="site-header">
       <div class="header-inner">
-        <a class="site-name" href="./">Aikido</a>
+        <a class="site-name" href="/">bijan</a>
         <nav aria-label="Primary navigation">
-          <a aria-current="page" href="./">Overview</a>
+          <a aria-current="page" href="./">Aikido</a>
           <a href="architecture.html">Architecture</a>
-          <a href="https://github.com/beejmaxx/aikido-systematic-trading">Repository</a>
+          <a href="/case-studies">All dossiers</a>
+          <a href="https://github.com/beejmaxx/aikido-systematic-trading">Public repository</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <header class="document-header">
-        <p class="document-type">Technical overview</p>
+    <main class="hub-main">
+      <header class="hub-hero">
+        <p class="document-type">Flagship project / system map</p>
         <h1>Aikido</h1>
-        <p class="summary">
-          Aikido is a private research and execution codebase for evaluating
-          trading policies against historical point-in-time evidence and
-          realizing approved policies through a shared runtime model.
+        <p class="hub-thesis">
+          A research and execution system built around one recurring constraint:
+          decisions that can move money must be reproducible, inspectable, and recoverable.
         </p>
-        <dl class="metadata">
-          <div><dt>Primary language</dt><dd>Rust 2024</dd></div>
-          <div><dt>Current focus</dt><dd>Single-account policy and accounting truth</dd></div>
-          <div><dt>Architecture state</dt><dd>Active migration toward frozen pack inputs</dd></div>
-          <div><dt>Page scope</dt><dd>Public technical summary</dd></div>
-        </dl>
+        <div class="hub-facts" aria-label="Aikido public dossier facts">
+          <div><strong>4</strong><span>subsystem dossiers</span></div>
+          <div><strong>Rust</strong><span>account + evaluator authority</span></div>
+          <div><strong>PIT</strong><span>historical decision inputs</span></div>
+          <div><strong>live</strong><span>desired-state convergence</span></div>
+        </div>
       </header>
 
-      <aside class="notice" aria-label="Scope note">
-        This page intentionally omits strategy parameters, operational host
-        details, account configuration, and unpublished research results. The
-        versioned documents in the repository remain authoritative.
-      </aside>
-
-      <section>
-        <h2>Purpose</h2>
-        <p>
-          The system treats policy as the active decision object. A policy maps
-          observer state, current exposure, and safety state to requested target
-          exposure. Replay and live execution are expected to share the same
-          accounting, legality, and session semantics.
-        </p>
-        <p>The system is organized to answer four separate questions:</p>
-        <ol>
-          <li>What market and research evidence exists?</li>
-          <li>What information was available at a decision boundary?</li>
-          <li>What exposure did the policy request?</li>
-          <li>What did the runtime actually realize, and how should that result be judged?</li>
+      <section class="system-slide" aria-labelledby="system-flow-title">
+        <header><span>system / 01</span><h2 id="system-flow-title">One project, several truth boundaries</h2></header>
+        <ol class="system-flow">
+          <li><span>01</span><strong>market facts</strong><small>bars · features · causal state</small></li>
+          <li><span>02</span><strong>research</strong><small>search · score · retain evidence</small></li>
+          <li><span>03</span><strong>frozen input</strong><small>what was knowable then</small></li>
+          <li><span>04</span><strong>policy</strong><small>requested target exposure</small></li>
+          <li><span>05</span><strong>runtime</strong><small>converge observed to desired</small></li>
+          <li><span>06</span><strong>evaluation</strong><small>account path · confidence · verdict</small></li>
         </ol>
+        <p class="slide-note">The dossiers below follow the boundaries where computation, state, and authority change hands.</p>
       </section>
 
-      <section>
-        <h2>System flow</h2>
-        <pre class="diagram" aria-label="Aikido system flow"><code>market facts
-    |
-    v
-canonical research evidence
-    |
-    v
-pack compiler --&gt; immutable point-in-time state pack
-                                      |
-                                      v
-                                   policy
-                                      |
-                                      v
-                         requested target exposure
-                                      |
-                                      v
-                          runtime / realizer
-                                      |
-                                      v
-                      execution report + episode result
-                                      |
-                                      v
-                                 evaluation</code></pre>
-        <p>
-          Research may query broad warehouse state. Policy and runtime should
-          consume a frozen publication rather than rebuilding point-in-time
-          state or reading mutable warehouse views in the decision loop.
-        </p>
-      </section>
-
-      <section>
-        <h2>Primary areas</h2>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th>Area</th><th>Responsibility</th><th>Representative code</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Engine</td>
-                <td>Strategy evaluation, predicates, features, and backtesting</td>
-                <td><code>crates/engine</code></td>
-              </tr>
-              <tr>
-                <td>Research</td>
-                <td>Discovery, evidence preparation, scoring, and research orchestration</td>
-                <td><code>crates/research</code>, <code>crates/research-query</code></td>
-              </tr>
-              <tr>
-                <td>Policy</td>
-                <td>Frozen policy inputs, decision logic, and requested exposure</td>
-                <td><code>crates/policy-kernel</code>, <code>crates/policy-sim</code></td>
-              </tr>
-              <tr>
-                <td>Evaluation</td>
-                <td>Canonical replay, account rules, and outcome evaluation</td>
-                <td><code>crates/policy-sim-env</code></td>
-              </tr>
-              <tr>
-                <td>Runtime</td>
-                <td>Executable realization, broker integration, and runtime state</td>
-                <td><code>crates/runtime</code>, broker adapter crates</td>
-              </tr>
-            </tbody>
-          </table>
+      <section class="dossier-section" aria-labelledby="dossiers-title">
+        <header><p class="document-type">Subsystem records</p><h2 id="dossiers-title">Four dossiers</h2></header>
+        <div class="dossier-grid">
+          <a href="/case-studies/predicate-sweep">
+            <span>00 / search</span><h3>The Predicate Sweep</h3>
+            <p>Bitsets, graph pruning, multicore scheduling, and a candidate-driven frontier through seven predicates.</p>
+            <strong>86B theoretical quads →</strong>
+          </a>
+          <a href="/case-studies/one-account-truth">
+            <span>01 / account semantics</span><h3>One Account, One Truth</h3>
+            <p>A deterministic account state machine shared by canonical replay and the runtime accounting path.</p>
+            <strong>state + event → state →</strong>
+          </a>
+          <a href="/case-studies/converge-dont-command">
+            <span>02 / live execution</span><h3>Converge, Don’t Command</h3>
+            <p>Idempotent target exposure, broker reconciliation, local coalescing, and one protection authority.</p>
+            <strong>desired − observed →</strong>
+          </a>
+          <a href="/case-studies/results-allowed-to-count">
+            <span>03 / evidence</span><h3>When a Result Is Allowed to Count</h3>
+            <p>Point-in-time inputs, exact-minute authority, artifact gates, matched trials, and confidence classes.</p>
+            <strong>result → evidence → verdict →</strong>
+          </a>
         </div>
       </section>
 
-      <section>
-        <h2>Non-negotiable behavior</h2>
-        <ul>
-          <li>Holdout data measures frozen decisions and does not feed those decisions.</li>
-          <li>Evidence requires at least 126 out-of-sample trading days; 189 is the target.</li>
-          <li>Replay is flat at 16:00 ET and does not carry overnight positions.</li>
-          <li>Market-bar and trade timestamps use America/New_York time.</li>
-          <li>Runtime and evaluation share account and execution semantics.</li>
-          <li>Requested, executable, and realized exposure remain distinguishable.</li>
-          <li>Promotion uses multiple gates rather than one performance score.</li>
-        </ul>
+      <section class="records-slide" aria-labelledby="records-title">
+        <header><span>supporting records / 02</span><h2 id="records-title">Smaller failures worth keeping</h2></header>
+        <div>
+          <article><strong>24 GB</strong><h3>The shared-cache lifetime mistake</h3><p>The source object was shared; 48 derived strategy subsets were not. Processing and releasing one subset at a time changed the memory bound.</p></article>
+          <article><strong>1% CPU</strong><h3>Workers waiting on workers</h3><p>Nested Rayon in one Phase-4 path left 27 workers nearly idle. Flattening that work graph changed a three-hour stall into minutes.</p></article>
+          <article><strong>−150</strong><h3>The protective-order runaway</h3><p>A practice incident exposed mixed protection ownership and made “one position, one authority” a runtime rule.</p></article>
+        </div>
       </section>
 
-      <section>
-        <h2>Current architecture status</h2>
+      <section class="hub-scope">
+        <div><p class="document-type">Implementation frame</p><h2>What this page claims</h2></div>
         <p>
-          The target boundaries are defined, but the implementation is still
-          converging. Canonical research evidence belongs in
-          <code>discovery</code>; research queues and operational boards belong
-          in <code>research_control</code>; frozen policy-state packs are the
-          downstream decision contract; runtime and evaluation own realized
-          truth. Existing <code>portfolio.*</code> point-in-time surfaces are
-          transitional compatibility layers rather than the target foundation.
+          These records describe implemented subsystems, recorded corrections, and known limits in the audited repository revision.
+          They do not publish strategy parameters, private results, account configuration, or operational credentials.
         </p>
-        <p>
-          See the <a href="architecture.html">architecture summary</a> for the
-          current-to-target mapping and ownership rules.
-        </p>
-      </section>
-
-      <section>
-        <h2>Repository documents</h2>
-        <p>The following source documents define the system more precisely:</p>
-        <ul class="document-list">
-          <li><code>docs/problem_frame.md</code> — canonical conceptual model</li>
-          <li><code>docs/SYSTEM_INVARIANTS.md</code> — non-negotiable system behavior</li>
-          <li><code>docs/START_HERE.md</code> — active implementation and research lane</li>
-          <li><code>docs/architecture.md</code> — current-code-reality architecture</li>
-          <li><code>docs/research/ideal_system_target_state_2026-04-21.md</code> — locked target</li>
-          <li><code>docs/research/current_to_target_system_map_2026-04-21.md</code> — migration map</li>
-          <li><code>docs/policy_pack_system_v1.md</code> — pack publication contract</li>
-        </ul>
+        <nav aria-label="Aikido references"><a href="architecture.html">technical architecture →</a><a href="https://github.com/beejmaxx/aikido-systematic-trading">public repository →</a></nav>
       </section>
     </main>
 
-    <footer>
-      <p>Aikido technical summary. Last reconciled with the architecture documents listed above.</p>
-    </footer>
+    <footer><p>Aikido / subsystem dossiers</p><a href="/">back to bijan’s portfolio →</a></footer>
   </body>
 </html>

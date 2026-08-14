@@ -95,9 +95,11 @@ test("publishes the Aikido subsystem dossier series with its evidence visuals", 
   assert.match(evidence, /canonical_authoritative/);
   assert.match(hub, /One project, several truth boundaries/i);
   assert.match(hub, /Choose site treatment/i);
-  assert.match(hub, /href="\/archive"/i);
+  assert.match(hub, /href="\/books"/i);
+  assert.doesNotMatch(hub, /href="\/archive"/i);
   assert.match(architecture, /Choose site treatment/i);
-  assert.match(architecture, /href="\/notes"/i);
+  assert.match(architecture, /href="\/case-studies"/i);
+  assert.doesNotMatch(architecture, /href="\/notes"/i);
   assert.doesNotMatch(`${account}${convergence}${evidence}`, /\[\[visual:/);
 });
 

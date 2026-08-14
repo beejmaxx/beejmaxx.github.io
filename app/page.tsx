@@ -7,12 +7,12 @@ const aikido = getWork("aikido")!;
 const depthfield = getWork("depthfield")!;
 
 const systemStages = [
-  ["01", "market facts", "bars · features · causal state"],
-  ["02", "research", "search · score · retain evidence"],
-  ["03", "frozen input", "what was knowable then"],
-  ["04", "policy", "requested target exposure"],
-  ["05", "runtime", "converge observed to desired"],
-  ["06", "evaluation", "account path · confidence · verdict"],
+  ["01", "market facts", "bars · features · causal state", "/aikido/#stage-market"],
+  ["02", "research", "search · score · retain evidence", "/aikido/#stage-research"],
+  ["03", "frozen input", "what was knowable then", "/aikido/#stage-frozen"],
+  ["04", "policy", "requested target exposure", "/aikido/#stage-policy"],
+  ["05", "runtime", "converge observed to desired", "/aikido/#stage-runtime"],
+  ["06", "evaluation", "account path · confidence · verdict", "/aikido/#stage-evaluation"],
 ];
 
 export default function HomePage() {
@@ -34,7 +34,7 @@ export default function HomePage() {
           </div>
           <div className={styles.aikidoFlow}>
             <header><span>system / 01</span><strong>one project · several truth boundaries</strong></header>
-            <ol>{systemStages.map(([number,title,note])=><li key={number}><span>{number}</span><strong>{title}</strong><small>{note}</small></li>)}</ol>
+            <ol>{systemStages.map(([number,title,note,href])=><li key={number}><a href={href}><span>{number}</span><strong>{title}</strong><small>{note}</small></a></li>)}</ol>
           </div>
           <div className={styles.aikidoDossiers}>
             <a href="/case-studies/predicate-sweep"><span>00 / search</span><strong>The Predicate Sweep</strong></a>

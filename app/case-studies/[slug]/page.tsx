@@ -52,6 +52,22 @@ const aikidoSeries = [
   ["03", "When a Result Is Allowed to Count", "results-allowed-to-count"],
 ] as const;
 
+const caseStudyScreenshots: Record<string, Array<{ src: string; alt: string; caption: string; portrait?: boolean }>> = {
+  "operations-workstation": [
+    {
+      src: "/assets/screenshots/live-execution-dashboard.png",
+      alt: "Desktop execution dashboard with a live chart, account table, order controls, and emergency actions",
+      caption: "Desktop execution view with account state and explicit emergency controls.",
+    },
+    {
+      src: "/assets/screenshots/mobile-control-surface.png",
+      alt: "Mobile trading control surface with chart overlays, recent trades, and emergency actions",
+      caption: "The same operational model carried into a narrow mobile control surface.",
+      portrait: true,
+    },
+  ],
+};
+
 function CaseStudyMarkdown({ content, slug }: { content: string; slug: string }) {
   const visuals = caseStudyVisuals[slug];
   if (!visuals) {
@@ -122,6 +138,23 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               sizes="(max-width: 980px) 100vw, 980px"
               priority
             />
+          )}
+          {caseStudyScreenshots[slug]?.length > 0 && (
+            <section className="case-screenshot-gallery" aria-labelledby="interface-screenshots">
+              <h2 id="interface-screenshots">Interface screenshots</h2>
+              {caseStudyScreenshots[slug].map((screenshot) => (
+                <figure className={screenshot.portrait ? "is-portrait" : undefined} key={screenshot.src}>
+                  <Image
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    width={screenshot.portrait ? 945 : 2000}
+                    height={screenshot.portrait ? 2048 : 1200}
+                    sizes={screenshot.portrait ? "(max-width: 880px) 82vw, 32rem" : "(max-width: 880px) 100vw, 800px"}
+                  />
+                  <figcaption>{screenshot.caption}</figcaption>
+                </figure>
+              ))}
+            </section>
           )}
           {study.slug === "predicate-sweep" && <PredicateSweepDiagram />}
           <div className="prose case-prose">

@@ -78,7 +78,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!getCaseStudySlugs().includes(slug)) return {};
   const study = getCaseStudyBySlug(slug);
   const socialImage = slug === "predicate-sweep" ? "/predicate-sweep-og.jpg" : study.image;
-  return { title: study.title, description: study.subtitle, alternates: { canonical: `/case-studies/${slug}` }, openGraph: { title: `${study.title} — bijan`, description: study.subtitle, url: `/case-studies/${slug}`, ...(socialImage ? { images: [socialImage] } : {}) }, ...(socialImage ? { twitter: { card: "summary_large_image", title: `${study.title} — bijan`, description: study.subtitle, images: [socialImage] } } : {}) };
+  return {
+    title: study.title,
+    description: study.subtitle,
+    alternates: { canonical: `/case-studies/${slug}` },
+    openGraph: {
+      title: `${study.title} — bijan`,
+      description: study.subtitle,
+      url: `/case-studies/${slug}`,
+      images: socialImage ? [socialImage] : [],
+    },
+    twitter: {
+      card: socialImage ? "summary_large_image" : "summary",
+      title: `${study.title} — bijan`,
+      description: study.subtitle,
+      images: socialImage ? [socialImage] : [],
+    },
+  };
 }
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -87,7 +103,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   const study = getCaseStudyBySlug(slug);
   const isAikidoDossier = aikidoSeries.some(([, , seriesSlug]) => seriesSlug === slug);
   return (
-    <SiteShell current="work">
+    <SiteShell current="case studies">
       <main className="page" id="main">
         <article className="article-shell case-article-shell">
           <a className="article-back" href={isAikidoDossier ? "/aikido/" : "/case-studies"}>{isAikidoDossier ? "← Aikido dossiers" : "← all dossiers"}</a>

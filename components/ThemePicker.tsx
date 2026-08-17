@@ -3,70 +3,40 @@
 import { useEffect, useState } from "react";
 import styles from "./ThemePicker.module.css";
 
-const themes = [
-  ["personal", "Personal web"],
-  ["dossier", "Dossier"],
-  ["hybrid", "Hybrid"],
-] as const;
-
-export type ThemeId = (typeof themes)[number][0];
-const storageKey = "portfolio-theme";
-
-function isTheme(value: string | null): value is ThemeId {
-  return themes.some(([id]) => id === value);
-}
+type Theme = "light" | "dark";
+const storageKey = "site-theme";
 
 export function ThemePicker() {
-  const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState<ThemeId>("hybrid");
+  const [theme, setTheme] = useState<Theme>("light");
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const saved = window.localStorage.getItem(storageKey);
-      const nextTheme = isTheme(saved) ? saved : "hybrid";
-      setTheme(nextTheme);
-      document.documentElement.dataset.theme = nextTheme;
-      setReady(true);
-    }, 0);
-    return () => window.clearTimeout(timer);
+    const saved = window.localStorage.getItem(storageKey);
+    const next = saved === "light" || saved === "dark"
+      ? saved
+      : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    setReady(true);
   }, []);
 
-  function choose(nextTheme: ThemeId) {
-    setTheme(nextTheme);
-    window.localStorage.setItem(storageKey, nextTheme);
-    setOpen(false);
+  function toggle() {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    window.localStorage.setItem(storageKey, next);
   }
 
-  useEffect(() => {
-    if (!ready) return;
-    document.documentElement.dataset.theme = theme;
-  }, [ready, theme]);
-
   return (
-    <div className={styles.picker} data-ready={ready || undefined}>
-      {open && (
-        <div className={styles.popover} id="theme-options">
-          <p>site treatment</p>
-          <div>
-            {themes.map(([id, label]) => (
-              <button type="button" key={id} data-swatch={id} aria-pressed={id === theme} onClick={() => choose(id)}>
-                <span aria-hidden="true" /> {label}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-      <button
-        className={styles.trigger}
-        type="button"
-        aria-label="Choose site treatment"
-        aria-expanded={open}
-        aria-controls="theme-options"
-        onClick={() => setOpen((value) => !value)}
-      >
-        <span aria-hidden="true" />
-      </button>
-    </div>
+    <button
+      className={styles.trigger}
+      data-ready={ready || undefined}
+      type="button"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+      title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+      onClick={toggle}
+    >
+      <span aria-hidden="true" />
+    </button>
   );
 }

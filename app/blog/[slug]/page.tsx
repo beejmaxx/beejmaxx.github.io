@@ -15,7 +15,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   if (!getPostSlugs().includes(slug)) return {};
   const post = getPostBySlug(slug);
-  return { title: post.title, description: post.excerpt, alternates: { canonical: `/blog/${slug}` }, openGraph: { title: `${post.title} — bijan`, description: post.excerpt, url: `/blog/${slug}`, type: "article" } };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: { title: `${post.title} — bijan`, description: post.excerpt, url: `/blog/${slug}`, type: "article", images: [] },
+    twitter: { card: "summary", title: `${post.title} — bijan`, description: post.excerpt, images: [] },
+  };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {

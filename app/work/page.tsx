@@ -1,9 +1,39 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
-import { WorkExplorer } from "@/components/WorkExplorer";
-import { trails, work, workForTrail } from "@/lib/work";
+import { trails, workForTrail } from "@/lib/work";
 import styles from "./work.module.css";
 
-export const metadata: Metadata = { title:"work",description:"A map of instruments, evidence systems, books, and collections by bijan.",alternates:{canonical:"/work"},openGraph:{title:"work — bijan",description:"Same obsession, different project.",url:"/work"} };
+export const metadata: Metadata = { title:"work",description:"Selected systems, instruments, books, and collections by bijan.",alternates:{canonical:"/work"},openGraph:{title:"work — bijan",description:"Selected systems, instruments, books, and collections.",url:"/work"} };
 
-export default function WorkPage(){return <SiteShell current="work"><main className="page" id="main"><section className="pageHero"><p className="eyebrow">curated work / projects can overlap</p><h1>same obsession,<br/><em>different project.</em></h1><p className="deck">A curated map of the systems, instruments, and experiments that best represent my work.</p></section><section className={styles.trails}>{trails.map(trail=><article className="panel" id={trail.id} key={trail.id}><header><span>{trail.number}</span><div><h2>{trail.title}</h2><p>{trail.description}</p></div></header><ol>{workForTrail(trail.id).map(item=><li key={item.id}><span>{item.status}</span><h3>{item.title}</h3><p>{item.thesis}</p><div>{item.demo&&<a href={item.demo}>open ↗</a>}{item.caseStudy&&<a href={item.caseStudy}>dossier ↗</a>}<a href={item.source}>source ↗</a></div></li>)}</ol></article>)}</section><WorkExplorer items={work}/></main></SiteShell>}
+export default function WorkPage() {
+  return (
+    <SiteShell current="work">
+      <main className="page" id="main">
+        <header className="pageHero">
+          <h1>Work</h1>
+          <p className="deck">A selection of systems, instruments, books, and collections. Some projects appear in more than one group.</p>
+        </header>
+        <div className={styles.groups}>
+          {trails.map((trail) => (
+            <section id={trail.id} key={trail.id}>
+              <header><div><h2>{trail.title}</h2><p>{trail.description}</p></div><span>{trail.number}</span></header>
+              <ul>
+                {workForTrail(trail.id).map((item) => (
+                  <li key={item.id}>
+                    <div><h3>{item.title}</h3><p>{item.thesis}</p></div>
+                    <span>{item.status}</span>
+                    <nav aria-label={`${item.title} links`}>
+                      {item.demo && <a href={item.demo}>open</a>}
+                      {item.caseStudy && <a href={item.caseStudy}>case study</a>}
+                      <a href={item.source}>source</a>
+                    </nav>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+      </main>
+    </SiteShell>
+  );
+}

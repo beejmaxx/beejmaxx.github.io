@@ -1,13 +1,4 @@
-.picker { position: fixed; z-index: 30; right: 16px; bottom: 16px; opacity: 0; transition: opacity .15s ease; }
-.picker[data-ready] { opacity: 1; }
-.trigger { width: 42px; height: 42px; display: grid; place-items: center; padding: 0; border: var(--border); border-radius: 50%; background: var(--paper-light); box-shadow: 2px 2px 0 color-mix(in srgb,var(--ink) 58%,transparent); cursor: pointer; }
-.trigger span { width: 20px; height: 20px; border: 1px solid var(--ink); border-radius: 50%; background: linear-gradient(135deg,var(--steel) 0 50%,var(--accent) 50%); }
-.trigger:focus-visible,.popover button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-.popover { position: absolute; right: 0; bottom: 52px; width: 205px; padding: 12px; border: var(--border); border-radius: var(--radius); background: var(--paper-light); box-shadow: var(--shadow); }
-.popover p { margin: 0 0 9px; color: var(--muted); font: 750 9px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
-.popover > div { display: grid; gap: 5px; }
-.popover button { min-height: 36px; display: flex; gap: 7px; align-items: center; padding: 6px 7px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: var(--ink); cursor: pointer; font-size: 10px; text-align: left; }
-.popover button:hover,.popover button[aria-pressed="true"] { border-color: var(--line); background: var(--paper); }
-.popover button span { width: 13px; height: 13px; flex: 0 0 auto; border: 1px solid var(--ink); border-radius: 50%; }
-.popover button[data-swatch="personal"] span { background:linear-gradient(135deg,#f6c978 0 50%,#74244a 50%) }.popover button[data-swatch="dossier"] span { background:linear-gradient(135deg,#edf4f6 0 50%,#173c4d 50%) }.popover button[data-swatch="hybrid"] span { background:linear-gradient(135deg,#f0eee7 0 50%,#9d3f2f 50%) }
-@media(max-width:620px){.picker{right:10px;bottom:10px}.popover{width:min(218px,calc(100vw - 20px))}}
+.trigger { position: fixed; z-index: 30; right: 1rem; bottom: 1rem; width: 2rem; height: 2rem; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); opacity: 0; cursor: pointer; }
+.trigger[data-ready] { opacity: 1; }
+.trigger span { width: .85rem; height: .85rem; border: 1px solid var(--ink); border-radius: 50%; background: linear-gradient(90deg, var(--ink) 0 50%, var(--paper) 50%); }
+.trigger:hover { border-color: var(--accent); }

@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://beejmaxx.github.io",
     siteName: "bijan",
-    images: [{ url: "/og.jpg", width: 1242, height: 652, alt: "bijan — making hidden systems inspectable" }],
+    images: [{ url: "/og-v2.png", width: 1731, height: 909, alt: "bijan — making hidden systems easier to inspect" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "bijan",
     description: "I make hidden systems inspectable.",
-    images: ["/og.jpg"],
+    images: ["/og-v2.png"],
   },
 };
 
@@ -45,9 +45,6 @@ const structuredData = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("portfolio-theme");if(t==="personal"||t==="dossier"||t==="hybrid")document.documentElement.dataset.theme=t;}catch(_){}})();` }} />
-      </head>
       <body id="top">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         {children}

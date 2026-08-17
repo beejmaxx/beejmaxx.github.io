@@ -8,10 +8,10 @@ const selectedWork = ["aikido", "depthfield", "bells", "engine-sim", "observator
   .filter(Boolean);
 
 const aikidoStudies = [
-  ["The Predicate Sweep", "custom research at combinatorial scale", "/case-studies/predicate-sweep"],
-  ["One Account, One Truth", "one authoritative account-state model", "/case-studies/one-account-truth"],
-  ["Converge, Don’t Command", "recoverable live execution", "/case-studies/converge-dont-command"],
-  ["When a Result Is Allowed to Count", "evidence and evaluation authority", "/case-studies/results-allowed-to-count"],
+  ["The Predicate Sweep", "/case-studies/predicate-sweep"],
+  ["One Account, One Truth", "/case-studies/one-account-truth"],
+  ["Converge, Don’t Command", "/case-studies/converge-dont-command"],
+  ["When a Result Is Allowed to Count", "/case-studies/results-allowed-to-count"],
 ] as const;
 
 export default function HomePage() {
@@ -27,9 +27,9 @@ export default function HomePage() {
         <section className={styles.section}>
           <header><h2>Aikido</h2></header>
           <p className={styles.intro}>A research, simulation, execution, and evaluation system for systematic trading. This is the largest body of work on the site.</p>
-          <nav className={styles.inlineLinks}><a href="/aikido/">System overview →</a><a href="https://github.com/beejmaxx/aikido-systematic-trading">Source code →</a></nav>
+          <nav className={styles.inlineLinks}><a href="/aikido/">About Aikido</a><a href="https://github.com/beejmaxx/aikido-systematic-trading">GitHub repository</a></nav>
           <ul className={styles.rows}>
-            {aikidoStudies.map(([title, description, href]) => <li key={href}><a href={href}><strong>{title}</strong><span>{description}</span></a></li>)}
+            {aikidoStudies.map(([title, href]) => <li key={href}><a href={href}><strong>{title}</strong></a></li>)}
           </ul>
         </section>
 

@@ -24,7 +24,7 @@ export function SiteShell({ current, children }: { current?: string; children: R
       {children}
       <footer className={styles.footer}>
         <p>built by bijan.</p>
-        <nav aria-label="Footer navigation"><a href="mailto:bijan.pourriahi@gmail.com">email</a><a href="https://github.com/beejmaxx">github</a><a href="#top">top</a></nav>
+        <nav aria-label="Footer navigation"><a href="/sitemap">sitemap</a><a href="mailto:bijan.pourriahi@gmail.com">email</a><a href="https://github.com/beejmaxx">github</a><a href="#top">top</a></nav>
       </footer>
     </div>
   );

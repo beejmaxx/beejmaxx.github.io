@@ -22,16 +22,16 @@ export type WorkItem = {
 
 export const trails = [
   {
-    id: "instruments",
-    number: "01",
-    title: "instruments",
-    description: "Things that turn changing systems into something visible, audible, or playable.",
-  },
-  {
     id: "receipts",
-    number: "02",
+    number: "01",
     title: "systems with receipts",
     description: "Replay, evidence, operator state, and decisions that can be inspected after the fact.",
+  },
+  {
+    id: "instruments",
+    number: "02",
+    title: "instruments",
+    description: "Things that turn changing systems into something visible, audible, or playable.",
   },
   {
     id: "library",
@@ -128,12 +128,12 @@ export const work: WorkItem[] = [
   {
     id: "observatory",
     title: "Flat Earth Observatory",
-    thesis: "Claims turned into measurements.",
+    thesis: "Measurement tools for testing claims against observations.",
     description: "An interactive observatory for comparing globe and flat-Earth predictions across shadows, horizons, stars, and eclipses.",
     kind: "instrument",
     status: "live",
     year: 2026,
-    trails: ["instruments", "receipts", "simulation", "provenance"],
+    trails: ["simulation", "provenance"],
     stack: ["TypeScript", "Geometry", "Evidence"],
     demo: "https://beejmaxx.github.io/flat-earth-observatory/",
     source: "https://github.com/beejmaxx/flat-earth-observatory",

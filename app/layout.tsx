@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://beejmaxx.github.io"),
   title: {
-    default: "bijan",
-    template: "%s — bijan",
+    default: "Bijan Pourriahi",
+    template: "%s — Bijan Pourriahi",
   },
   description:
-    "Reliable agent infrastructure, developer tooling, stateful execution systems, and technical instruments by Bijan.",
+    "Systems engineer building runtimes, integrations, and tools for complex, stateful systems.",
   alternates: {
     canonical: "/",
   },
@@ -17,17 +17,17 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: "bijan",
-    description: "Reliable systems for agents and operators.",
+    title: "Bijan Pourriahi",
+    description: "Systems engineer building runtimes, integrations, and tools for complex, stateful systems.",
     type: "website",
     url: "https://beejmaxx.github.io",
-    siteName: "bijan",
-    images: [{ url: "/og-v2.png", width: 1731, height: 909, alt: "bijan — making hidden systems easier to inspect" }],
+    siteName: "Bijan Pourriahi",
+    images: [{ url: "/og-v2.png", width: 1731, height: 909, alt: "Bijan Pourriahi — systems engineer building runtimes, integrations, and tools for complex, stateful systems" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "bijan",
-    description: "Reliable systems for agents and operators.",
+    title: "Bijan Pourriahi",
+    description: "Systems engineer building runtimes, integrations, and tools for complex, stateful systems.",
     images: ["/og-v2.png"],
   },
 };
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "bijan",
+  name: "Bijan Pourriahi",
   url: "https://beejmaxx.github.io",
   sameAs: ["https://github.com/beejmaxx"],
   knowsAbout: ["Rust", "Python", "agent infrastructure", "process supervision", "developer tooling", "stateful systems"],

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
 import styles from "./about.module.css";
 
-export const metadata: Metadata = { title:"about",description:"About bijan and the recurring ideas behind the work.",alternates:{canonical:"/about"},openGraph:{title:"about — bijan",description:"Software engineer making hidden systems inspectable.",url:"/about"} };
+export const metadata: Metadata = { title:"about",description:"About Bijan Pourriahi and his work on runtimes, integrations, and tools for complex, stateful systems.",alternates:{canonical:"/about"},openGraph:{title:"about — Bijan Pourriahi",description:"Systems engineer building runtimes, integrations, and tools for complex, stateful systems.",url:"/about"} };
 
 const timeline = [
   ["2010", "small programs, Ruby, Rails, and learning in public"],

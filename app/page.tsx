@@ -22,8 +22,8 @@ export default function HomePage() {
     <SiteShell current="home">
       <main id="main" className={styles.main}>
         <section className={styles.hero}>
-          <h1>Reliable systems for agents and operators.</h1>
-          <p>I’m Bijan, a systems engineer focused on agent infrastructure, developer tooling, and stateful execution systems.</p>
+          <h1>Bijan Pourriahi</h1>
+          <p>Systems engineer building runtimes, integrations, and tools for complex, stateful systems.</p>
           <p>I build around unreliable external processes: durable state, cancellation and recovery, protocol boundaries, evidence capture, and operator-facing controls. I work mainly in Rust, Python, and TypeScript.</p>
           <nav className={styles.inlineLinks}><a href="/resume.pdf">Résumé</a><a href="https://github.com/beejmaxx">GitHub</a></nav>
         </section>

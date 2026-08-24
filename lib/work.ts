@@ -88,7 +88,7 @@ export const work: WorkItem[] = [
     kind: "instrument",
     status: "live",
     year: 2026,
-    trails: ["instruments", "receipts", "replay", "state"],
+    trails: ["instruments", "replay", "state"],
     stack: ["TypeScript", "WebGPU", "Web Workers", "IndexedDB"],
     demo: "https://beejmaxx.github.io/depthfield/",
     source: "https://github.com/beejmaxx/depthfield",

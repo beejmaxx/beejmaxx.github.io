@@ -29,19 +29,19 @@ export default function HomePage() {
         </section>
 
         <section className={styles.section}>
-          <header><h2>Agent infrastructure</h2></header>
-          <p className={styles.intro}>Experiments in supervising external AI agents and their capabilities without pretending the host controls what it cannot observe.</p>
-          <ul className={styles.rows}>
-            {agentInfrastructure.map((item) => item && <li key={item.id}><a href={item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span>{item.id === "agent-supervisor" && <span className={styles.detail}>Explores lifecycle management, authority boundaries, interruption recovery, and evidence capture for long-running agent workflows.</span>}</a></li>)}
-          </ul>
-        </section>
-
-        <section className={styles.section}>
           <header><h2>Selected systems</h2></header>
           <ul className={styles.rows}>
             {selectedWork.map((item) => item && <li key={item.id}><a href={item.demo ?? item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span></a></li>)}
           </ul>
           <p className={styles.more}><a href="/work">All work →</a></p>
+        </section>
+
+        <section className={styles.section}>
+          <header><h2>Agent infrastructure</h2></header>
+          <p className={styles.intro}>Experiments in supervising external AI agents and their capabilities without pretending the host controls what it cannot observe.</p>
+          <ul className={styles.rows}>
+            {agentInfrastructure.map((item) => item && <li key={item.id}><a href={item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span>{item.id === "agent-supervisor" && <span className={styles.detail}>Explores lifecycle management, authority boundaries, interruption recovery, and evidence capture for long-running agent workflows.</span>}</a></li>)}
+          </ul>
         </section>
 
         <section className={styles.section}>

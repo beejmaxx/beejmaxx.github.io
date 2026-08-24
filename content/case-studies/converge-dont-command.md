@@ -146,3 +146,8 @@ That separation makes retry, recovery, operator inspection, and incident analysi
 The runtime remains a live system with active migration seams, broker-specific behavior, and staging requirements. A practice-account verification is meaningful operational evidence, but it is not proof against every broker race or failure mode.
 
 The defensible result is narrower: the system replaced a demonstrably unsafe delta-command loop with broker-reconciled target convergence, local coalescing, acknowledged delivery, explicit protection authority, and regression harnesses for the failure modes that had occurred.
+
+## Source references
+
+- The [protective-order runaway incident record](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/docs/incidents/2026-04-13_protective_order_runaway.md) documents the observed failure and corrective actions.
+- The [desired-exposure architecture](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/docs/foundational_desired_exposure_architecture.md) defines the convergence model and its authority boundary.

@@ -168,8 +168,6 @@ export const work: WorkItem[] = [
     stack: ["Real-time systems", "Operational UX", "Risk"],
     source: "https://github.com/beejmaxx/aikido-systematic-trading",
     caseStudy: "/case-studies/operations-workstation",
-    evidence: "/assets/screenshots/trading-fleet-dashboard.png",
-    evidenceAlt: "A trading fleet dashboard showing account and execution state",
     proof: "Account health, exposure, limits, fan-out behavior, and emergency controls are visible in the same operational model.",
   },
   {

@@ -1,6 +1,6 @@
 ---
 title: Agent Supervisor
-subtitle: A Rust experiment in supervising autonomous agents as long-running, unreliable external processes.
+subtitle: A Rust experiment in supervising external AI agents as long-running, unreliable processes.
 index: 00
 tags: Rust, ACP, SQLite, agent infrastructure
 image:
@@ -8,7 +8,7 @@ image:
 
 ## Problem
 
-An autonomous agent can stream output, mutate a workspace, request permission, stop responding, or disappear after an effect may already have happened. A chat transcript alone cannot answer the operational questions that follow:
+An external AI agent can stream output, mutate a workspace, request permission, stop responding, or disappear after an effect may already have happened. A chat transcript alone cannot answer the operational questions that follow:
 
 - Which durable attempt owned the work?
 - What authority did the host actually have?

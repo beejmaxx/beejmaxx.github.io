@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
-import { getAllCaseStudies } from "@/lib/case-studies";
+import { getListedCaseStudies } from "@/lib/case-studies";
 import styles from "./cases.module.css";
 
 export const metadata: Metadata = { title:"case studies",description:"Engineering records with constraints, evidence, limits, and decisions.",alternates:{canonical:"/case-studies"},openGraph:{title:"case studies — bijan",description:"Engineering records with context and evidence.",url:"/case-studies"} };
@@ -8,7 +8,7 @@ export const metadata: Metadata = { title:"case studies",description:"Engineerin
 const aikidoSlugs = ["predicate-sweep", "one-account-truth", "converge-dont-command", "results-allowed-to-count"];
 
 export default function CasesPage() {
-  const studies = getAllCaseStudies();
+  const studies = getListedCaseStudies();
   const aikido = aikidoSlugs.map((slug) => studies.find((study) => study.slug === slug)).filter(Boolean);
   const other = studies.filter((study) => !aikidoSlugs.includes(study.slug));
   return (

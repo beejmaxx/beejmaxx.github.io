@@ -127,7 +127,7 @@ Recent hardening added:
 - a confidence scorecard joining audit, exact replay, Monte Carlo, and coverage artifacts;
 - confidence-first ranking before fast-pass utility.
 
-The fast screen uses three seed streams. The repository’s audited backlog still lists a ten-seed finalist certificate, block bootstrap, fuller coverage gates, and tail-stress work as incomplete. That distinction belongs on the page: implemented safeguards and intended safeguards are not the same thing.
+The fast screen uses three seed streams. The predicate-sweep verifier already uses a 500-resample, 20-day-block bootstrap for one selection score; the separate policy-certification program described here still lists a generalized finalist block-bootstrap certificate, ten-seed certification, fuller coverage gates, and tail-stress work as incomplete. That distinction belongs on the page: a safeguard implemented in one evaluation path is not automatically a platform-wide guarantee.
 
 [[visual:confidence-ladder]]
 
@@ -173,6 +173,11 @@ Each mechanism turns an implicit assumption into something inspectable.
 
 ## Limits
 
-The audited repository documents open work: exact-minute Monte Carlo calibration, expanded seed certification, block bootstrap, coverage enforcement, stop-loss parity, and full single-simulator cutover are not all complete.
+The audited repository documents open work: exact-minute Monte Carlo calibration, expanded seed certification, the broader policy-certification block bootstrap, coverage enforcement, stop-loss parity, and full single-simulator cutover are not all complete.
 
 This is therefore not a claim that Aikido’s evaluation is infallible. It is a case study in building an evaluation system that identifies its authority boundary, retains the evidence required to audit it, and can demote its own conclusions when that boundary moves.
+
+## Source references
+
+- The [evaluation contract](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/docs/research/evaluation_contract_v1.md) defines the authoritative artifact and comparison requirements.
+- The [trusted-results record](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/docs/research/trusted_results_v2.md) shows the current comparable core, exclusions, and explicit limits on promotion authority.

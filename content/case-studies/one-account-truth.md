@@ -145,3 +145,8 @@ The repository also retains a selected-path parity lane and canonical fixtures s
 This is an implemented shared kernel inside an active migration, not a claim that every historical simulator or every runtime path has already disappeared. The audited architecture still identifies legacy compatibility surfaces and work required to finish the single-simulator cutover.
 
 The case study therefore supports a precise claim: Aikido has extracted its central one-account transitions into a reusable, validated Rust state machine and connected the canonical simulator and runtime accounting path to it. It does not claim that all surrounding systems are identical.
+
+## Source references
+
+- [`OneAccountStateV0`, `OneAccountEventV0`, reducers, and invariant tests](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/crates/policy-kernel/src/one_account.rs) are the implemented shared state-machine surface.
+- The [one-account state specification](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/docs/research/policy_kernel_one_account_state_spec_v1.md) records the intended boundaries and parity contract.

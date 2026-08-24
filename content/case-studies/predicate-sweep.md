@@ -223,4 +223,11 @@ The proof surface includes tests that graph pruning preserves triangle and cliqu
 
 This is an implementation and optimization-history dossier, not a controlled benchmark against providers or a canonical end-to-end run report. The architectural claim is narrower: this research depended on an internal predicate representation, cache lineage, a custom pruning graph, a strategy-specific screening model, and an exact verification contract. Those were the reasons to build the subsystem.
 
+## Source references
+
+- The [`pred_sweep` subsystem guide](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/crates/research/src/pred_sweep/README.md) documents the pipeline, validation modes, and authority boundary.
+- [`SweepSpec` and pipeline construction](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/crates/research/src/pred_sweep/pipeline.rs) define the strategy-specific search inputs.
+- [`VerifiedResult` and exact candidate verification](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/crates/research/src/pred_sweep/verify.rs) implement the narrow path back to canonical simulation.
+- [Predicate-sweep parity tests](https://github.com/beejmaxx/aikido-systematic-trading/blob/main/crates/engine/tests/pred_sweep_parity.rs) cover selected cache and evaluator equivalence contracts.
+
 [See the larger Aikido system →](/aikido/)

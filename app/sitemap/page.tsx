@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
-import { getAllCaseStudies } from "@/lib/case-studies";
+import { getListedCaseStudies } from "@/lib/case-studies";
 import styles from "./sitemap.module.css";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function SitemapPage() {
-  const studies = getAllCaseStudies();
+  const studies = getListedCaseStudies();
 
   return (
     <SiteShell>

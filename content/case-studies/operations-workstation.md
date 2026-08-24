@@ -3,20 +3,16 @@ title: Real-Time Operations Workstation
 subtitle: An operator-facing workstation that brought multi-account state, execution workflows, risk controls, monitoring, and emergency actions into one legible system.
 index: 02
 tags: real-time systems, operational UX, risk, full-stack
-image: /assets/screenshots/trading-fleet-dashboard.png
+image:
 ---
 
 ## What exists
 
 Operators needed one surface to understand live account state, execution behavior, exposure, limits, and emergency controls without jumping between separate tools. The interface had to support fast action while keeping state inspectable and operational decisions explainable.
 
-![Trading fleet dashboard](/assets/screenshots/trading-fleet-dashboard.png)
-
 ## The hard part
 
 The interface had to support fast action without turning an emergency control into an easy accident. Display state and control logic stayed separate; destructive actions remained explicit; fan-out behavior needed to be visible rather than implied.
-
-![Strategy explorer](/assets/screenshots/strategy-explorer.png)
 
 ## System map
 
@@ -32,11 +28,9 @@ workstation → API/control layer → runtime state → policy/control logic
 - Preserve event and execution history for review rather than showing only current positions.
 - Use the same operational model on desktop and mobile without pretending the surfaces are interchangeable.
 
-![Live execution dashboard](/assets/screenshots/live-execution-dashboard.png)
-
 ## Evidence
 
-The screenshots on this page show the fleet overview, experiment comparison surface, and live execution state. They are product artifacts, not reconstructed portfolio mockups.
+The [public Aikido repository](https://github.com/beejmaxx/aikido-systematic-trading) and [architecture record](/aikido/architecture.html) document the control-plane boundaries behind the workstation. Operational screenshots are withheld because they contain account-level data; the page does not substitute reconstructed mockups for that evidence.
 
 ## Limits
 

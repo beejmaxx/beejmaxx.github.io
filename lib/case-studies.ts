@@ -14,6 +14,15 @@ const caseStudySources = import.meta.glob<string>("../content/case-studies/*.md"
   query: "?raw",
 });
 
+const listedCaseStudySlugs = new Set([
+  "predicate-sweep",
+  "one-account-truth",
+  "converge-dont-command",
+  "results-allowed-to-count",
+  "agent-supervisor",
+  "operations-workstation",
+]);
+
 function parseFrontmatter(source: string) {
   const match = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/.exec(source);
   if (!match) throw new Error("Every case study needs a frontmatter block.");
@@ -47,4 +56,8 @@ export function getCaseStudyBySlug(slug: string): CaseStudy {
 
 export function getAllCaseStudies() {
   return getCaseStudySlugs().map(getCaseStudyBySlug).sort((a, b) => a.index.localeCompare(b.index));
+}
+
+export function getListedCaseStudies() {
+  return getAllCaseStudies().filter((study) => listedCaseStudySlugs.has(study.slug));
 }

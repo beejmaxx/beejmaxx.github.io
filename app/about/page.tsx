@@ -19,7 +19,7 @@ export default function AboutPage() {
         <section className={styles.copy}>
           <p>I build agent infrastructure, integration systems, developer tools, market infrastructure, and operational control surfaces.</p>
           <p>The domain changes, but the questions repeat: What state matters? Who owns it? Can the behavior be interrupted and recovered? What evidence survives? What does the operator see?</p>
-          <p>Agent Supervisor applies those questions to autonomous agents. Aikido applies them to research, simulation, and execution. Both are prototypes, documented according to what their current implementations actually support.</p>
+          <p>Agent Supervisor applies those questions to external AI agents. Aikido applies them to research, simulation, and execution. Both are prototypes, documented according to what their current implementations actually support.</p>
         </section>
         <section className={styles.section}><h2>Background</h2><ol>{timeline.map(([date, note]) => <li key={date}><span>{date}</span><p>{note}</p></li>)}</ol></section>
         <section className={styles.section}><h2>Links</h2><dl><div><dt>Résumé</dt><dd><a href="/resume.pdf">PDF ↗</a></dd></div><div><dt>GitHub</dt><dd><a href="https://github.com/beejmaxx">beejmaxx ↗</a></dd></div><div><dt>Email</dt><dd><a href="mailto:bijan.pourriahi@gmail.com">bijan.pourriahi@gmail.com</a></dd></div><div><dt>Tools</dt><dd>Rust, Python, TypeScript, Go</dd></div></dl></section>

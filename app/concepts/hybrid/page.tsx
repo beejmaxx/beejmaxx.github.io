@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { projects } from "@/lib/projects";
 import { conceptLinks, conceptProjects, secondaryProjects } from "../concept-data";
 import styles from "./hybrid.module.css";
@@ -81,7 +80,6 @@ export default function HybridConcept() {
             </p>
             <a href="/case-studies/operations-workstation">Read the case study →</a>
           </div>
-          <Image src="/assets/screenshots/live-execution-dashboard.png" alt="Live trading operations workstation" width={2000} height={1253} sizes="(max-width: 800px) 100vw, 70vw" />
         </section>
 
         <section className={styles.systems} id="systems">

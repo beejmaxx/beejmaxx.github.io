@@ -122,7 +122,7 @@ test("exports discovery files, data, and public artifacts", async () => {
   for (const asset of [
     ".nojekyll", "og.jpg", "resume.pdf", "engine-sim/index.html", "aikido/index.html",
     "aikido/architecture.html", "aikido/system-map.js", "case-studies/marketplace-integrity.html",
-    "assets/screenshots/depthfield-live.png", "assets/screenshots/trading-fleet-dashboard.png",
+    "assets/screenshots/depthfield-live.png", "assets/screenshots/strategy-explorer.png",
   ]) await access(new URL(asset, clientRoot));
 });
 

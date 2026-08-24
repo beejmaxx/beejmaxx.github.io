@@ -13,6 +13,7 @@
 .rows a { color: var(--link); }
 .rows strong { font-weight: 700; }
 .rows span { display: block; color: var(--ink); font-size: .92rem; }
+.rows .detail { max-width: 46rem; margin-top: .2rem; color: var(--muted); font-size: .84rem; }
 .more { margin: .4rem 0 0; }
 @media(max-width: 38rem) {
   .main { padding-top: 1rem; }

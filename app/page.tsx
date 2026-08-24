@@ -32,7 +32,7 @@ export default function HomePage() {
           <header><h2>Agent infrastructure</h2></header>
           <p className={styles.intro}>Experiments in supervising external AI agents and their capabilities without pretending the host controls what it cannot observe.</p>
           <ul className={styles.rows}>
-            {agentInfrastructure.map((item) => item && <li key={item.id}><a href={item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span></a></li>)}
+            {agentInfrastructure.map((item) => item && <li key={item.id}><a href={item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span>{item.id === "agent-supervisor" && <span className={styles.detail}>Explores lifecycle management, authority boundaries, interruption recovery, and evidence capture for long-running agent workflows.</span>}</a></li>)}
           </ul>
         </section>
 

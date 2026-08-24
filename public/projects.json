@@ -1,7 +1,53 @@
 {
-  "updated": "2026-08-14",
+  "updated": "2026-08-24",
   "description": "Curated public work by bijan. The raw GitHub snapshot lives in content/projects.json.",
   "projects": [
+    {
+      "id": "agent-supervisor",
+      "title": "Agent Supervisor",
+      "thesis": "External AI agents treated as unreliable processes.",
+      "description": "An experimental Rust control plane for durable agent attempts, explicit trust tiers, interruption, recovery, and evidence capture.",
+      "kind": "system",
+      "status": "working",
+      "year": 2026,
+      "trails": [
+        "receipts",
+        "replay",
+        "state"
+      ],
+      "stack": [
+        "Rust",
+        "ACP",
+        "SQLite",
+        "JSON-RPC"
+      ],
+      "source": "https://github.com/beejmaxx/agent-supervisor",
+      "caseStudy": "/case-studies/agent-supervisor",
+      "proof": "ACP and Codex adapters exercise durable attempt identity, generation-fenced bindings, interruption, conservative unknown outcomes, and observed workspace evidence.",
+      "limit": "A research prototype, not a production sandbox or security boundary; external ACP agents retain their own tools and effects."
+    },
+    {
+      "id": "mcphub",
+      "title": "MCPHub RS",
+      "thesis": "A bounded gateway for MCP capabilities.",
+      "description": "A Rust-native MCP gateway that supervises stdio servers and makes transport, cancellation, policy decisions, and execution records explicit.",
+      "kind": "system",
+      "status": "working",
+      "year": 2026,
+      "trails": [
+        "receipts",
+        "state"
+      ],
+      "stack": [
+        "Rust",
+        "MCP",
+        "Streamable HTTP",
+        "SQLite"
+      ],
+      "source": "https://github.com/beejmaxx/mcphub-rs",
+      "proof": "The implementation bounds frames, requests, concurrency, stderr retention, and shutdown while recording capability routing and effects.",
+      "limit": "Infrastructure experiment rather than a universal MCP deployment platform."
+    },
     {
       "id": "depthfield",
       "title": "Depthfield",

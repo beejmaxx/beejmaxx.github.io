@@ -1,9 +1,12 @@
 import { SiteShell } from "@/components/SiteShell";
-import { books } from "@/lib/books";
 import { getWork } from "@/lib/work";
 import styles from "./home.module.css";
 
-const selectedWork = ["aikido", "depthfield", "bells", "engine-sim", "observatory"]
+const agentInfrastructure = ["agent-supervisor", "mcphub"]
+  .map(getWork)
+  .filter(Boolean);
+
+const selectedWork = ["aikido", "depthfield", "operations", "bot-defense"]
   .map(getWork)
   .filter(Boolean);
 
@@ -19,34 +22,35 @@ export default function HomePage() {
     <SiteShell current="home">
       <main id="main" className={styles.main}>
         <section className={styles.hero}>
-          <h1>Welcome</h1>
-          <p>My name is bijan. I’m a software engineer who builds research systems, browser instruments, developer tools, and technical books.</p>
-          <p>Most of my work is about making hidden state easier to inspect, replay, and understand. I work mainly in Rust, Python, and TypeScript.</p>
+          <h1>Reliable systems for agents and operators.</h1>
+          <p>I’m Bijan, a systems engineer focused on agent infrastructure, developer tooling, and stateful execution systems.</p>
+          <p>I build around unreliable external processes: durable state, cancellation and recovery, protocol boundaries, evidence capture, and operator-facing controls. I work mainly in Rust, Python, and TypeScript.</p>
+          <nav className={styles.inlineLinks}><a href="/resume.pdf">Résumé</a><a href="https://github.com/beejmaxx">GitHub</a></nav>
         </section>
 
         <section className={styles.section}>
-          <header><h2>Aikido</h2></header>
-          <p className={styles.intro}>A research, simulation, execution, and evaluation system for systematic trading. This is the largest body of work on the site.</p>
-          <nav className={styles.inlineLinks}><a href="/aikido/">About Aikido</a><a href="https://github.com/beejmaxx/aikido-systematic-trading">GitHub repository</a></nav>
+          <header><h2>Agent infrastructure</h2></header>
+          <p className={styles.intro}>Experiments in supervising external AI agents and their capabilities without pretending the host controls what it cannot observe.</p>
           <ul className={styles.rows}>
-            {aikidoStudies.map(([title, href]) => <li key={href}><a href={href}><strong>{title}</strong></a></li>)}
+            {agentInfrastructure.map((item) => item && <li key={item.id}><a href={item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span></a></li>)}
           </ul>
         </section>
 
         <section className={styles.section}>
-          <header><h2>Selected work</h2></header>
+          <header><h2>Selected systems</h2></header>
           <ul className={styles.rows}>
-            {selectedWork.slice(1).map((item) => item && <li key={item.id}><a href={item.demo ?? item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span></a></li>)}
+            {selectedWork.map((item) => item && <li key={item.id}><a href={item.demo ?? item.caseStudy ?? item.source}><strong>{item.title}</strong><span>{item.thesis}</span></a></li>)}
           </ul>
           <p className={styles.more}><a href="/work">All work →</a></p>
         </section>
 
         <section className={styles.section}>
-          <header><h2>Books</h2></header>
+          <header><h2>Aikido case studies</h2></header>
+          <p className={styles.intro}>Engineering records from a systematic-trading research and execution system: state machines, distributed reconciliation, reproducibility, and evaluation.</p>
           <ul className={styles.rows}>
-            {books.slice(0, 3).map((book) => <li key={book.id}><a href={book.onePager ? `/books/${book.id}` : book.demo}><strong>{book.title}</strong><span>{book.thesis}</span></a></li>)}
+            {aikidoStudies.map(([title, href]) => <li key={href}><a href={href}><strong>{title}</strong></a></li>)}
           </ul>
-          <p className={styles.more}><a href="/books">All books →</a></p>
+          <p className={styles.more}><a href="/aikido/">Aikido system overview →</a></p>
         </section>
       </main>
     </SiteShell>

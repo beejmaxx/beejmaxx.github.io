@@ -18,9 +18,9 @@ export function PersonalSiteShell({
           <div><a className={styles.name} href="/">bijan</a><p>{section}</p></div>
           <nav aria-label="Main navigation">
             <a href="/work-map">stuff</a>
-            <a href="/books">books</a>
             <a href="/case-studies">cases</a>
             <a href="/about">about</a>
+            <a href="/resume.pdf">résumé</a>
           </nav>
         </header>
         {children}

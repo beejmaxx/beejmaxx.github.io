@@ -2,7 +2,7 @@ import { writeFile } from "node:fs/promises";
 import { work } from "../lib/work.ts";
 
 const packet = {
-  updated: "2026-08-14",
+  updated: "2026-08-24",
   description: "Curated public work by bijan. The raw GitHub snapshot lives in content/projects.json.",
   projects: work,
 };

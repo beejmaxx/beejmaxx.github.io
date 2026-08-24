@@ -8,10 +8,9 @@ export const metadata: Metadata = {
     template: "%s — bijan",
   },
   description:
-    "Instruments, evidence systems, books, collections, and unfinished inquiries by bijan.",
+    "Reliable agent infrastructure, developer tooling, stateful execution systems, and technical instruments by Bijan.",
   alternates: {
     canonical: "/",
-    types: { "application/atom+xml": "/feed.xml" },
   },
   icons: {
     icon: "/favicon.svg",
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "bijan",
-    description: "I make hidden systems inspectable.",
+    description: "Reliable systems for agents and operators.",
     type: "website",
     url: "https://beejmaxx.github.io",
     siteName: "bijan",
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "bijan",
-    description: "I make hidden systems inspectable.",
+    description: "Reliable systems for agents and operators.",
     images: ["/og-v2.png"],
   },
 };
@@ -39,7 +38,7 @@ const structuredData = {
   name: "bijan",
   url: "https://beejmaxx.github.io",
   sameAs: ["https://github.com/beejmaxx"],
-  knowsAbout: ["Rust", "Python", "interactive systems", "simulation", "research infrastructure"],
+  knowsAbout: ["Rust", "Python", "agent infrastructure", "process supervision", "developer tooling", "stateful systems"],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

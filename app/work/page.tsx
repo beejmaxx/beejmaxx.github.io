@@ -3,7 +3,9 @@ import { SiteShell } from "@/components/SiteShell";
 import { trails, workForTrail } from "@/lib/work";
 import styles from "./work.module.css";
 
-export const metadata: Metadata = { title:"work",description:"Selected systems, instruments, books, and collections by bijan.",alternates:{canonical:"/work"},openGraph:{title:"work — bijan",description:"Selected systems, instruments, books, and collections.",url:"/work"} };
+export const metadata: Metadata = { title:"work",description:"Selected agent infrastructure, execution systems, developer tools, and technical instruments by Bijan.",alternates:{canonical:"/work"},openGraph:{title:"work — bijan",description:"Selected agent infrastructure, execution systems, developer tools, and technical instruments.",url:"/work"} };
+
+const visibleTrails = trails.filter((trail) => trail.id !== "library");
 
 export default function WorkPage() {
   return (
@@ -11,14 +13,14 @@ export default function WorkPage() {
       <main className="page" id="main">
         <header className="pageHero">
           <h1>Work</h1>
-          <p className="deck">A selection of systems, instruments, books, and collections. Some projects appear in more than one group.</p>
+          <p className="deck">Agent infrastructure, execution systems, developer tools, and technical instruments. Some projects appear in more than one group.</p>
         </header>
         <div className={styles.groups}>
-          {trails.map((trail) => (
+          {visibleTrails.map((trail) => (
             <section id={trail.id} key={trail.id}>
               <header><div><h2>{trail.title}</h2><p>{trail.description}</p></div><span>{trail.number}</span></header>
               <ul>
-                {workForTrail(trail.id).map((item) => (
+                {workForTrail(trail.id).filter((item) => item.kind !== "book" && item.kind !== "collection").map((item) => (
                   <li key={item.id}>
                     <div><h3>{item.title}</h3><p>{item.thesis}</p></div>
                     <span>{item.status}</span>

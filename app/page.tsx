@@ -2,7 +2,7 @@ import { SiteShell } from "@/components/SiteShell";
 import { getWork } from "@/lib/work";
 import styles from "./home.module.css";
 
-const agentInfrastructure = ["agent-supervisor", "mcphub"]
+const agentInfrastructure = ["agent-supervisor", "polymarket-mcp", "mcphub"]
   .map(getWork)
   .filter(Boolean);
 

@@ -21,6 +21,15 @@ export type Book = {
 
 export const books: Book[] = [
   {
+    id: "market-structures",
+    title: "Market Structures",
+    status: "working",
+    thesis: "Learn data structures by connecting workload, invariants, representation, and measurement.",
+    description: "An interactive 18-module guide to data structures, low-latency systems, and practical HFT experiments.",
+    demo: "https://beejmaxx.github.io/market-structures/",
+    source: "https://github.com/beejmaxx/market-structures",
+  },
+  {
     id: "platform-integrity",
     title: "Platform Integrity",
     status: "working draft",

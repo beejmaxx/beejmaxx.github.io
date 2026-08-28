@@ -22,7 +22,7 @@ export default function SitemapPage() {
         <div className={styles.index}>
           <section>
             <h2>Main</h2>
-            <ul><li><a href="/">Home</a></li><li><a href="/work">Work</a></li><li><a href="/case-studies">Case studies</a></li><li><a href="/about">About</a></li><li><a href="/resume.pdf">Résumé</a></li></ul>
+            <ul><li><a href="/">Home</a></li><li><a href="/work">Work</a></li><li><a href="/books">Books</a></li><li><a href="/case-studies">Case studies</a></li><li><a href="/about">About</a></li><li><a href="/resume.pdf">Résumé</a></li></ul>
           </section>
           <section>
             <h2>Aikido</h2>

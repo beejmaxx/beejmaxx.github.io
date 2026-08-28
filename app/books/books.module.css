@@ -1,12 +1,20 @@
-.main { width: min(100%, 50rem); margin-inline: auto; }
-.intro { padding: 2rem 0 .75rem; }
+.main { width: min(100%, 58rem); margin-inline: auto; padding-bottom: 5rem; }
+.intro { max-width: 48rem; padding: 2rem 0 2.25rem; border-bottom: 1px solid var(--line); }
 .intro h1 { margin: 0; font: 700 2.2rem/1.2 Arial, Helvetica, sans-serif; letter-spacing: 0; }
-.intro > p:last-child { max-width: 46rem; margin: .75rem 0 0; font-size: 1rem; }
-.list { border-top: 0; }
-.book { display: grid; grid-template-columns: minmax(12rem, .8fr) minmax(18rem, 1.2fr); gap: 2rem; padding: 1.35rem 0; }
-.heading span { color: var(--muted); font-size: .68rem; text-transform: lowercase; }
-.heading h2 { margin: .3rem 0 0; font: 700 1rem/1.4 Arial, Helvetica, sans-serif; }
+.intro > p:last-child { max-width: 43rem; margin: .75rem 0 0; color: var(--muted); font-size: 1rem; }
+.section { margin-top: 2.5rem; }
+.sectionHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .9rem; }
+.sectionHeading h2 { margin: 0; font: 700 1rem/1.3 var(--display); }
+.sectionHeading span { color: var(--muted); font: .68rem var(--mono); }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .85rem; }
+.book { display: flex; min-height: 15rem; flex-direction: column; padding: 1.2rem; border: 1px solid var(--line); background: var(--paper-light); }
+.heading span { color: var(--muted); font: .65rem/1.4 var(--mono); text-transform: lowercase; }
+.heading h3 { margin: .38rem 0 0; font: 700 1.05rem/1.35 var(--display); }
+.heading h3 a { color: var(--ink); }
+.heading h3 a:hover,.heading h3 a:focus-visible { color: var(--accent); }
+.copy { margin-top: .9rem; }
 .copy p { margin: 0 0 .65rem; color: var(--muted); font-size: .8rem; }
 .copy .thesis { color: var(--ink); font-weight: 600; }
-.copy nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; font-size: .72rem; }
-@media(max-width: 40rem) { .intro { padding: 3rem 0 2.25rem; } .book { grid-template-columns: 1fr; gap: .7rem; } }
+.book nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .72rem; }
+@media(max-width: 52rem) { .main { width: min(100%, 50rem); } }
+@media(max-width: 40rem) { .intro { padding: 3rem 0 2.25rem; } .grid { grid-template-columns: 1fr; } .book { min-height: 0; } }

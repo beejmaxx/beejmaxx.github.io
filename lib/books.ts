@@ -11,6 +11,7 @@ export type BookOnePager = {
 export type Book = {
   id: string;
   title: string;
+  area: "systems" | "rust";
   status: string;
   thesis: string;
   description: string;
@@ -21,17 +22,29 @@ export type Book = {
 
 export const books: Book[] = [
   {
-    id: "market-structures",
-    title: "Market Structures",
-    status: "working",
-    thesis: "Learn data structures by connecting workload, invariants, representation, and measurement.",
-    description: "An interactive 18-module guide to data structures, low-latency systems, and practical HFT experiments.",
-    demo: "https://beejmaxx.github.io/market-structures/",
-    source: "https://github.com/beejmaxx/market-structures",
+    id: "electronic-markets-from-first-principles",
+    title: "Electronic Markets from First Principles",
+    area: "systems",
+    status: "early public draft",
+    thesis: "Understand what electronic markets do before modeling or optimizing them.",
+    description: "Interactive market mechanics, microstructure, execution, market making, empirical work, and realistic simulation.",
+    demo: "https://beejmaxx.github.io/electronic-markets-from-first-principles/",
+    source: "https://github.com/beejmaxx/electronic-markets-from-first-principles",
+  },
+  {
+    id: "computer-science-from-first-principles",
+    title: "Computer Science from First Principles",
+    area: "systems",
+    status: "working · data structures v1",
+    thesis: "Build a mechanical understanding of high-performance and low-latency systems.",
+    description: "Interactive foundations spanning data structures, algorithms, CPUs, operating systems, concurrency, networking, storage, and measurement.",
+    demo: "https://beejmaxx.github.io/computer-science-from-first-principles/",
+    source: "https://github.com/beejmaxx/computer-science-from-first-principles",
   },
   {
     id: "platform-integrity",
     title: "Platform Integrity",
+    area: "systems",
     status: "working draft",
     thesis: "Engineering detection, decisions, and enforcement against bots, fraud, and abuse.",
     description: "A decision framework for defending digital ecosystems without reducing every problem to bot detection.",
@@ -61,6 +74,7 @@ export const books: Book[] = [
   {
     id: "rust-api-gallery",
     title: "Rust API Design Guidebook",
+    area: "rust",
     status: "working",
     thesis: "Consumer-visible API decisions, specimen by specimen.",
     description: "Complete programs and implementation trails from important Rust libraries, organized around API-design questions.",
@@ -70,6 +84,7 @@ export const books: Book[] = [
   {
     id: "async-rust-guidebook",
     title: "Async Rust Guidebook",
+    area: "rust",
     status: "working",
     thesis: "A consumer-first guide to asynchronous Rust.",
     description: "Complete programs, observed output, ordering timelines, cancellation, and library-level async design.",
@@ -79,6 +94,7 @@ export const books: Book[] = [
   {
     id: "rust-by-example",
     title: "Rust by Example: Real Repositories",
+    area: "rust",
     status: "working",
     thesis: "Learn Rust by tracing production systems from public API to runtime behavior.",
     description: "Repository walkthroughs that connect execution paths and architectural decisions to Rust's type, ownership, and concurrency models.",
@@ -88,25 +104,12 @@ export const books: Book[] = [
   {
     id: "rust-hero",
     title: "Rust Hero",
+    area: "rust",
     status: "working",
     thesis: "A fast, practical guide to the Rust concepts that appear constantly in real programs.",
     description: "Focused explanations and runnable examples for building fluency with Rust's core language and standard-library patterns.",
     demo: "https://beejmaxx.github.io/rust-hero/",
     source: "https://github.com/beejmaxx/rust-hero",
-  },
-  {
-    id: "building-dependable-data-systems",
-    title: "Building Dependable Data Systems",
-    status: "local draft",
-    thesis: "A practical guide to dependable data-intensive systems.",
-    description: "A book in progress. Its repository is currently local and has not been published to GitHub yet.",
-  },
-  {
-    id: "distributed-systems-guidebook",
-    title: "Distributed Systems Guidebook",
-    status: "local draft",
-    thesis: "A practical guide to distributed-systems concepts and design.",
-    description: "A book in progress. Its repository is currently local and has not been published to GitHub yet.",
   },
 ];
 

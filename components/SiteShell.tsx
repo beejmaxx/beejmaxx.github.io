@@ -3,6 +3,7 @@ import styles from "./SiteShell.module.css";
 const navigation = [
   { label: "home", href: "/", current: "home" },
   { label: "work", href: "/work", current: "work" },
+  { label: "books", href: "/books", current: "books" },
   { label: "case studies", href: "/case-studies", current: "case studies" },
   { label: "about", href: "/about", current: "about" },
   { label: "résumé", href: "/resume.pdf", current: "resume" },

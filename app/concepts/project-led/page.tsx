@@ -13,7 +13,7 @@ export default function ProjectLedConcept() {
         <nav aria-label="Homepage concepts">
           {conceptLinks.slice(1).map(([label, href]) => <a href={href} key={href}>{label}</a>)}
         </nav>
-        <a href="mailto:bijan.pourriahi@gmail.com">Email</a>
+        <a href="mailto:bijpou@gmail.com">Email</a>
       </header>
 
       <main>

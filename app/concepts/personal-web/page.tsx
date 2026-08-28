@@ -176,7 +176,7 @@ export function PersonalWebHomepage({ showConceptNavigation = true, fixedTheme }
           <a href="/resume.pdf" title="Resume">
             <span aria-hidden="true">↓</span> Résumé
           </a>
-          <a href="mailto:bijan.pourriahi@gmail.com" title="Email bijan">
+          <a href="mailto:bijpou@gmail.com" title="Email Bijan">
             <span aria-hidden="true">@</span> Email
           </a>
         </nav>

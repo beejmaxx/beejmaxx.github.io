@@ -22,7 +22,7 @@ export default function NotebookConcept() {
         <div className={styles.sideLinks}>
           <a href="https://github.com/beejmaxx" target="_blank" rel="noreferrer">GitHub ↗</a>
           <a href="/resume.pdf">Résumé ↗</a>
-          <a href="mailto:bijan.pourriahi@gmail.com">Email ↗</a>
+          <a href="mailto:bijpou@gmail.com">Email ↗</a>
         </div>
       </aside>
 

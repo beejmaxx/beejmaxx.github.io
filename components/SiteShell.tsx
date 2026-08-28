@@ -19,13 +19,13 @@ export function SiteShell({ current, children }: { current?: string; children: R
         <nav aria-label="Main navigation">
           {navigation.map((item) => <a href={item.href} key={item.href} aria-current={current === item.current ? "page" : undefined}>{item.label}</a>)}
           <a href="https://github.com/beejmaxx" target="_blank" rel="noreferrer">github</a>
-          <a href="mailto:bijan.pourriahi@gmail.com">email</a>
+          <a href="mailto:bijpou@gmail.com">email</a>
         </nav>
       </header>
       {children}
       <footer className={styles.footer}>
         <p>built by bijan.</p>
-        <nav aria-label="Footer navigation"><a href="/sitemap">sitemap</a><a href="mailto:bijan.pourriahi@gmail.com">email</a><a href="https://github.com/beejmaxx">github</a><a href="#top">top</a></nav>
+        <nav aria-label="Footer navigation"><a href="/sitemap">sitemap</a><a href="mailto:bijpou@gmail.com">email</a><a href="https://github.com/beejmaxx">github</a><a href="#top">top</a></nav>
       </footer>
     </div>
   );

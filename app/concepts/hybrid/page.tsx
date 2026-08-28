@@ -18,7 +18,7 @@ export default function HybridConcept() {
           <a href="/archive">Archive</a>
           <a href="/about">About</a>
         </nav>
-        <a href="mailto:bijpou@gmail.com">Email</a>
+        <a href="mailto:beejmaxx@gmail.com">Email</a>
       </header>
 
       <main>
@@ -101,7 +101,7 @@ export default function HybridConcept() {
       </main>
 
       <footer className={styles.footer}>
-        <div><p className={styles.eyebrow}>Contact</p><a href="mailto:bijpou@gmail.com">email</a></div>
+        <div><p className={styles.eyebrow}>Contact</p><a href="mailto:beejmaxx@gmail.com">email</a></div>
         <nav aria-label="Homepage concepts">{conceptLinks.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
       </footer>
     </div>

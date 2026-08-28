@@ -23,7 +23,7 @@ export default function TechnicalIndexConcept() {
             <div><dt>Primary work</dt><dd>Real-time systems, developer platforms, research infrastructure</dd></div>
             <div><dt>Languages</dt><dd>Rust, Python, TypeScript, Go</dd></div>
             <div><dt>Public history</dt><dd>63 original repositories since 2010</dd></div>
-            <div><dt>Contact</dt><dd><a href="mailto:bijpou@gmail.com">email</a></dd></div>
+            <div><dt>Contact</dt><dd><a href="mailto:beejmaxx@gmail.com">email</a></dd></div>
           </dl>
         </section>
 

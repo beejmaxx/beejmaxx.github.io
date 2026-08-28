@@ -12,7 +12,7 @@ export function SiteHeader() {
           <a href="/about">About</a>
           <a href="/resume.pdf">Résumé</a>
         </nav>
-        <a className="availability" href="mailto:bijpou@gmail.com">Email</a>
+        <a className="availability" href="mailto:beejmaxx@gmail.com">Email</a>
       </header>
     </div>
   );
@@ -23,7 +23,7 @@ export function SimpleFooter() {
     <footer className="site-footer wrap">
       <div>
         <p className="eyebrow">Contact</p>
-        <a className="footer-email" href="mailto:bijpou@gmail.com">email ↗</a>
+        <a className="footer-email" href="mailto:beejmaxx@gmail.com">email ↗</a>
       </div>
       <div className="footer-links">
         <a href="https://github.com/beejmaxx" target="_blank" rel="noreferrer">GitHub</a>

@@ -26,7 +26,7 @@ export function PersonalSiteShell({
         {children}
         <footer className={styles.footer}>
           <p>{footerNote}</p>
-          <nav aria-label="Footer navigation"><a href="mailto:bijpou@gmail.com">email ↗</a><a href="https://github.com/beejmaxx">github ↗</a><a href="#top">up ↑</a></nav>
+          <nav aria-label="Footer navigation"><a href="mailto:beejmaxx@gmail.com">email ↗</a><a href="https://github.com/beejmaxx">github ↗</a><a href="#top">up ↑</a></nav>
         </footer>
       </div>
     </ThemeShell>

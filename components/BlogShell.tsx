@@ -8,7 +8,7 @@ export function BlogShell({ children }: { children: React.ReactNode }) {
         <div className={styles.headerInner}>
           <a className={styles.brand} href="/" aria-label="Bijan's notes, home">bijan&apos;s notes</a>
           <nav aria-label="Main navigation">
-            <a href="/">Posts</a>
+            <a href="/blog">Posts</a>
             <a href="/work">Work</a>
             <a href="/about">About</a>
           </nav>

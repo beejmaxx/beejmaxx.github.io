@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <SiteShell current="about">
       <main className="page" id="main">
-        <header className="pageHero"><h1>About</h1><p className="deck">I’m Bijan, a systems engineer.</p></header>
+        <header className="pageHero"><h1>About</h1></header>
         <section className={styles.copy}>
           <p>I build agent infrastructure, integration systems, developer tools, market infrastructure, and operational control surfaces.</p>
           <p>The domain changes, but the questions repeat: What state matters? Who owns it? Can the behavior be interrupted and recovered? What evidence survives? What does the operator see?</p>

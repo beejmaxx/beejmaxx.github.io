@@ -32,15 +32,17 @@ test("exports the blog and every public index", async () => {
   assert.match(library, /Platform Integrity/);
   assert.doesNotMatch(home, /href="\/attempts"/);
   assert.doesNotMatch(home, /href="\/(?:notes|archive)"/);
-  assert.match(notes, /price anchor for every column/i);
+  assert.match(notes, />Posts</i);
   assert.match(about, /Ruby, Rails/i);
   assert.match(cases, /engineering records/i);
   assert.match(cases, /The Predicate Sweep/);
-  assert.match(blogAlias, /price anchor for every column/i);
+  assert.match(blogAlias, />Posts</i);
+  assert.doesNotMatch(blogAlias, /href="\/blog\/[^"]+"/i);
   assert.match(workAlias, /systems with receipts/i);
 
-  assert.match(blogAlias, /bijan&#x27;s notes/i);
-  for (const page of [home, work, books, library, notes, about, cases, workAlias]) assert.match(page, />bijan</i);
+  for (const page of [blogAlias, notes]) assert.match(page, /bijan&#x27;s notes/i);
+  assert.match(blogAlias, /href="\/blog">Posts</i);
+  for (const page of [home, work, books, library, about, cases, workAlias]) assert.match(page, />bijan</i);
 });
 
 test("publishes a dedicated Platform Integrity one-pager", async () => {
@@ -53,10 +55,9 @@ test("publishes a dedicated Platform Integrity one-pager", async () => {
   assert.match(page, /https:\/\/beejmaxx\.github\.io\/platform-integrity\//);
 });
 
-test("publishes one real note and keeps old drafts out", async () => {
-  const note = await readPage("blog/why-depth-history-needs-price-anchors.html");
-  assert.match(note, /History should be immutable/);
-  assert.match(note, /coordinate system/i);
+test("publishes no posts until Bijan writes one", async () => {
+  await assert.rejects(access(new URL("blog/why-depth-history-needs-price-anchors.html", clientRoot)));
+  await assert.rejects(access(new URL("blog/complex-systems-begin-with-core-abstractions.html", clientRoot)));
   await assert.rejects(access(new URL("blog/the-things-that-didnt-ship-belong-here.html", clientRoot)));
 });
 
@@ -114,10 +115,9 @@ test("exports discovery files, data, and public artifacts", async () => {
   assert.match(sitemap, /beejmaxx\.github\.io\/books/);
   assert.match(sitemap, /beejmaxx\.github\.io\/books\/platform-integrity/);
   assert.match(sitemap, /beejmaxx\.github\.io\/blog</);
-  assert.match(sitemap, /\/blog\/complex-systems-begin-with-core-abstractions/);
-  assert.match(sitemap, /\/blog\/why-depth-history-needs-price-anchors/);
+  assert.doesNotMatch(sitemap, /\/blog\/(?:complex-systems-begin-with-core-abstractions|why-depth-history-needs-price-anchors)/);
   assert.doesNotMatch(sitemap, /\/(?:notes|attempts|archive)/);
-  assert.match(feed, /Why a depth heatmap needs a price anchor/);
+  assert.doesNotMatch(feed, /<entry>/);
   assert.equal(JSON.parse(packet).projects.length, 18);
   for (const asset of [
     ".nojekyll", "og.jpg", "resume.pdf", "engine-sim/index.html", "aikido/index.html",

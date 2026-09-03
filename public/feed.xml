@@ -4,20 +4,6 @@
   <id>https://beejmaxx.github.io/blog</id>
   <link href="https://beejmaxx.github.io/blog"/>
   <link href="https://beejmaxx.github.io/feed.xml" rel="self" type="application/atom+xml"/>
-  <updated>2026-08-18T00:00:00Z</updated>
+  <updated>2026-09-03T00:00:00Z</updated>
   <author><name>bijan</name><uri>https://beejmaxx.github.io</uri></author>
-  <entry>
-    <title>Start with the primitives</title>
-    <id>https://beejmaxx.github.io/blog/complex-systems-begin-with-core-abstractions</id>
-    <link href="https://beejmaxx.github.io/blog/complex-systems-begin-with-core-abstractions"/>
-    <updated>2026-08-18T00:00:00Z</updated>
-    <summary>Before services, agents, or interfaces, decide which facts the system can represent and who is allowed to change them.</summary>
-  </entry>
-  <entry>
-    <title>Why a depth heatmap needs a price anchor for every column</title>
-    <id>https://beejmaxx.github.io/blog/why-depth-history-needs-price-anchors</id>
-    <link href="https://beejmaxx.github.io/blog/why-depth-history-needs-price-anchors"/>
-    <updated>2026-08-14T00:00:00Z</updated>
-    <summary>A small rendering shortcut made old liquidity appear to move. The fix was to preserve the coordinate system with the data.</summary>
-  </entry>
 </feed>

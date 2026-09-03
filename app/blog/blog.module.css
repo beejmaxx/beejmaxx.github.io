@@ -1,0 +1,11 @@
+.main { width: min(100%, 54rem); margin-inline: auto; padding: 3.1rem 0 7rem; }
+.main h1 { margin: 0 0 2.1rem; font: 500 1.65rem/1.2 Arial, Helvetica, sans-serif; letter-spacing: -.035em; }
+.posts { display: grid; gap: 2.2rem; margin: 0; padding: 0; list-style: none; }
+.posts li { display: grid; gap: .35rem; }
+.posts time { color: #777; font-size: .93rem; }
+.posts a { width: fit-content; color: #367fe8; font-size: clamp(1.35rem, 3vw, 1.65rem); line-height: 1.22; letter-spacing: -.03em; }
+@media(max-width: 42rem) {
+  .main { padding-top: 2.4rem; }
+  .main h1 { margin-bottom: 1.8rem; }
+  .posts { gap: 1.8rem; }
+}

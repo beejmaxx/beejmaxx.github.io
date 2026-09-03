@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import HomePage from "../page";
-
-export const metadata: Metadata = {
-  title: "Posts",
-  alternates: { canonical: "/" },
-  robots: { index: false, follow: true },
-};
-
-export default HomePage;
+import { SiteShell } from "@/components/SiteShell";
+import { getAllPosts } from "@/lib/posts";
+import styles from "./notes.module.css";
+export const metadata:Metadata={title:"notes",description:"Technical notes and field records by bijan.",alternates:{canonical:"/notes"},openGraph:{title:"notes — bijan",description:"Technical notes and field records.",url:"/notes"}};
+const prompts=["Why a depth heatmap needs per-column price anchors","The attractive bot policy the evaluator rejected","Four complete orders for the same Rust curriculum","Nine modal pairs and a mallet gesture","Why a source collection needs checksums"];
+export default function NotesPage(){const posts=getAllPosts();return <SiteShell current="notes"><main className="page" id="main"><section className="pageHero"><p className="eyebrow">field notes / when they are ready</p><h1>things worth<br/><em>writing down.</em></h1><p className="deck">No placeholder essays. The publishing machinery exists; these are the notes currently queued by the work.</p></section>{posts.length?<section className={styles.posts}>{posts.map(post=><a href={`/blog/${post.slug}`} key={post.slug}><time>{post.displayDate}</time><h2>{post.title}</h2><p>{post.excerpt}</p><span>{post.readingTime} ↗</span></a>)}</section>:<section className={`${styles.queue} panel`}><header><span>0 published</span><h2>not empty—queued.</h2><p>The projects already contain the substance. I am not backfilling the page with generic commentary.</p></header><ol>{prompts.map((prompt,index)=><li key={prompt}><span>0{index+1}</span><p>{prompt}</p></li>)}</ol></section>}</main></SiteShell>}

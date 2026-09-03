@@ -16,9 +16,9 @@ test("exports the blog and every public index", async () => {
   const pages = await Promise.all(paths.map(readPage));
   const [home, work, books, library, notes, about, cases, blogAlias, workAlias] = pages;
 
-  assert.match(home, /bijan&#x27;s notes/i);
-  assert.match(home, /Start with the primitives/i);
-  assert.match(home, /Why a depth heatmap needs a price anchor/i);
+  assert.match(home, /Bijan Pourriahi/i);
+  assert.match(home, /Selected systems/i);
+  assert.match(home, /Depthfield/i);
   assert.match(work, /systems with receipts/i);
   assert.match(work, /Polymarket MCP/);
   assert.match(books, /Async Rust Guidebook/);
@@ -30,8 +30,7 @@ test("exports the blog and every public index", async () => {
   assert.match(library, /Rust API Design Guidebook/);
   assert.match(library, /Platform Integrity/);
   assert.doesNotMatch(home, /href="\/attempts"/);
-  assert.match(home, /href="\/blog\/complex-systems-begin-with-core-abstractions"/);
-  assert.doesNotMatch(home, /href="\/(?:notes|archive)"/);
+  assert.doesNotMatch(home, /href="\/(?:notes|blog|archive)"/);
   assert.match(notes, /price anchor for every column/i);
   assert.match(about, /Ruby, Rails/i);
   assert.match(cases, /engineering records/i);
@@ -39,8 +38,8 @@ test("exports the blog and every public index", async () => {
   assert.match(blogAlias, /price anchor for every column/i);
   assert.match(workAlias, /systems with receipts/i);
 
-  for (const page of [home, notes, blogAlias]) assert.match(page, /bijan&#x27;s notes/i);
-  for (const page of [work, books, library, about, cases, workAlias]) assert.match(page, />bijan</i);
+  assert.match(blogAlias, /bijan&#x27;s notes/i);
+  for (const page of [home, work, books, library, notes, about, cases, workAlias]) assert.match(page, />bijan</i);
 });
 
 test("publishes a dedicated Platform Integrity one-pager", async () => {
@@ -113,6 +112,7 @@ test("exports discovery files, data, and public artifacts", async () => {
   assert.match(robots, /Sitemap: https:\/\/beejmaxx\.github\.io\/sitemap\.xml/);
   assert.match(sitemap, /beejmaxx\.github\.io\/books/);
   assert.match(sitemap, /beejmaxx\.github\.io\/books\/platform-integrity/);
+  assert.match(sitemap, /beejmaxx\.github\.io\/blog</);
   assert.match(sitemap, /\/blog\/complex-systems-begin-with-core-abstractions/);
   assert.match(sitemap, /\/blog\/why-depth-history-needs-price-anchors/);
   assert.doesNotMatch(sitemap, /\/(?:notes|attempts|archive)/);

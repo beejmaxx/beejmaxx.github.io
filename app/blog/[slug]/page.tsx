@@ -33,7 +33,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <BlogShell>
       <main className="page" id="main">
         <article className="article-shell">
-          <a className="article-back" href="/">← all posts</a>
+          <a className="article-back" href="/blog">← all posts</a>
           <header className="article-header">
             <p className="eyebrow">{post.tags.join(" · ")}</p>
             <h1>{post.title}</h1>

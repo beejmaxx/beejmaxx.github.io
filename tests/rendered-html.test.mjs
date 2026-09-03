@@ -19,6 +19,7 @@ test("exports the blog and every public index", async () => {
   assert.match(home, /Bijan Pourriahi/i);
   assert.match(home, /Selected systems/i);
   assert.match(home, /Depthfield/i);
+  assert.match(home, /href="\/blog"[^>]*>blog</i);
   assert.match(work, /systems with receipts/i);
   assert.match(work, /Polymarket MCP/);
   assert.match(books, /Async Rust Guidebook/);
@@ -30,7 +31,7 @@ test("exports the blog and every public index", async () => {
   assert.match(library, /Rust API Design Guidebook/);
   assert.match(library, /Platform Integrity/);
   assert.doesNotMatch(home, /href="\/attempts"/);
-  assert.doesNotMatch(home, /href="\/(?:notes|blog|archive)"/);
+  assert.doesNotMatch(home, /href="\/(?:notes|archive)"/);
   assert.match(notes, /price anchor for every column/i);
   assert.match(about, /Ruby, Rails/i);
   assert.match(cases, /engineering records/i);

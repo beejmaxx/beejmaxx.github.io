@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>notes by bijan</title>
-  <id>https://beejmaxx.github.io/notes</id>
-  <link href="https://beejmaxx.github.io/notes"/>
+  <title>bijan's notes</title>
+  <id>https://beejmaxx.github.io/</id>
+  <link href="https://beejmaxx.github.io/"/>
   <link href="https://beejmaxx.github.io/feed.xml" rel="self" type="application/atom+xml"/>
-  <updated>2026-08-14T00:00:00Z</updated>
+  <updated>2026-08-18T00:00:00Z</updated>
   <author><name>bijan</name><uri>https://beejmaxx.github.io</uri></author>
+  <entry>
+    <title>Start with the primitives</title>
+    <id>https://beejmaxx.github.io/blog/complex-systems-begin-with-core-abstractions</id>
+    <link href="https://beejmaxx.github.io/blog/complex-systems-begin-with-core-abstractions"/>
+    <updated>2026-08-18T00:00:00Z</updated>
+    <summary>Before services, agents, or interfaces, decide which facts the system can represent and who is allowed to change them.</summary>
+  </entry>
   <entry>
     <title>Why a depth heatmap needs a price anchor for every column</title>
     <id>https://beejmaxx.github.io/blog/why-depth-history-needs-price-anchors</id>

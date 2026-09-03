@@ -1,20 +1,51 @@
-.main { width: min(100%, 50rem); margin-inline: auto; padding-top: 2rem; }
-.hero { padding: 0; }
-.hero h1 { margin: 0 0 1rem; font: 700 2.2rem/1.2 Arial, Helvetica, sans-serif; }
-.hero p { max-width: 48rem; margin: 0 0 1rem; }
-.inlineLinks { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1rem; }
-.section { padding: 1.75rem 0 0; }
-.section > header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-bottom: .75rem; }
-.section h2 { margin: 0; font: 700 1.45rem/1.3 Arial, Helvetica, sans-serif; }
-.section header span,.section header a { color: var(--muted); font-size: .76rem; }
-.intro { max-width: 48rem; margin: 0; }
-.rows { margin: 1rem 0 0; padding-left: 1.5rem; }
-.rows li { margin-bottom: .9rem; padding-left: .15rem; }
-.rows a { color: var(--link); }
-.rows strong { font-weight: 700; }
-.rows span { display: block; color: var(--ink); font-size: .92rem; }
-.rows .detail { max-width: 46rem; margin-top: .2rem; color: var(--muted); font-size: .84rem; }
-.more { margin: .4rem 0 0; }
-@media(max-width: 38rem) {
-  .main { padding-top: 1rem; }
+.main {
+  width: min(100%, 54rem);
+  margin-inline: auto;
+  padding: 3.1rem 0 7rem;
+}
+
+.main h1 {
+  margin: 0 0 2.1rem;
+  font: 500 1.65rem/1.2 Arial, Helvetica, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.posts {
+  display: grid;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.posts li {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.posts time {
+  color: #777;
+  font-size: 0.93rem;
+}
+
+.posts a {
+  width: fit-content;
+  color: #367fe8;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 42rem) {
+  .main {
+    padding-top: 2.4rem;
+  }
+
+  .main h1 {
+    margin-bottom: 1.8rem;
+  }
+
+  .posts {
+    gap: 1.8rem;
+  }
 }

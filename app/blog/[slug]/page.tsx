@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { SiteShell } from "@/components/SiteShell";
+import { BlogShell } from "@/components/BlogShell";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 
 export const dynamicParams = false;
@@ -30,10 +30,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getPostBySlug(slug);
 
   return (
-    <SiteShell current="notes">
+    <BlogShell>
       <main className="page" id="main">
         <article className="article-shell">
-          <a className="article-back" href="/notes">← all notes</a>
+          <a className="article-back" href="/">← all posts</a>
           <header className="article-header">
             <p className="eyebrow">{post.tags.join(" · ")}</p>
             <h1>{post.title}</h1>
@@ -48,6 +48,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </article>
       </main>
-    </SiteShell>
+    </BlogShell>
   );
 }

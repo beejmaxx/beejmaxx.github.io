@@ -1,12 +1,9 @@
-# Bijan — technical portfolio
+# bijan's notes
 
-A static portfolio and case-study site for systems engineering work: agent
-infrastructure, developer tooling, stateful execution systems, market
-infrastructure, and operational interfaces.
+A minimalist technical blog with retained work, case-study, and about pages.
+The homepage lists Markdown posts in reverse chronological order.
 
-The public homepage is intentionally selective. The repository retains older
-book and note routes as source material, but they are not part of the primary
-navigation.
+The site is published at [beejmaxx.github.io](https://beejmaxx.github.io/).
 
 ## Primary content
 
@@ -15,9 +12,9 @@ navigation.
 - an Aikido system overview and subsystem dossiers;
 - a downloadable résumé at `/resume.pdf`.
 
-## Retained notes
+## Add a post
 
-Markdown notes remain in `content/posts` and can still be rendered when needed:
+Create a Markdown file in `content/posts` with this frontmatter:
 
 ```md
 ---

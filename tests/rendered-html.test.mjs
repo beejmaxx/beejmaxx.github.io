@@ -8,7 +8,7 @@ async function readPage(path) {
   return readFile(new URL(path, clientRoot), "utf8");
 }
 
-test("exports the portfolio and every public index", async () => {
+test("exports the blog and every public index", async () => {
   const paths = [
     "index.html", "work.html", "books.html", "library.html", "notes.html",
     "about.html", "case-studies.html", "blog.html", "work-map.html",
@@ -16,42 +16,39 @@ test("exports the portfolio and every public index", async () => {
   const pages = await Promise.all(paths.map(readPage));
   const [home, work, books, library, notes, about, cases, blogAlias, workAlias] = pages;
 
-  assert.match(home, /making hidden systems inspectable/i);
-  assert.match(home, /Depthfield/);
-  assert.match(home, /01 \/ flagship system/i);
-  assert.match(home, /start with Aikido/i);
-  assert.match(home, /systems with receipts/i);
-  assert.match(work, /same obsession/i);
+  assert.match(home, /bijan&#x27;s notes/i);
+  assert.match(home, /Start with the primitives/i);
+  assert.match(home, /Why a depth heatmap needs a price anchor/i);
+  assert.match(work, /systems with receipts/i);
   assert.match(work, /Polymarket MCP/);
   assert.match(books, /Async Rust Guidebook/);
   assert.match(books, /Platform Integrity/);
-  assert.match(books, /Building Dependable Data Systems/);
-  assert.match(books, /Distributed Systems Guidebook/);
+  assert.match(books, /Computer Science from First Principles/);
+  assert.match(books, /Electronic Markets from First Principles/);
   assert.match(books, /href="\/books\/platform-integrity"/);
   assert.doesNotMatch(books, /Rust API Field Guide/);
   assert.match(library, /Rust API Design Guidebook/);
   assert.match(library, /Platform Integrity/);
   assert.doesNotMatch(home, /href="\/attempts"/);
-  assert.doesNotMatch(home, /href="\/(?:notes|blog|archive)"/);
+  assert.match(home, /href="\/blog\/complex-systems-begin-with-core-abstractions"/);
+  assert.doesNotMatch(home, /href="\/(?:notes|archive)"/);
   assert.match(notes, /price anchor for every column/i);
   assert.match(about, /Ruby, Rails/i);
   assert.match(cases, /engineering records/i);
   assert.match(cases, /The Predicate Sweep/);
   assert.match(blogAlias, /price anchor for every column/i);
-  assert.match(workAlias, /same obsession/i);
+  assert.match(workAlias, /systems with receipts/i);
 
-  for (const page of pages) {
-    assert.match(page, /Choose site treatment/);
-    assert.match(page, />bijan</);
-  }
+  for (const page of [home, notes, blogAlias]) assert.match(page, /bijan&#x27;s notes/i);
+  for (const page of [work, books, library, about, cases, workAlias]) assert.match(page, />bijan</i);
 });
 
 test("publishes a dedicated Platform Integrity one-pager", async () => {
   const page = await readPage("books/platform-integrity.html");
-  assert.match(page, /Most platforms start with the wrong question/);
-  assert.match(page, /A field guide for decisions that detectors cannot make/);
-  assert.match(page, /Read the public draft/);
-  assert.match(page, /Discuss the work/);
+  assert.match(page, /Platforms often begin with the wrong question/);
+  assert.match(page, /Engineering detection, decisions, and enforcement/);
+  assert.match(page, /read the public draft/i);
+  assert.match(page, /source/i);
   assert.match(page, /NIST risk and identity frameworks/);
   assert.match(page, /https:\/\/beejmaxx\.github\.io\/platform-integrity\//);
 });
@@ -85,7 +82,7 @@ test("publishes the Aikido subsystem dossier series with its evidence visuals", 
     readPage("aikido/architecture.html"),
   ]);
 
-  assert.match(cases, /four subsystem dossiers/i);
+  assert.match(cases, /Four detailed studies/i);
   assert.match(cases, /One Account, One Truth/);
   assert.match(account, /OneAccountState/);
   assert.match(account, /the close can lie/i);
@@ -100,10 +97,10 @@ test("publishes the Aikido subsystem dossier series with its evidence visuals", 
   assert.doesNotMatch(hub, /data-stage-panel[^>]*hidden/i);
   assert.match(hub, /Retrying a delta command into a doubled position/i);
   assert.match(hub, /scalar score outrunning its evidence/i);
-  assert.match(hub, /Choose site treatment/i);
+  assert.match(hub, /Aikido \/ subsystem dossiers/i);
   assert.match(hub, /href="\/books"/i);
   assert.doesNotMatch(hub, /href="\/archive"/i);
-  assert.match(architecture, /Choose site treatment/i);
+  assert.match(architecture, /Aikido/i);
   assert.match(architecture, /href="\/case-studies"/i);
   assert.doesNotMatch(architecture, /href="\/notes"/i);
   assert.doesNotMatch(`${account}${convergence}${evidence}`, /\[\[visual:/);
@@ -116,9 +113,11 @@ test("exports discovery files, data, and public artifacts", async () => {
   assert.match(robots, /Sitemap: https:\/\/beejmaxx\.github\.io\/sitemap\.xml/);
   assert.match(sitemap, /beejmaxx\.github\.io\/books/);
   assert.match(sitemap, /beejmaxx\.github\.io\/books\/platform-integrity/);
-  assert.doesNotMatch(sitemap, /\/(?:blog|notes|attempts|archive)/);
+  assert.match(sitemap, /\/blog\/complex-systems-begin-with-core-abstractions/);
+  assert.match(sitemap, /\/blog\/why-depth-history-needs-price-anchors/);
+  assert.doesNotMatch(sitemap, /\/(?:notes|attempts|archive)/);
   assert.match(feed, /Why a depth heatmap needs a price anchor/);
-  assert.equal(JSON.parse(packet).projects.length, 16);
+  assert.equal(JSON.parse(packet).projects.length, 18);
   for (const asset of [
     ".nojekyll", "og.jpg", "resume.pdf", "engine-sim/index.html", "aikido/index.html",
     "aikido/architecture.html", "aikido/system-map.js", "case-studies/marketplace-integrity.html",

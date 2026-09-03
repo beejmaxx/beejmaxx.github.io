@@ -1,0 +1,40 @@
+.site {
+  --blog-accent: #367fe8;
+  --blog-accent-dark: #175fc6;
+  --blog-ink: #171717;
+  --blog-muted: #777;
+  --blog-line: #e8e8e8;
+  min-height: 100vh;
+  background: #fff;
+  color: var(--blog-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.site a { color: var(--blog-accent); }
+.site a:hover,.site a:focus-visible { color: var(--blog-accent-dark); }
+.skip { position: fixed; z-index: 100; top: .75rem; left: .75rem; transform: translateY(-180%); padding: .55rem .75rem; background: var(--blog-ink); color: #fff!important; }
+.skip:focus { transform: none; }
+.header { border-bottom: 1px solid var(--blog-line); }
+.headerInner { width: min(100%, 54rem); min-height: 4.75rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-inline: auto; }
+.brand { color: var(--blog-ink)!important; font-size: 1.65rem; line-height: 1; letter-spacing: -.045em; }
+.brand:hover,.brand:focus-visible { text-decoration: none; }
+.header nav { display: flex; align-items: center; gap: 1.8rem; }
+.header nav a { color: var(--blog-ink); font-size: .98rem; }
+.header nav a:hover,.header nav a:focus-visible { color: var(--blog-accent); text-decoration: none; }
+.content,.footer,.headerInner { padding-inline: 1.5rem; }
+.footer { width: min(100%, 54rem); display: flex; justify-content: space-between; gap: 1rem; margin: 0 auto; padding-top: 1.25rem; padding-bottom: 2.5rem; border-top: 1px solid var(--blog-line); color: var(--blog-muted); font-size: .8rem; }
+.site :global(.page) { width: min(100%, 46rem); }
+.site :global(.article-shell) { max-width: 46rem; padding: 3rem 0 6rem; }
+.site :global(.article-back) { margin-bottom: 2.5rem; color: var(--blog-muted); font-size: .9rem; }
+.site :global(.article-header) { border-color: var(--blog-line); }
+.site :global(.article-header h1) { font-size: clamp(2rem, 6vw, 3rem); font-weight: 500; letter-spacing: -.04em; }
+.site :global(.article-excerpt) { color: var(--blog-muted); font-size: 1.08rem; }
+.site :global(.article-byline),.site :global(.eyebrow) { color: var(--blog-muted); }
+.site :global(.prose) { font-size: 1.03rem; line-height: 1.78; }
+@media(max-width: 38rem) {
+  .headerInner { min-height: 4.25rem; }
+  .brand { font-size: 1.35rem; }
+  .header nav { gap: 1rem; }
+  .header nav a { font-size: .9rem; }
+  .header nav a:first-child { display: none; }
+  .content,.footer,.headerInner { padding-inline: 1rem; }
+}

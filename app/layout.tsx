@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://beejmaxx.github.io"),
   title: {
-    default: "Bijan Pourriahi",
+    default: "bijan's notes",
     template: "%s — Bijan Pourriahi",
   },
   description:
-    "Systems engineer building runtimes, integrations, and tools for complex, stateful systems.",
+    "Notes on software, systems, markets, and the work of building them.",
   alternates: {
     canonical: "/",
   },
@@ -17,18 +17,18 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: "Bijan Pourriahi",
-    description: "Systems engineer building runtimes, integrations, and tools for complex, stateful systems.",
+    title: "bijan's notes",
+    description: "Notes on software, systems, markets, and the work of building them.",
     type: "website",
     url: "https://beejmaxx.github.io",
-    siteName: "Bijan Pourriahi",
-    images: [{ url: "/og-v2.png", width: 1731, height: 909, alt: "Bijan Pourriahi — systems engineer building runtimes, integrations, and tools for complex, stateful systems" }],
+    siteName: "bijan's notes",
+    images: [{ url: "/og.png", width: 1672, height: 941, alt: "bijan's notes — software, systems, markets, and the work of building them" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bijan Pourriahi",
-    description: "Systems engineer building runtimes, integrations, and tools for complex, stateful systems.",
-    images: ["/og-v2.png"],
+    title: "bijan's notes",
+    description: "Notes on software, systems, markets, and the work of building them.",
+    images: ["/og.png"],
   },
 };
 

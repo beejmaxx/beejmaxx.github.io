@@ -24,7 +24,7 @@ export default function HomePage() {
         <section className={styles.hero}>
           <h1>Bijan Pourriahi</h1>
           <p>Systems engineer building runtimes, integrations, and tools for complex, stateful systems.</p>
-          <p>I build around unreliable external processes: durable state, cancellation and recovery, protocol boundaries, evidence capture, and operator-facing controls. I work mainly in Rust, Python, and TypeScript.</p>
+          <p>I build distributed systems, backend platforms, and developer tools, primarily in Rust, Python, and TypeScript. My work spans execution engines, workflow orchestration, API integrations, and production infrastructure.</p>
           <nav className={styles.inlineLinks}><a href="/resume.pdf">Résumé</a><a href="https://github.com/beejmaxx">GitHub</a></nav>
         </section>
 

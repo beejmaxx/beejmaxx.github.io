@@ -21,7 +21,6 @@ const listedCaseStudySlugs = new Set([
   "results-allowed-to-count",
   "agent-supervisor",
   "operations-workstation",
-  "tinygrad-contributor-guide",
 ]);
 
 function parseFrontmatter(source: string) {

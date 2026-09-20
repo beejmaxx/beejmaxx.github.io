@@ -53,7 +53,7 @@ export const obsessions = [
 export const work: WorkItem[] = [
   {
     id: "tinygrad-guide",
-    title: "tinygrad Contributor Field Guide",
+    title: "tinygrad notes",
     thesis: "Current architecture and contribution rules, tied to public sources.",
     description: "An unofficial orientation to tinygrad 0.14.0 and current master: the execution pipeline, proof expectations, and the shortest credible path from bug to reviewable change.",
     kind: "guide",
@@ -61,9 +61,8 @@ export const work: WorkItem[] = [
     year: 2026,
     trails: ["receipts", "provenance"],
     stack: ["Python", "UOps", "Compiler systems"],
-    demo: "/case-studies/tinygrad-contributor-guide",
-    source: "https://github.com/beejmaxx/tinygrad",
-    caseStudy: "/case-studies/tinygrad-contributor-guide",
+    demo: "/tinygrad-notes/",
+    source: "https://github.com/beejmaxx/tinygrad-notes",
     proof: "The published snapshot pins upstream commit 8ad8f73, distinguishes official policy from practical guidance, and links every current claim to the public repository.",
     limit: "Unofficial and time-bounded. Upstream README, AGENTS.md, code, and CI remain authoritative.",
   },

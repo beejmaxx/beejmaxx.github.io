@@ -19,6 +19,7 @@ test("exports the blog and every public index", async () => {
   assert.match(home, /Bijan Pourriahi/i);
   assert.match(home, /Selected systems/i);
   assert.match(home, /Depthfield/i);
+  assert.match(home, /tinygrad Contributor Field Guide/i);
   assert.match(home, /href="\/blog"[^>]*>blog</i);
   assert.match(work, /systems with receipts/i);
   assert.match(work, /Polymarket MCP/);
@@ -36,6 +37,7 @@ test("exports the blog and every public index", async () => {
   assert.match(about, /Ruby, Rails/i);
   assert.match(cases, /engineering records/i);
   assert.match(cases, /The Predicate Sweep/);
+  assert.match(cases, /tinygrad Contributor Field Guide/);
   assert.match(blogAlias, />Posts</i);
   assert.doesNotMatch(blogAlias, /href="\/blog\/[^"]+"/i);
   assert.match(workAlias, /systems with receipts/i);
@@ -53,6 +55,18 @@ test("publishes a dedicated Platform Integrity one-pager", async () => {
   assert.match(page, /source/i);
   assert.match(page, /NIST risk and identity frameworks/);
   assert.match(page, /https:\/\/beejmaxx\.github\.io\/platform-integrity\//);
+});
+
+test("publishes a current, source-linked tinygrad contributor guide", async () => {
+  const page = await readPage("case-studies/tinygrad-contributor-guide.html");
+  assert.match(page, /September 21, 2026/);
+  assert.match(page, /v0\.14\.0/);
+  assert.match(page, /8ad8f73/);
+  assert.match(page, /Python 3\.11 or newer/);
+  assert.match(page, /UOp compute graph/);
+  assert.match(page, /Agent-authored code should not be submitted unchanged/);
+  assert.match(page, /fails before the fix and passes after it/);
+  assert.match(page, /github\.com\/tinygrad\/tinygrad\/blob\/8ad8f738755c3ab157d356aedd5d5c108aa1a642\/README\.md/);
 });
 
 test("publishes no posts until Bijan writes one", async () => {
@@ -115,10 +129,11 @@ test("exports discovery files, data, and public artifacts", async () => {
   assert.match(sitemap, /beejmaxx\.github\.io\/books/);
   assert.match(sitemap, /beejmaxx\.github\.io\/books\/platform-integrity/);
   assert.match(sitemap, /beejmaxx\.github\.io\/blog</);
+  assert.match(sitemap, /beejmaxx\.github\.io\/case-studies\/tinygrad-contributor-guide/);
   assert.doesNotMatch(sitemap, /\/blog\/(?:complex-systems-begin-with-core-abstractions|why-depth-history-needs-price-anchors)/);
   assert.doesNotMatch(sitemap, /\/(?:notes|attempts|archive)/);
   assert.doesNotMatch(feed, /<entry>/);
-  assert.equal(JSON.parse(packet).projects.length, 18);
+  assert.equal(JSON.parse(packet).projects.length, 19);
   for (const asset of [
     ".nojekyll", "og.jpg", "resume.pdf", "engine-sim/index.html", "aikido/index.html",
     "aikido/architecture.html", "aikido/system-map.js", "case-studies/marketplace-integrity.html",

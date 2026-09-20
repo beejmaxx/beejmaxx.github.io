@@ -1,5 +1,5 @@
 export type WorkStatus = "live" | "working" | "paused" | "superseded" | "attempt";
-export type WorkKind = "instrument" | "system" | "book" | "collection" | "attempt";
+export type WorkKind = "instrument" | "system" | "guide" | "book" | "collection" | "attempt";
 
 export type WorkItem = {
   id: string;
@@ -51,6 +51,22 @@ export const obsessions = [
 ] as const;
 
 export const work: WorkItem[] = [
+  {
+    id: "tinygrad-guide",
+    title: "tinygrad Contributor Field Guide",
+    thesis: "Current architecture and contribution rules, tied to public sources.",
+    description: "An unofficial orientation to tinygrad 0.14.0 and current master: the execution pipeline, proof expectations, and the shortest credible path from bug to reviewable change.",
+    kind: "guide",
+    status: "working",
+    year: 2026,
+    trails: ["receipts", "provenance"],
+    stack: ["Python", "UOps", "Compiler systems"],
+    demo: "/case-studies/tinygrad-contributor-guide",
+    source: "https://github.com/beejmaxx/tinygrad",
+    caseStudy: "/case-studies/tinygrad-contributor-guide",
+    proof: "The published snapshot pins upstream commit 8ad8f73, distinguishes official policy from practical guidance, and links every current claim to the public repository.",
+    limit: "Unofficial and time-bounded. Upstream README, AGENTS.md, code, and CI remain authoritative.",
+  },
   {
     id: "agent-supervisor",
     title: "Agent Supervisor",

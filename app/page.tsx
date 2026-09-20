@@ -6,7 +6,7 @@ const agentInfrastructure = ["agent-supervisor", "polymarket-mcp", "mcphub"]
   .map(getWork)
   .filter(Boolean);
 
-const selectedWork = ["aikido", "depthfield", "operations", "bot-defense"]
+const selectedWork = ["aikido", "tinygrad-guide", "depthfield", "operations", "bot-defense"]
   .map(getWork)
   .filter(Boolean);
 
